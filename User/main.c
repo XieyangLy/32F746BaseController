@@ -40,6 +40,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "rl_net.h"
+#include "sdcardTest.h"
+#include "eventrecorder.h"
+
 #ifdef _RTE_
 #include "RTE_Components.h"             // Component selection
 #endif
@@ -123,9 +126,7 @@ int main(void)
 
   /* Add your application code here
      */
-	//添加网络初始化
-	netInitialize ();
-	
+	EventRecorderInitialize (EventRecordAll, 1);
 
 
 
@@ -135,7 +136,12 @@ int main(void)
 
   /* Create thread functions that start executing, 
   Example: osThreadNew(app_main, NULL, NULL); */
+	//添加网络初始化
+//	netInitialize ();
 
+	osThreadNew(fileTestApp, NULL, NULL);
+	
+	
   /* Start thread execution */
   osKernelStart();
 #endif

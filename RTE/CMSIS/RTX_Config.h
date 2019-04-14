@@ -44,7 +44,7 @@
 //   <i> Defines the combined global dynamic memory size.
 //   <i> Default: 4096
 #ifndef OS_DYNAMIC_MEM_SIZE
-#define OS_DYNAMIC_MEM_SIZE         4096
+#define OS_DYNAMIC_MEM_SIZE         40960
 #endif
  
 //   <o>Kernel Tick Frequency [Hz] <1-1000000>
@@ -124,7 +124,7 @@
 //   <i> Defines stack size for threads with zero stack size specified.
 //   <i> Default: 256
 #ifndef OS_STACK_SIZE
-#define OS_STACK_SIZE               256
+#define OS_STACK_SIZE               4096
 #endif
  
 //   <o>Idle Thread Stack size [bytes] <72-1073741824:8>
@@ -247,14 +247,14 @@
 //   <e>Object specific Memory allocation
 //   <i> Enables object specific memory allocation.
 #ifndef OS_MUTEX_OBJ_MEM
-#define OS_MUTEX_OBJ_MEM            0
+#define OS_MUTEX_OBJ_MEM            1
 #endif
  
 //     <o>Number of Mutex objects <1-1000>
 //     <i> Defines maximum number of objects that can be active at the same time.
 //     <i> Applies to objects with system provided memory for control blocks.
 #ifndef OS_MUTEX_NUM
-#define OS_MUTEX_NUM                1
+#define OS_MUTEX_NUM                10
 #endif
  
 //   </e>
@@ -343,7 +343,7 @@
 //   <e>Global Initialization
 //   <i> Initialize Event Recorder during 'osKernelInitialize'.
 #ifndef OS_EVR_INIT
-#define OS_EVR_INIT                 0
+#define OS_EVR_INIT                 1
 #endif
  
 //     <q>Start recording

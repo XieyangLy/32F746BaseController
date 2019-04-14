@@ -25,6 +25,12 @@
 /*  Keil.ARM Compiler::Compiler:I/O:File:File System:1.2.0 */
 #define RTE_Compiler_IO_File            /* Compiler I/O: File */
           #define RTE_Compiler_IO_File_FS         /* Compiler I/O: File (File System) */
+/*  Keil.ARM Compiler::Compiler:I/O:STDERR:Breakpoint:1.2.0 */
+#define RTE_Compiler_IO_STDERR          /* Compiler I/O: STDERR */
+          #define RTE_Compiler_IO_STDERR_BKPT     /* Compiler I/O: STDERR Breakpoint */
+/*  Keil.ARM Compiler::Compiler:I/O:STDIN:Breakpoint:1.2.0 */
+#define RTE_Compiler_IO_STDIN           /* Compiler I/O: STDIN */
+          #define RTE_Compiler_IO_STDIN_BKPT      /* Compiler I/O: STDIN Breakpoint */
 /*  Keil.ARM Compiler::Compiler:I/O:STDOUT:EVR:1.2.0 */
 #define RTE_Compiler_IO_STDOUT          /* Compiler I/O: STDOUT */
           #define RTE_Compiler_IO_STDOUT_EVR      /* Compiler I/O: STDOUT EVR */
@@ -32,8 +38,9 @@
 #define RTE_FileSystem_Core             /* File System Core */
           #define RTE_FileSystem_LFN              /* File System with Long Filename support */
           #define RTE_FileSystem_Debug            /* File System Debug Version */
-/*  Keil.MDK-Plus::File System:Drive:RAM:6.11.0 */
-#define RTE_FileSystem_Drive_RAM        /* File System RAM Drive */
+/*  Keil.MDK-Plus::File System:Drive:Memory Card:6.11.0 */
+#define RTE_FileSystem_Drive_MC_0       /* File System Memory Card Drive 0 */
+
 /*  Keil.MDK-Plus::Network:CORE:IPv4 Debug:7.10.0 */
 #define RTE_Network_Core                /* Network Core */
           #define RTE_Network_IPv4                /* Network IPv4 Stack */
@@ -51,6 +58,9 @@
 #define RTE_Drivers_ETH_MAC0            /* Driver ETH_MAC0 */
 /*  Keil::CMSIS Driver:Ethernet PHY:LAN8742A:1.2.0 */
 #define RTE_Drivers_PHY_LAN8742A        /* Driver PHY LAN8742A */
+/*  Keil::CMSIS Driver:MCI:1.6.0 */
+#define RTE_Drivers_MCI0                /* Driver MCI0 */
+        #define RTE_Drivers_MCI1                /* Driver MCI1 */
 /*  Keil::Device:STM32Cube Framework:Classic:1.2.6 */
 #define RTE_DEVICE_FRAMEWORK_CLASSIC
 /*  Keil::Device:STM32Cube HAL:Common:1.2.6 */
@@ -65,6 +75,8 @@
 #define RTE_DEVICE_HAL_PWR
 /*  Keil::Device:STM32Cube HAL:RCC:1.2.6 */
 #define RTE_DEVICE_HAL_RCC
+/*  Keil::Device:STM32Cube HAL:SD:1.2.6 */
+#define RTE_DEVICE_HAL_SD
 /*  Keil::Device:STM32Cube HAL:UART:1.2.6 */
 #define RTE_DEVICE_HAL_UART
 /*  Keil::Device:STM32Cube HAL:USART:1.2.6 */

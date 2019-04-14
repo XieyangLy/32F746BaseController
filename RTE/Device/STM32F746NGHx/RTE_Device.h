@@ -2285,7 +2285,7 @@
 
 // <e> SDMMC1 (SD/SDIO/MMC card host interface 1) [Driver_MCI0]
 // <i> Configuration settings for Driver_MCI0 in component ::CMSIS Driver:MCI
-#define RTE_SDMMC1                      0
+#define RTE_SDMMC1                      1
 
 //   <h> SDMMC Peripheral Bus
 //     <o> SDMMC1_CK Pin <0=>PC12
@@ -2389,10 +2389,10 @@
 //     <o4> Pull Resistor <0=>Inactive <1=>Pull-up <2=>Pull-down
 //     <i>  Select Pin Pull Resistor function
 //   </e>
-#define RTE_SDMMC1_CD_PIN_EN            0
+#define RTE_SDMMC1_CD_PIN_EN            1
 #define RTE_SDMMC1_CD_ACTIVE            0
-#define RTE_SDMMC1_CD_PORT              GPIO_PORT(0)
-#define RTE_SDMMC1_CD_PIN               0
+#define RTE_SDMMC1_CD_PORT              GPIO_PORT(2)
+#define RTE_SDMMC1_CD_PIN               13
 #define RTE_SDMMC1_CD_PULL              1
 
 //   <e> Write Protect Pin
