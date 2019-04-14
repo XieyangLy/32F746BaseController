@@ -84,7 +84,12 @@ uint32_t HAL_GetTick (void) {
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+extern uint64_t app_main_stk[];
+extern const osThreadAttr_t app_main_attr;
+
 /* Private function prototypes -----------------------------------------------*/
+extern void app_main (void *arg);
+
 static void SystemClock_Config(void);
 static void Error_Handler(void);
 static void MPU_Config(void);
@@ -119,7 +124,7 @@ int main(void)
      */
   HAL_Init();
 
-  /* Configure the System clock to have a frequency of 200 MHz */
+  /* Configure the System clock to have a frequency of 216 MHz */
   SystemClock_Config();
   SystemCoreClockUpdate();
 
@@ -134,13 +139,8 @@ int main(void)
   /* Initialize CMSIS-RTOS2 */
   osKernelInitialize ();
 
-  /* Create thread functions that start executing, 
-  Example: osThreadNew(app_main, NULL, NULL); */
-	//ÃÌº”Õ¯¬Á≥ı ºªØ
-//	netInitialize ();
-
-	osThreadNew(fileTestApp, NULL, NULL);
-	
+  // Create thread functions that start executing
+	osThreadNew(app_main, NULL, &app_main_attr);
 	
   /* Start thread execution */
   osKernelStart();
@@ -156,14 +156,14 @@ int main(void)
   * @brief  System Clock Configuration
   *         The system Clock is configured as follow : 
   *            System Clock source            = PLL (HSE)
-  *            SYSCLK(Hz)                     = 200000000
-  *            HCLK(Hz)                       = 200000000
+  *            SYSCLK(Hz)                     = 216000000
+  *            HCLK(Hz)                       = 216000000
   *            AHB Prescaler                  = 1
   *            APB1 Prescaler                 = 4
   *            APB2 Prescaler                 = 2
   *            HSE Frequency(Hz)              = 25000000
   *            PLL_M                          = 25
-  *            PLL_N                          = 400
+  *            PLL_N                          = 432
   *            PLL_P                          = 2
   *            PLL_Q                          = 9
   *            VDD(V)                         = 3.3
@@ -184,7 +184,7 @@ static void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 25;
-  RCC_OscInitStruct.PLL.PLLN = 400;  
+  RCC_OscInitStruct.PLL.PLLN = 432;  
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 9;
   if(HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)

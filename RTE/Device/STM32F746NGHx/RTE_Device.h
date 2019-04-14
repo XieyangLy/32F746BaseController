@@ -3042,12 +3042,12 @@
 
 
 // <e> USB OTG Full-speed
-#define RTE_USB_OTG_FS                  0
+#define RTE_USB_OTG_FS                  1
 
 //   <e> Device [Driver_USBD0]
 //   <i> Configuration settings for Driver_USBD0 in component ::CMSIS Driver:USB Device
 
-#define RTE_USB_OTG_FS_DEVICE           1
+#define RTE_USB_OTG_FS_DEVICE           0
 
 //     <o0.0> VBUS Sensing Pin
 //     <i> Enable or disable VBUS sensing
@@ -3057,7 +3057,7 @@
 //   <e> Host [Driver_USBH0]
 //   <i> Configuration settings for Driver_USBH0 in component ::CMSIS Driver:USB Host
 
-#define RTE_USB_OTG_FS_HOST             0
+#define RTE_USB_OTG_FS_HOST             1
 
 //     <e> VBUS Power On/Off Pin
 //     <i> Configure Pin for driving VBUS
@@ -3071,10 +3071,10 @@
 //       <o3> Bit <0-15>
 //       <i>  Selects Port Bit
 //     </e>
-#define RTE_OTG_FS_VBUS_PIN             0
-#define RTE_OTG_FS_VBUS_ACTIVE          0
-#define RTE_OTG_FS_VBUS_PORT            GPIO_PORT(0)
-#define RTE_OTG_FS_VBUS_BIT             0
+#define RTE_OTG_FS_VBUS_PIN             1
+#define RTE_OTG_FS_VBUS_ACTIVE          1
+#define RTE_OTG_FS_VBUS_PORT            GPIO_PORT(3)
+#define RTE_OTG_FS_VBUS_BIT             5
 
 //     <e> Overcurrent Detection Pin
 //     <i> Configure Pin for overcurrent detection
@@ -3230,7 +3230,7 @@
 
 //   <e> Host [Driver_USBH1]
 //   <i> Configuration settings for Driver_USBH1 in component ::CMSIS Driver:USB Host
-#define RTE_USB_OTG_HS_HOST             0
+#define RTE_USB_OTG_HS_HOST             1
 
 //     <e> VBUS Power On/Off Pin
 //     <i> Configure Pin for driving VBUS

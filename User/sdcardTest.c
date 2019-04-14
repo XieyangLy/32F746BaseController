@@ -10,22 +10,33 @@
 *文件系统测试APP
 *
 */
+char volumeBuf[256];
+uint32_t volumeSerial;
+uint32_t ullSdCapacity;
+
+
 void fileTestApp(void *param)
 {
 	FILE *f; 
 	
 	//初始化文件系统
-	if(finit("M0:") != fsOK)
+	if(finit("M:") != fsOK)
 	{
 		//err 
 		goto errHandler;
 	}
 	
-	//等待sd卡插入
-//	while(fs_mc_read_cd(0) != 1)
+//	if(fvol("M0:",(char*)volumeBuf,&volumeSerial) == 0)
 //	{
-//		//等待sd卡插入
+//		
 //	}
+//	ullSdCapacity = ffree("M0:");
+//	
+//	
+//	
+	
+	
+	
 	
 	//挂载文件驱动器
 	if(fmount("M:") != fsOK)
@@ -42,6 +53,7 @@ void fileTestApp(void *param)
 	}else
 	{	//文件打开成功
 		fprintf(f,"hello world\r\n");
+		fprintf(f,"bye bye\r\n");
 		fflush(f);
 		//关闭文件
 		fclose(f);
