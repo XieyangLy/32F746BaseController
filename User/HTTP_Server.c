@@ -31,6 +31,7 @@ const osThreadAttr_t app_main_attr = {
   .stack_mem  = &app_main_stk[0],
   .stack_size = sizeof(app_main_stk)
 };
+extern const osThreadAttr_t app_mqtt_attr;
 
 extern GLCD_FONT GLCD_Font_16x24;
 
@@ -55,7 +56,7 @@ osThreadId_t TID_Led;
 /* Thread declarations */
 static void BlinkLed (void *arg);
 static void Display  (void *arg);
-
+extern void app_mqtt (void *arg);
 /* Read analog inputs */
 uint16_t AD_in (uint32_t ch) {
   /* User analog input is not available */
@@ -178,7 +179,7 @@ __NO_RETURN void app_main (void *arg) {
 
   TID_Led     = osThreadNew (BlinkLed, NULL, NULL);
   TID_Display = osThreadNew (Display,  NULL, NULL);
-
+	osThreadNew(app_mqtt, NULL, &app_mqtt_attr);
   while(1) {
     osThreadFlagsWait (0, osFlagsWaitAny, osWaitForever);
   }

@@ -86,14 +86,22 @@ uint32_t HAL_GetTick (void) {
 /* Private variables ---------------------------------------------------------*/
 extern uint64_t app_main_stk[];
 extern const osThreadAttr_t app_main_attr;
+extern const osThreadAttr_t app_mqtt_attr;
+
+
+
 
 /* Private function prototypes -----------------------------------------------*/
 extern void app_main (void *arg);
+extern void app_mqtt (void *arg);
+
 
 static void SystemClock_Config(void);
 static void Error_Handler(void);
 static void MPU_Config(void);
 static void CPU_CACHE_Enable(void);
+
+
 
 /* Private functions ---------------------------------------------------------*/
 
@@ -128,7 +136,6 @@ int main(void)
   SystemClock_Config();
   SystemCoreClockUpdate();
 
-
   /* Add your application code here
      */
 	EventRecorderInitialize (EventRecordAll, 1);
@@ -141,6 +148,7 @@ int main(void)
 
   // Create thread functions that start executing
 	osThreadNew(app_main, NULL, &app_main_attr);
+//	osThreadNew(app_mqtt, NULL, &app_mqtt_attr);
 	
   /* Start thread execution */
   osKernelStart();

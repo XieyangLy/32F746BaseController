@@ -16,5 +16,6 @@ network.cgi,
 pabb.gif,
 system.cgi,
 tcp.cgi,
-xml_http.js 
+xml_http.js,
+..\README.md 
 TO Web.c RTE NOPRINT ROOT(Web)

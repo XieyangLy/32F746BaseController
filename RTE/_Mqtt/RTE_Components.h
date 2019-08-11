@@ -4,7 +4,7 @@
  *      *** Do not modify ! ***
  *
  * Project: '32F746Demo' 
- * Target:  'Target 1' 
+ * Target:  'Mqtt' 
  */
 
 #ifndef RTE_COMPONENTS_H

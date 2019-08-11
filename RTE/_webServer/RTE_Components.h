@@ -4,7 +4,7 @@
  *      *** Do not modify ! ***
  *
  * Project: '32F746Demo' 
- * Target:  'Target 1' 
+ * Target:  'webServer' 
  */
 
 #ifndef RTE_COMPONENTS_H
@@ -20,15 +20,14 @@
 #define RTE_CMSIS_RTOS2                 /* CMSIS-RTOS2 */
         #define RTE_CMSIS_RTOS2_RTX5            /* CMSIS-RTOS2 Keil RTX5 */
         #define RTE_CMSIS_RTOS2_RTX5_SOURCE     /* CMSIS-RTOS2 Keil RTX5 Source */
+/*  ARM::Security:mbed TLS:2.17.0 */
+#define RTE_Security_mbedTLS            /* Security mbed TLS */
 /*  Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.4.0 */
 #define RTE_Compiler_EventRecorder
           #define RTE_Compiler_EventRecorder_DAP
 /*  Keil.ARM Compiler::Compiler:I/O:STDERR:Breakpoint:1.2.0 */
 #define RTE_Compiler_IO_STDERR          /* Compiler I/O: STDERR */
           #define RTE_Compiler_IO_STDERR_BKPT     /* Compiler I/O: STDERR Breakpoint */
-/*  Keil.ARM Compiler::Compiler:I/O:STDIN:Breakpoint:1.2.0 */
-#define RTE_Compiler_IO_STDIN           /* Compiler I/O: STDIN */
-          #define RTE_Compiler_IO_STDIN_BKPT      /* Compiler I/O: STDIN Breakpoint */
 /*  Keil.ARM Compiler::Compiler:I/O:STDOUT:EVR:1.2.0 */
 #define RTE_Compiler_IO_STDOUT          /* Compiler I/O: STDOUT */
           #define RTE_Compiler_IO_STDOUT_EVR      /* Compiler I/O: STDOUT EVR */
