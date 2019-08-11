@@ -15,7 +15,7 @@
 #define SERVER_PORT 1883
 #endif
 
-//信息接收中断
+//淇℃伅鎺ユ敹涓柇
 void messageArrived(MessageData* data)
 {
   printf("  Message arrived on topic %.*s: %.*s\n", data->topicName->lenstring.len, data->topicName->lenstring.data,

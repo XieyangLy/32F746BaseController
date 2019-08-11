@@ -29,7 +29,7 @@
 #define MAX_Topic_Num	3
 
 /*
-*ÐèÒª¶©ÔÄµÄ»°Ìâ
+*æ¶“å©šï¿½æ¨¿ï¿½ãˆ¤æ§„
 */
 struct subTopicType subscribeTopic[MAX_Topic_Num]= 
 {
@@ -98,8 +98,8 @@ void app_mqtt (void *arg)
 
 
 /*
-*ÐÅÏ¢½ÓÊÕÖÐ¶Ï
-*¶ÔÓ¦topic:MDK/sample/#
+*ä¿¡æ¯æŽ¥æ”¶ä¸­æ–­
+*å¯¹åº”topic:MDK/sample/#
 */
 void messageArrived(MessageData* data)
 {
@@ -110,7 +110,7 @@ void messageArrived(MessageData* data)
   printf("Message arrived on topic %.*s: %.*s\n", data->topicName->lenstring.len, data->topicName->lenstring.data,
   data->message->payloadlen, (char *)data->message->payload);
 	
-	//¶ÔÏûÏ¢½øÐÐÉ¢×ª´¦Àí
+	//å¯¹æ¶ˆæ¯è¿›è¡Œæ•£è½¬å¤„ç†
 	if(data->message->payloadlen)
 	{
 		root = cJSON_Parse((char *)data->message->payload);
@@ -122,18 +122,18 @@ void messageArrived(MessageData* data)
 		
 	}
 	
-	//µØÖ·
+	//åœ°å€
     item = cJSON_GetArrayItem(root,0);
     printf("mqtt data, addr=%s\r\n",item->valuestring);
-    //ÀàÐÍ
+    //ç±»åž‹
     item = cJSON_GetArrayItem(root,1);
     printf("mqtt data, type=%d\r\n",item->valueint);
-    //Éè±¸
+    //è®¾å¤‡
     dev = cJSON_GetArrayItem(root,2);
-    //¿ØÖÆ×Ö
+    //æŽ§åˆ¶å­—
     item = cJSON_GetArrayItem(dev,0);
     printf("mqtt data, dev/ctrl=%d\r\n",item->valueint);
-    //×´Ì¬
+    //çŠ¶æ€
     item = cJSON_GetArrayItem(dev,1);
     printf("mqtt data, dev/status=%d\r\n",item->valueint);
     if(item->valueint == 1)

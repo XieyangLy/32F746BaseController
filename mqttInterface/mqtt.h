@@ -18,7 +18,7 @@ struct subTopicType
 
 
 /*
-*信息接收中断
+*淇℃伅鎺ユ敹涓柇
 *
 */
 void messageArrived(MessageData* data);
