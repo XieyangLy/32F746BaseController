@@ -25,9 +25,6 @@
 /*  Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.4.0 */
 #define RTE_Compiler_EventRecorder
           #define RTE_Compiler_EventRecorder_DAP
-/*  Keil.ARM Compiler::Compiler:I/O:STDERR:Breakpoint:1.2.0 */
-#define RTE_Compiler_IO_STDERR          /* Compiler I/O: STDERR */
-          #define RTE_Compiler_IO_STDERR_BKPT     /* Compiler I/O: STDERR Breakpoint */
 /*  Keil.ARM Compiler::Compiler:I/O:STDOUT:EVR:1.2.0 */
 #define RTE_Compiler_IO_STDOUT          /* Compiler I/O: STDOUT */
           #define RTE_Compiler_IO_STDOUT_EVR      /* Compiler I/O: STDOUT EVR */
@@ -58,10 +55,14 @@
         #define RTE_Drivers_MCI1                /* Driver MCI1 */
 /*  Keil::Device:STM32Cube Framework:Classic:1.2.6 */
 #define RTE_DEVICE_FRAMEWORK_CLASSIC
+/*  Keil::Device:STM32Cube HAL:CRC:1.2.6 */
+#define RTE_DEVICE_HAL_CRC
 /*  Keil::Device:STM32Cube HAL:Common:1.2.6 */
 #define RTE_DEVICE_HAL_COMMON
 /*  Keil::Device:STM32Cube HAL:Cortex:1.2.6 */
 #define RTE_DEVICE_HAL_CORTEX
+/*  Keil::Device:STM32Cube HAL:DMA2D:1.2.6 */
+#define RTE_DEVICE_HAL_DMA2D
 /*  Keil::Device:STM32Cube HAL:DMA:1.2.6 */
 #define RTE_DEVICE_HAL_DMA
 /*  Keil::Device:STM32Cube HAL:GPIO:1.2.6 */
@@ -72,12 +73,16 @@
 #define RTE_DEVICE_HAL_LTDC
 /*  Keil::Device:STM32Cube HAL:PWR:1.2.6 */
 #define RTE_DEVICE_HAL_PWR
+/*  Keil::Device:STM32Cube HAL:QSPI:1.2.6 */
+#define RTE_DEVICE_HAL_QSPI
 /*  Keil::Device:STM32Cube HAL:RCC:1.2.6 */
 #define RTE_DEVICE_HAL_RCC
 /*  Keil::Device:STM32Cube HAL:SD:1.2.6 */
 #define RTE_DEVICE_HAL_SD
 /*  Keil::Device:STM32Cube HAL:SDRAM:1.2.6 */
 #define RTE_DEVICE_HAL_SDRAM
+/*  Keil::Device:STM32Cube HAL:TIM:1.2.6 */
+#define RTE_DEVICE_HAL_TIM
 /*  Keil::Device:STM32Cube HAL:UART:1.2.6 */
 #define RTE_DEVICE_HAL_UART
 /*  Keil::Device:STM32Cube HAL:USART:1.2.6 */

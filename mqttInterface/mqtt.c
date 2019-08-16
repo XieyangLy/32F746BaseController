@@ -29,7 +29,7 @@
 #define MAX_Topic_Num	3
 
 /*
-*涓婚�樿�㈤槄
+*订阅的topic和回调函数
 */
 struct subTopicType subscribeTopic[MAX_Topic_Num]= 
 {

@@ -17,23 +17,20 @@
 #include "stm32f7xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
 #include "Board_LED.h"                  // ::Board Support:LED
 #include "Board_Buttons.h"              // ::Board Support:Buttons
-#include "Board_GLCD.h"                 // ::Board Support:Graphic LCD
-#include "GLCD_Config.h"
+//#include "Board_GLCD.h"                 // ::Board Support:Graphic LCD
+//#include "GLCD_Config.h"
 
 #ifdef RTE_Compiler_EventRecorder
 #include "EventRecorder.h"
 #endif
-
-// Main stack size must be multiple of 8 Bytes
-#define APP_MAIN_STK_SZ (1024U)
-uint64_t app_main_stk[APP_MAIN_STK_SZ / 8];
-const osThreadAttr_t app_main_attr = {
-  .stack_mem  = &app_main_stk[0],
-  .stack_size = sizeof(app_main_stk)
+#define HTTP_SERVER_STK_SZ (1024U)
+uint64_t http_server_attr_stk[HTTP_SERVER_STK_SZ / 8];
+const osThreadAttr_t httpServer_attr = {
+  .stack_mem  = &http_server_attr_stk[0],
+  .stack_size = sizeof(http_server_attr_stk),
 };
-extern const osThreadAttr_t app_mqtt_attr;
 
-extern GLCD_FONT GLCD_Font_16x24;
+//extern GLCD_FONT GLCD_Font_16x24;
 
 extern uint16_t AD_in          (uint32_t ch);
 extern uint8_t  get_button     (void);
@@ -87,6 +84,14 @@ void netDHCP_Notify (uint32_t if_num, uint8_t option, const uint8_t *val, uint32
   Thread 'Display': LCD display handler
  *---------------------------------------------------------------------------*/
 static __NO_RETURN void Display (void *arg) {
+#if (1)
+	
+	osThreadSuspend(NULL);
+	while(1)
+	{
+		osDelay(500);
+	}
+#else	
   static uint8_t ip_addr[NET_ADDR_IP6_LEN];
   static char    ip_ascii[40];
   static char    buf[24];
@@ -134,6 +139,7 @@ static __NO_RETURN void Display (void *arg) {
     sprintf (buf, "%-20s", lcd_text[1]);
     GLCD_DrawString (x*16, 8*24, buf);
   }
+#endif
 }
 
 /*----------------------------------------------------------------------------
@@ -162,24 +168,19 @@ static __NO_RETURN void BlinkLed (void *arg) {
 /*----------------------------------------------------------------------------
   Main Thread 'main': Run Network
  *---------------------------------------------------------------------------*/
-__NO_RETURN void app_main (void *arg) {
+__NO_RETURN void httpServer_main (void *arg) {
   (void)arg;
 
 #ifdef RTE_Compiler_EventRecorder
-  EventRecorderInitialize(0U, 1U);
-  EventRecorderEnable (EventRecordError, 0xC0U, 0xDCU);    /* Net Events     */
-  EventRecorderEnable (EventRecordAll,   0xCAU, 0xCAU);    /* DHCP Events    */
   EventRecorderEnable (EventRecordAll,   0xD3U, 0xD3U);    /* HTTP Events    */
 #endif
 
   LED_Initialize();
   Buttons_Initialize();
 
-  netInitialize ();
-
   TID_Led     = osThreadNew (BlinkLed, NULL, NULL);
   TID_Display = osThreadNew (Display,  NULL, NULL);
-	osThreadNew(app_mqtt, NULL, &app_mqtt_attr);
+	
   while(1) {
     osThreadFlagsWait (0, osFlagsWaitAny, osWaitForever);
   }

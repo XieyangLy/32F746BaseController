@@ -141,7 +141,7 @@
           <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut>Web.c</pFcarmOut>
-          <pFcarmGrp>Source</pFcarmGrp>
+          <pFcarmGrp>WebFile</pFcarmGrp>
           <pFcArmRoot>Web</pFcArmRoot>
           <FcArmLst>0</FcArmLst>
         </Utilities>
@@ -336,9 +336,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>MQTT_MBEDTLS = 0,MQTT_TASK,STM32F746xx</Define>
+              <Define>MQTT_MBEDTLS = 0,MQTT_TASK,STM32F746xx,USE_HAL_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\User;.\mqttInterface;.\mqttVirtualDevice</IncludePath>
+              <IncludePath>.\User;.\mqttInterface;.\mqttVirtualDevice;.\TouchGFX\target;.\TouchGFX\generated\fonts\include;.\TouchGFX\generated\gui_generated\include;.\TouchGFX\generated\images\include;.\TouchGFX\generated\texts\include;.\Middlewares\ST\TouchGFX\touchgfx\framework\include;.\Drivers\BSP\STM32746G-Discovery;.\TouchGFX\gui\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -383,14 +383,9 @@
           <GroupName>Source</GroupName>
           <Files>
             <File>
-              <FileName>Web.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Web\Web.c</FilePath>
-            </File>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\main.c</FilePath>
+              <FileName>main.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\User\main.cpp</FilePath>
             </File>
             <File>
               <FileName>HTTP_Server.c</FileName>
@@ -401,6 +396,21 @@
               <FileName>HTTP_Server_CGI.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\User\HTTP_Server_CGI.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_timebase_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\stm32f7xx_hal_timebase_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_it.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\stm32f7xx_it.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_msp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\stm32f7xx_hal_msp.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -502,6 +512,11 @@
               <FileType>9</FileType>
               <FilePath>.\Web\xml_http.js</FilePath>
             </File>
+            <File>
+              <FileName>Web.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>Web\Web.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -526,6 +541,492 @@
               <FileName>README.md</FileName>
               <FileType>9</FileType>
               <FilePath>.\README.md</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers/BSP</GroupName>
+          <Files>
+            <File>
+              <FileName>ft5336.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\BSP\Components\ft5336\ft5336.c</FilePath>
+            </File>
+            <File>
+              <FileName>ft5336.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Drivers\BSP\Components\ft5336\ft5336.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery_qspi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_qspi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery_qspi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_qspi.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery_sdram.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_sdram.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery_sdram.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_sdram.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery_ts.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_ts.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery_ts.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_ts.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/TouchGFX/target</GroupName>
+          <Files>
+            <File>
+              <FileName>BoardConfiguration.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\target\BoardConfiguration.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\target\GPIO.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>HW_Init.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\target\HW_Init.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7DMA.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\target\STM32F7DMA.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7HAL.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\target\STM32F7HAL.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7Instrumentation.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\target\STM32F7Instrumentation.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7TouchController.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\target\STM32F7TouchController.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/generated/fonts</GroupName>
+          <Files>
+            <File>
+              <FileName>ApplicationFontProvider.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\ApplicationFontProvider.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_verdana_10_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Font_verdana_10_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_verdana_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Font_verdana_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_verdana_40_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Font_verdana_40_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>FontGetters.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\FontGetters.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_verdana_10_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Kerning_verdana_10_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_verdana_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Kerning_verdana_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_verdana_40_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Kerning_verdana_40_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_verdana_10_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Table_verdana_10_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_verdana_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Table_verdana_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_verdana_40_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Table_verdana_40_4bpp.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/generated/images</GroupName>
+          <Files>
+            <File>
+              <FileName>BitmapDatabase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\BitmapDatabase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_buttons_round_edge_small.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_buttons_round_edge_small.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_buttons_round_edge_small_pressed.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_buttons_round_edge_small_pressed.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_progressindicators_bg_medium_circle_indicator_bg_full.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_progressindicators_bg_medium_circle_indicator_bg_full.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_progressindicators_fill_medium_circle_indicator_fill_full.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_progressindicators_fill_medium_circle_indicator_fill_full.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/generated/images/gui</GroupName>
+          <Files>
+            <File>
+              <FileName>FrontendApplicationBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\gui_generated\src\common\FrontendApplicationBase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ScprocessViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\gui_generated\src\scprocess_screen\ScprocessViewBase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ScWelcomViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\gui_generated\src\scwelcom_screen\ScWelcomViewBase.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/generated/text</GroupName>
+          <Files>
+            <File>
+              <FileName>LanguageGb.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\texts\src\LanguageGb.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Texts.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\texts\src\Texts.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>TypedTextDatabase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\texts\src\TypedTextDatabase.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/gui/common</GroupName>
+          <Files>
+            <File>
+              <FileName>FrontendApplication.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\common\FrontendApplication.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/gui/model</GroupName>
+          <Files>
+            <File>
+              <FileName>Model.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\model\Model.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/gui/scProcess</GroupName>
+          <Files>
+            <File>
+              <FileName>ScProcessPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\scprocess_screen\ScProcessPresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ScProcessView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\scprocess_screen\ScProcessView.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/gui/scWelcom</GroupName>
+          <Files>
+            <File>
+              <FileName>ScWelcomPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\scwelcom_screen\ScWelcomPresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ScWelcomView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\scwelcom_screen\ScWelcomView.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/TouchGFX</GroupName>
+          <Files>
+            <File>
+              <FileName>touchgfx_core.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>D:\workSpaceEmbedded\STMicroelectronics\32F746DISCOVERY\Applications\32F746BaseController\Middlewares\ST\TouchGFX\touchgfx\lib\core\cortex_m7\Keil\touchgfx_core.lib</FilePath>
+            </File>
+            <File>
+              <FileName>OSWrappers.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappers.cpp</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>0</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <uGnu>2</uGnu>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
+            </File>
+            <File>
+              <FileName>OSWrappers_cmsis.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappers_cmsis.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>OSWrappersRTX.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappersRTX.cpp</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>0</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <ComprImg>1</ComprImg>
+                </CommonProperty>
+                <FileArmAds>
+                  <Cads>
+                    <interw>2</interw>
+                    <Optim>0</Optim>
+                    <oTime>2</oTime>
+                    <SplitLS>2</SplitLS>
+                    <OneElfS>2</OneElfS>
+                    <Strict>2</Strict>
+                    <EnumInt>2</EnumInt>
+                    <PlainCh>2</PlainCh>
+                    <Ropi>2</Ropi>
+                    <Rwpi>2</Rwpi>
+                    <wLevel>0</wLevel>
+                    <uThumb>2</uThumb>
+                    <uSurpInc>2</uSurpInc>
+                    <uC99>2</uC99>
+                    <uGnu>2</uGnu>
+                    <useXO>2</useXO>
+                    <v6Lang>0</v6Lang>
+                    <v6LangP>0</v6LangP>
+                    <vShortEn>2</vShortEn>
+                    <vShortWch>2</vShortWch>
+                    <v6Lto>2</v6Lto>
+                    <v6WtE>2</v6WtE>
+                    <v6Rtti>2</v6Rtti>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </Cads>
+                </FileArmAds>
+              </FileOption>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>segger</GroupName>
+          <GroupOption>
+            <CommonProperty>
+              <UseCPPCompiler>0</UseCPPCompiler>
+              <RVCTCodeConst>0</RVCTCodeConst>
+              <RVCTZI>0</RVCTZI>
+              <RVCTOtherData>0</RVCTOtherData>
+              <ModuleSelection>0</ModuleSelection>
+              <IncludeInBuild>0</IncludeInBuild>
+              <AlwaysBuild>2</AlwaysBuild>
+              <GenerateAssemblyFile>2</GenerateAssemblyFile>
+              <AssembleAssemblyFile>2</AssembleAssemblyFile>
+              <PublicsOnly>2</PublicsOnly>
+              <StopOnExitCode>11</StopOnExitCode>
+              <CustomArgument></CustomArgument>
+              <IncludeLibraryModules></IncludeLibraryModules>
+              <ComprImg>1</ComprImg>
+            </CommonProperty>
+            <GroupArmAds>
+              <Cads>
+                <interw>2</interw>
+                <Optim>0</Optim>
+                <oTime>2</oTime>
+                <SplitLS>2</SplitLS>
+                <OneElfS>2</OneElfS>
+                <Strict>2</Strict>
+                <EnumInt>2</EnumInt>
+                <PlainCh>2</PlainCh>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <wLevel>0</wLevel>
+                <uThumb>2</uThumb>
+                <uSurpInc>2</uSurpInc>
+                <uC99>2</uC99>
+                <uGnu>2</uGnu>
+                <useXO>2</useXO>
+                <v6Lang>0</v6Lang>
+                <v6LangP>0</v6LangP>
+                <vShortEn>2</vShortEn>
+                <vShortWch>2</vShortWch>
+                <v6Lto>2</v6Lto>
+                <v6WtE>2</v6WtE>
+                <v6Rtti>2</v6Rtti>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Cads>
+              <Aads>
+                <interw>2</interw>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <thumb>2</thumb>
+                <SplitLS>2</SplitLS>
+                <SwStkChk>2</SwStkChk>
+                <NoWarn>2</NoWarn>
+                <uSurpInc>2</uSurpInc>
+                <useXO>2</useXO>
+                <uClangAs>2</uClangAs>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Aads>
+            </GroupArmAds>
+          </GroupOption>
+          <Files>
+            <File>
+              <FileName>HardFaultHandler.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\User\segger\HardFaultHandlerMDK\HardFaultHandler.S</FilePath>
+            </File>
+            <File>
+              <FileName>SEGGER_HardFaultHandler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\segger\HardFaultHandlerMDK\SEGGER_HardFaultHandler.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1076,65 +1577,9 @@
           <GroupName>Source</GroupName>
           <Files>
             <File>
-              <FileName>Web.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Web\Web.c</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>0</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                  <ComprImg>1</ComprImg>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\main.c</FilePath>
+              <FileName>main.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\User\main.cpp</FilePath>
             </File>
             <File>
               <FileName>HTTP_Server.c</FileName>
@@ -1247,6 +1692,21 @@
                   </Cads>
                 </FileArmAds>
               </FileOption>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_timebase_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\stm32f7xx_hal_timebase_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_it.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\stm32f7xx_it.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_msp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\stm32f7xx_hal_msp.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1417,6 +1877,11 @@
               <FileType>9</FileType>
               <FilePath>.\Web\xml_http.js</FilePath>
             </File>
+            <File>
+              <FileName>Web.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>Web\Web.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1441,6 +1906,321 @@
               <FileName>README.md</FileName>
               <FileType>9</FileType>
               <FilePath>.\README.md</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers/BSP</GroupName>
+          <Files>
+            <File>
+              <FileName>ft5336.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\BSP\Components\ft5336\ft5336.c</FilePath>
+            </File>
+            <File>
+              <FileName>ft5336.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Drivers\BSP\Components\ft5336\ft5336.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery_qspi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_qspi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery_qspi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_qspi.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery_sdram.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_sdram.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery_sdram.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_sdram.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery_ts.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_ts.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32746g_discovery_ts.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Drivers\BSP\STM32746G-Discovery\stm32746g_discovery_ts.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/TouchGFX/target</GroupName>
+          <Files>
+            <File>
+              <FileName>BoardConfiguration.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\target\BoardConfiguration.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\target\GPIO.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>HW_Init.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\target\HW_Init.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7DMA.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\target\STM32F7DMA.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7HAL.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\target\STM32F7HAL.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7Instrumentation.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\target\STM32F7Instrumentation.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>STM32F7TouchController.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\target\STM32F7TouchController.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/generated/fonts</GroupName>
+          <Files>
+            <File>
+              <FileName>ApplicationFontProvider.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\ApplicationFontProvider.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_verdana_10_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Font_verdana_10_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_verdana_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Font_verdana_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_verdana_40_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Font_verdana_40_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>FontGetters.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\FontGetters.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_verdana_10_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Kerning_verdana_10_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_verdana_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Kerning_verdana_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_verdana_40_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Kerning_verdana_40_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_verdana_10_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Table_verdana_10_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_verdana_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Table_verdana_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_verdana_40_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\fonts\src\Table_verdana_40_4bpp.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/generated/images</GroupName>
+          <Files>
+            <File>
+              <FileName>BitmapDatabase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\BitmapDatabase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_buttons_round_edge_small.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_buttons_round_edge_small.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_buttons_round_edge_small_pressed.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_buttons_round_edge_small_pressed.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_progressindicators_bg_medium_circle_indicator_bg_full.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_progressindicators_bg_medium_circle_indicator_bg_full.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_progressindicators_fill_medium_circle_indicator_fill_full.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_progressindicators_fill_medium_circle_indicator_fill_full.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/generated/images/gui</GroupName>
+          <Files>
+            <File>
+              <FileName>FrontendApplicationBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\gui_generated\src\common\FrontendApplicationBase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ScprocessViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\gui_generated\src\scprocess_screen\ScprocessViewBase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ScWelcomViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\gui_generated\src\scwelcom_screen\ScWelcomViewBase.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/generated/text</GroupName>
+          <Files>
+            <File>
+              <FileName>LanguageGb.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\texts\src\LanguageGb.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Texts.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\texts\src\Texts.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>TypedTextDatabase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\texts\src\TypedTextDatabase.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/gui/common</GroupName>
+          <Files>
+            <File>
+              <FileName>FrontendApplication.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\common\FrontendApplication.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/gui/model</GroupName>
+          <Files>
+            <File>
+              <FileName>Model.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\model\Model.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/gui/scProcess</GroupName>
+          <Files>
+            <File>
+              <FileName>ScProcessPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\scprocess_screen\ScProcessPresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ScProcessView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\scprocess_screen\ScProcessView.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/user/Gui/gui/scWelcom</GroupName>
+          <Files>
+            <File>
+              <FileName>ScWelcomPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\scwelcom_screen\ScWelcomPresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ScWelcomView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\scwelcom_screen\ScWelcomView.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/TouchGFX</GroupName>
+          <Files>
+            <File>
+              <FileName>touchgfx_core.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>D:\workSpaceEmbedded\STMicroelectronics\32F746DISCOVERY\Applications\32F746BaseController\Middlewares\ST\TouchGFX\touchgfx\lib\core\cortex_m7\Keil\touchgfx_core.lib</FilePath>
+            </File>
+            <File>
+              <FileName>OSWrappers.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappers.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>OSWrappers_cmsis.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappers_cmsis.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>OSWrappersRTX.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappersRTX.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>segger</GroupName>
+          <Files>
+            <File>
+              <FileName>HardFaultHandler.S</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\User\segger\HardFaultHandlerMDK\HardFaultHandler.S</FilePath>
+            </File>
+            <File>
+              <FileName>SEGGER_HardFaultHandler.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\segger\HardFaultHandlerMDK\SEGGER_HardFaultHandler.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1481,13 +2261,6 @@
   <RTE>
     <apis>
       <api Capiversion="1.0.0" Cclass="Board Support" Cgroup="Buttons" exclusive="0">
-        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
-        <targetInfos>
-          <targetInfo name="Mqtt"/>
-          <targetInfo name="webServer"/>
-        </targetInfos>
-      </api>
-      <api Capiversion="1.0.0" Cclass="Board Support" Cgroup="Graphic LCD" exclusive="0">
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
@@ -1581,13 +2354,6 @@
           </targetInfo>
         </targetInfos>
       </component>
-      <component Cbundle="ARM Compiler" Cclass="Compiler" Cgroup="I/O" Csub="STDERR" Cvariant="Breakpoint" Cvendor="Keil" Cversion="1.2.0" condition="ARMCC Cortex-M">
-        <package name="ARM_Compiler" schemaVersion="1.4.9" url="http://www.keil.com/pack/" vendor="Keil" version="1.6.1"/>
-        <targetInfos>
-          <targetInfo name="Mqtt"/>
-          <targetInfo name="webServer"/>
-        </targetInfos>
-      </component>
       <component Cbundle="ARM Compiler" Cclass="Compiler" Cgroup="I/O" Csub="STDOUT" Cvariant="EVR" Cvendor="Keil" Cversion="1.2.0" condition="ARMCC Cortex-M with EVR">
         <package name="ARM_Compiler" schemaVersion="1.4.9" url="http://www.keil.com/pack/" vendor="Keil" version="1.6.1"/>
         <targetInfos>
@@ -1651,27 +2417,6 @@
           <targetInfo name="webServer"/>
         </targetInfos>
       </component>
-      <component Cbundle="STM32F746G-Discovery" Cclass="Board Support" Cgroup="Drivers" Csub="Basic I/O" Cvendor="Keil" Cversion="1.1.1" condition="STM32F746G-Discovery BSP">
-        <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
-        <targetInfos>
-          <targetInfo name="Mqtt"/>
-          <targetInfo name="webServer"/>
-        </targetInfos>
-      </component>
-      <component Cbundle="STM32F746G-Discovery" Cclass="Board Support" Cgroup="Drivers" Csub="SDRAM" Cvendor="Keil" Cversion="1.1.1" condition="STM32F746G-Discovery BSP SDRAM">
-        <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
-        <targetInfos>
-          <targetInfo name="Mqtt"/>
-          <targetInfo name="webServer"/>
-        </targetInfos>
-      </component>
-      <component Capiversion="1.0.0" Cbundle="STM32F746G-Discovery" Cclass="Board Support" Cgroup="Graphic LCD" Cvendor="Keil" Cversion="1.1.1" condition="STM32F746G-Discovery GLCD">
-        <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
-        <targetInfos>
-          <targetInfo name="Mqtt"/>
-          <targetInfo name="webServer"/>
-        </targetInfos>
-      </component>
       <component Capiversion="1.0.0" Cbundle="STM32F746G-Discovery" Cclass="Board Support" Cgroup="LED" Cvendor="Keil" Cversion="1.1.1" condition="STM32F7 HAL GPIO">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
@@ -1707,6 +2452,13 @@
           <targetInfo name="webServer"/>
         </targetInfos>
       </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="CRC" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL">
+        <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="Common" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL Common">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
@@ -1722,6 +2474,13 @@
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="DMA" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL">
+        <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="DMA2D" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
@@ -1756,6 +2515,13 @@
           <targetInfo name="webServer"/>
         </targetInfos>
       </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="QSPI" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL DMA">
+        <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="RCC" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7x5_7x6_7x7_7x9_750 HAL GPIO">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
@@ -1771,6 +2537,13 @@
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="SDRAM" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL DMA">
+        <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="TIM" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL DMA">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
