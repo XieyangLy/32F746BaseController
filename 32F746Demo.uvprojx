@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>MQTT_MBEDTLS = 0,MQTT_TASK,STM32F746xx,USE_HAL_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\User;.\mqttInterface;.\mqttVirtualDevice;.\TouchGFX\target;.\TouchGFX\generated\fonts\include;.\TouchGFX\generated\gui_generated\include;.\TouchGFX\generated\images\include;.\TouchGFX\generated\texts\include;.\Middlewares\ST\TouchGFX\touchgfx\framework\include;.\Drivers\BSP\STM32746G-Discovery;.\TouchGFX\gui\include</IncludePath>
+              <IncludePath>.\User;.\mqttInterface;.\mqttVirtualDevice;.\TouchGFX\target;.\TouchGFX\generated\fonts\include;.\TouchGFX\generated\gui_generated\include;.\TouchGFX\generated\images\include;.\TouchGFX\generated\texts\include;.\Middlewares\ST\TouchGFX\touchgfx\framework\include;.\Drivers\BSP\STM32746G-Discovery;.\TouchGFX\gui\include;.\virtualCOM</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -388,16 +388,6 @@
               <FilePath>.\User\main.cpp</FilePath>
             </File>
             <File>
-              <FileName>HTTP_Server.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\HTTP_Server.c</FilePath>
-            </File>
-            <File>
-              <FileName>HTTP_Server_CGI.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\HTTP_Server_CGI.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32f7xx_hal_timebase_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\User\stm32f7xx_hal_timebase_tim.c</FilePath>
@@ -411,6 +401,56 @@
               <FileName>stm32f7xx_hal_msp.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\User\stm32f7xx_hal_msp.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>mqttApp</GroupName>
+          <Files>
+            <File>
+              <FileName>mqtt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mqttInterface\mqtt.c</FilePath>
+            </File>
+            <File>
+              <FileName>virtualDevice.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mqttVirtualDevice\virtualDevice.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>HttpServer</GroupName>
+          <Files>
+            <File>
+              <FileName>HTTP_Server.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\HTTP_Server.c</FilePath>
+            </File>
+            <File>
+              <FileName>HTTP_Server_CGI.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\HTTP_Server_CGI.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>UsbDevice</GroupName>
+          <Files>
+            <File>
+              <FileName>VirtualCOM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\virtualCOM\VirtualCOM.c</FilePath>
+            </File>
+            <File>
+              <FileName>USBD_User_CDC_ACM_0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\virtualCOM\USBD_User_CDC_ACM_0.c</FilePath>
+            </File>
+            <File>
+              <FileName>virtualCOMConf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\virtualCOM\virtualCOMConf.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -516,31 +556,6 @@
               <FileName>Web.c</FileName>
               <FileType>1</FileType>
               <FilePath>Web\Web.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>mqttApp</GroupName>
-          <Files>
-            <File>
-              <FileName>mqtt.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\mqttInterface\mqtt.c</FilePath>
-            </File>
-            <File>
-              <FileName>virtualDevice.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\mqttVirtualDevice\virtualDevice.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>doc</GroupName>
-          <Files>
-            <File>
-              <FileName>README.md</FileName>
-              <FileType>9</FileType>
-              <FilePath>.\README.md</FilePath>
             </File>
           </Files>
         </Group>
@@ -1034,6 +1049,16 @@
           <GroupName>SoftComponents</GroupName>
         </Group>
         <Group>
+          <GroupName>doc</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\README.md</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::Board Support</GroupName>
         </Group>
         <Group>
@@ -1200,6 +1225,9 @@
         </Group>
         <Group>
           <GroupName>::Security</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::USB</GroupName>
         </Group>
       </Groups>
     </Target>
@@ -1585,6 +1613,41 @@
               <FilePath>.\User\main.cpp</FilePath>
             </File>
             <File>
+              <FileName>stm32f7xx_hal_timebase_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\stm32f7xx_hal_timebase_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_it.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\stm32f7xx_it.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f7xx_hal_msp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User\stm32f7xx_hal_msp.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>mqttApp</GroupName>
+          <Files>
+            <File>
+              <FileName>mqtt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mqttInterface\mqtt.c</FilePath>
+            </File>
+            <File>
+              <FileName>virtualDevice.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mqttVirtualDevice\virtualDevice.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>HttpServer</GroupName>
+          <Files>
+            <File>
               <FileName>HTTP_Server.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\User\HTTP_Server.c</FilePath>
@@ -1696,20 +1759,25 @@
                 </FileArmAds>
               </FileOption>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>UsbDevice</GroupName>
+          <Files>
             <File>
-              <FileName>stm32f7xx_hal_timebase_tim.c</FileName>
+              <FileName>VirtualCOM.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\User\stm32f7xx_hal_timebase_tim.c</FilePath>
+              <FilePath>.\virtualCOM\VirtualCOM.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f7xx_it.c</FileName>
+              <FileName>USBD_User_CDC_ACM_0.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\User\stm32f7xx_it.c</FilePath>
+              <FilePath>.\virtualCOM\USBD_User_CDC_ACM_0.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f7xx_hal_msp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\User\stm32f7xx_hal_msp.c</FilePath>
+              <FileName>virtualCOMConf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\virtualCOM\virtualCOMConf.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1884,31 +1952,6 @@
               <FileName>Web.c</FileName>
               <FileType>1</FileType>
               <FilePath>Web\Web.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>mqttApp</GroupName>
-          <Files>
-            <File>
-              <FileName>mqtt.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\mqttInterface\mqtt.c</FilePath>
-            </File>
-            <File>
-              <FileName>virtualDevice.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\mqttVirtualDevice\virtualDevice.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>doc</GroupName>
-          <Files>
-            <File>
-              <FileName>README.md</FileName>
-              <FileType>9</FileType>
-              <FilePath>.\README.md</FilePath>
             </File>
           </Files>
         </Group>
@@ -2231,6 +2274,16 @@
           <GroupName>SoftComponents</GroupName>
         </Group>
         <Group>
+          <GroupName>doc</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>9</FileType>
+              <FilePath>.\README.md</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::Board Support</GroupName>
         </Group>
         <Group>
@@ -2259,6 +2312,9 @@
         </Group>
         <Group>
           <GroupName>::Security</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::USB</GroupName>
         </Group>
       </Groups>
     </Target>
@@ -2295,6 +2351,13 @@
         </targetInfos>
       </api>
       <api Capiversion="2.3.0" Cclass="CMSIS Driver" Cgroup="MCI" exclusive="0">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.5.1"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </api>
+      <api Capiversion="2.2.0" Cclass="CMSIS Driver" Cgroup="USB Device" exclusive="0">
         <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.5.1"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
@@ -2416,6 +2479,27 @@
           <targetInfo name="webServer"/>
         </targetInfos>
       </component>
+      <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="CORE" Cvariant="Debug" Cvendor="Keil" Cversion="6.13.0" condition="USB Core and Event Recorder">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="Device" Cvendor="Keil" Cversion="6.13.0" condition="USB Core and Device Driver" maxInstances="4">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="Device" Csub="CDC" Cvendor="Keil" Cversion="6.13.0" condition="USB Device" maxInstances="8">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
       <component Capiversion="1.0.0" Cbundle="STM32F746G-Discovery" Cclass="Board Support" Cgroup="Buttons" Cvendor="Keil" Cversion="1.1.1" condition="STM32F7 HAL GPIO">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
@@ -2445,6 +2529,20 @@
         </targetInfos>
       </component>
       <component Capiversion="2.2.0" Cclass="CMSIS Driver" Cgroup="MCI" Cvendor="Keil" Cversion="1.6.0" condition="STM32F7 CMSIS_Driver MCI">
+        <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Capiversion="2.1.0" Cclass="CMSIS Driver" Cgroup="USB Device" Csub="Full-speed" Cvendor="Keil" Cversion="1.10.0" condition="STM32F7 CMSIS_Driver USB">
+        <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Capiversion="2.1.0" Cclass="CMSIS Driver" Cgroup="USB Device" Csub="High-speed" Cvendor="Keil" Cversion="1.13.0" condition="STM32F7 CMSIS_Driver USB">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
@@ -2787,6 +2885,42 @@
           <targetInfo name="webServer"/>
         </targetInfos>
       </file>
+      <file attr="config" category="source" name="USB\Config\USBD_Config.c" version="5.2.0">
+        <instance index="0">RTE\USB\USBD_Config_0.c</instance>
+        <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="Device" Cvendor="Keil" Cversion="6.13.0" condition="USB Core and Device Driver" maxInstances="4"/>
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="USB\Config\USBD_Config.c" version="5.2.0">
+        <instance index="1" removed="1">RTE\USB\USBD_Config_1.c</instance>
+        <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="Device" Cvendor="Keil" Cversion="6.13.0" condition="USB Core and Device Driver" maxInstances="4"/>
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
+        <targetInfos/>
+      </file>
+      <file attr="config" category="source" name="USB\Config\USBD_Config_CDC.h" version="5.2.0">
+        <instance index="0">RTE\USB\USBD_Config_CDC_0.h</instance>
+        <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="Device" Csub="CDC" Cvendor="Keil" Cversion="6.13.0" condition="USB Device" maxInstances="8"/>
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="source" name="USB\Config\USBD_Config_CDC.h" version="5.2.0">
+        <instance index="1" removed="1">RTE\USB\USBD_Config_CDC_1.h</instance>
+        <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="Device" Csub="CDC" Cvendor="Keil" Cversion="6.13.0" condition="USB Device" maxInstances="8"/>
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
+        <targetInfos/>
+      </file>
+      <file attr="config" category="source" name="USB\Config\USBD_Config_CustomClass.h" version="5.2.0">
+        <instance index="0" removed="1">RTE\USB\USBD_Config_CustomClass_0.h</instance>
+        <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="Device" Csub="Custom Class" Cvendor="Keil" Cversion="6.13.0" condition="USB Device" maxInstances="4"/>
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
+        <targetInfos/>
+      </file>
       <file attr="config" category="source" name="USB\Config\USBH_Config.c" version="5.2.1">
         <instance index="0" removed="1">RTE\USB\USBH_Config_0.c</instance>
         <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="Host" Cvendor="Keil" Cversion="6.13.0" condition="USB Core and Host Driver" maxInstances="4"/>
@@ -2800,10 +2934,13 @@
         <targetInfos/>
       </file>
       <file attr="config" category="source" name="USB\Config\USB_Debug.c" version="1.0.0">
-        <instance index="0" removed="1">RTE\USB\USB_Debug.c</instance>
+        <instance index="0">RTE\USB\USB_Debug.c</instance>
         <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="CORE" Cvariant="Debug" Cvendor="Keil" Cversion="6.13.0" condition="USB Core and Event Recorder"/>
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
-        <targetInfos/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
       </file>
     </files>
   </RTE>

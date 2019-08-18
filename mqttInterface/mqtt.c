@@ -44,13 +44,18 @@ Network network;
 
 
 uint64_t app_mqtt_stk[8192/8];
-const osThreadAttr_t app_mqtt_attr = { .stack_size = sizeof(app_mqtt_stk),.stack_mem = &app_mqtt_stk};
-void app_mqtt (void *arg)
+const osThreadAttr_t app_mqtt_attr = {
+	.stack_size = sizeof(app_mqtt_stk),
+	.stack_mem = &app_mqtt_stk
+};
+
+__NO_RETURN void app_mqtt (void *arg)
 {
+	(void)arg;
+	
 #if (MQTT_MBEDTLS != 0)
   TLScert tlscert = {(char *)CA_Cert, NULL, NULL};
 #endif
-	uint32_t addr;
 	int rc = 0;
   MQTTPacket_connectData connectData = MQTTPacket_connectData_initializer;
 	NetworkInit(&network);
@@ -90,10 +95,10 @@ void app_mqtt (void *arg)
 	if ((rc = MQTTPublish(&client, "MDK/sample/a", &message)) != 0)
 		printf("Return code from MQTT publish is %d\n", rc);
 	
-	do {
+	for(;;) {
 		osDelay(50U);
 //		netIF_GetOption(NET_IF_CLASS_ETH | 0, netIF_OptionIP4_Address, (uint8_t *)&addr, sizeof (addr));
-	} while (addr == 0U);
+	}
 }
 
 

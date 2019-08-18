@@ -11,7 +11,7 @@
 
 // <e>USB Host Debug
 // <i>Enable USB Host debugging with Event Recorder
-#define USBH_DEBUG_EVR                  1
+#define USBH_DEBUG_EVR                  0
 
 //   <o>Core <0=>Off <1=>Errors <2=>Errors + API <3=>All
 //   <i>Configure USB Host Core event recording
@@ -40,15 +40,15 @@
 
 // <e>USB Device Debug
 // <i>Enable USB Device debugging with Event Recorder
-#define USBD_DEBUG_EVR                  0
+#define USBD_DEBUG_EVR                  1
 
 //   <o>Core <0=>Off <1=>Errors <2=>Errors + API <3=>All
 //   <i>Configure USB Device Core event recording
-#define USBD_DEBUG_EVR_Core             1
+#define USBD_DEBUG_EVR_Core             2
 
 //   <o>Driver <0=>Off <1=>Errors <2=>Errors + API <3=>All
 //   <i>Configure USB Device Driver event recording
-#define USBD_DEBUG_EVR_Driver           1
+#define USBD_DEBUG_EVR_Driver           2
 
 //   <o>Custom Class <0=>Off <1=>Errors <2=>Errors + API <3=>All
 //   <i>Configure USB Device Custom Class event recording
@@ -60,7 +60,7 @@
 
 //   <o>Communication Device Class (CDC) <0=>Off <1=>Errors <2=>Errors + API <3=>All
 //   <i>Configure USB Device Communication Device Class event recording
-#define USBD_DEBUG_EVR_CDC              1
+#define USBD_DEBUG_EVR_CDC              3
 
 //   <o>Human Interface Device class (HID) <0=>Off <1=>Errors <2=>Errors + API <3=>All
 //   <i>Configure USB Device Human Interface Device class event recording

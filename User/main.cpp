@@ -102,11 +102,15 @@ osThreadAttr_t init_attr;
 //};
 extern const osThreadAttr_t httpServer_attr;
 extern const osThreadAttr_t app_mqtt_attr;
-
+extern const osThreadAttr_t usbVirtualCOM_attr;
 
 /* Private function prototypes -----------------------------------------------*/
-extern "C" void httpServer_main (void *arg);
-extern "C" void app_mqtt (void *arg);
+extern "C" 
+{
+	void httpServer_main (void *arg);
+	void app_mqtt (void *arg);
+	void usbVirtualCOM_main (void *arg);
+}
 extern void GRAPHICS_MainTask(void);
 
 extern void GRAPHICS_HW_Init(void);
@@ -618,7 +622,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   GPIO_InitStruct.Alternate = GPIO_AF10_OTG_HS;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
 }
 
 
@@ -635,11 +638,15 @@ static void init_task(void *arg)
 #endif	
 	 netInitialize ();
 	
-//	//创建httpServer任务
+	//创建httpServer任务
 	osThreadNew(httpServer_main, NULL, &httpServer_attr);
-//	
-//	//创建mqtt任务
+	
+	//创建mqtt任务
 	osThreadNew(app_mqtt, NULL, &app_mqtt_attr);
+	
+	//创建	
+	osThreadNew(usbVirtualCOM_main,NULL,&usbVirtualCOM_attr);
+	
 	
 	GRAPHICS_MainTask();
 	//创建touchGFX任务

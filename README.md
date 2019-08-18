@@ -16,7 +16,7 @@
 		GRAPHICS_MainTask
 	}
 }
-
+4、加入USB虚拟串口，可以通过虚拟串口与系统通信
 
 
 ## TODO

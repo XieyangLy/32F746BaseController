@@ -46,6 +46,15 @@
 #define RTE_Network_Socket_TCP          /* Network Socket TCP */
 /*  Keil.MDK-Pro::Network:Socket:UDP:7.10.0 */
 #define RTE_Network_Socket_UDP          /* Network Socket UDP */
+/*  Keil.MDK-Pro::USB:CORE:Debug:6.13.0 */
+#define RTE_USB_Core                    /* USB Core */
+          #define RTE_USB_Core_Debug              /* USB Core Debug Version */
+/*  Keil.MDK-Pro::USB:Device:6.13.0 */
+#define RTE_USB_Device_0                /* USB Device 0 */
+
+/*  Keil.MDK-Pro::USB:Device:CDC:6.13.0 */
+#define RTE_USB_Device_CDC_0            /* USB Device CDC instance 0 */
+
 /*  Keil::CMSIS Driver:Ethernet MAC:1.6.0 */
 #define RTE_Drivers_ETH_MAC0            /* Driver ETH_MAC0 */
 /*  Keil::CMSIS Driver:Ethernet PHY:LAN8742A:1.2.0 */
@@ -53,6 +62,10 @@
 /*  Keil::CMSIS Driver:MCI:1.6.0 */
 #define RTE_Drivers_MCI0                /* Driver MCI0 */
         #define RTE_Drivers_MCI1                /* Driver MCI1 */
+/*  Keil::CMSIS Driver:USB Device:Full-speed:1.10.0 */
+#define RTE_Drivers_USBD0               /* Driver USBD0 */
+/*  Keil::CMSIS Driver:USB Device:High-speed:1.13.0 */
+#define RTE_Drivers_USBD1               /* Driver USBD1 */
 /*  Keil::Device:STM32Cube Framework:Classic:1.2.6 */
 #define RTE_DEVICE_FRAMEWORK_CLASSIC
 /*  Keil::Device:STM32Cube HAL:CRC:1.2.6 */
