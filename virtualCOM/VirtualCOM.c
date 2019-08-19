@@ -81,25 +81,21 @@ __NO_RETURN void usbVirtualCOM_main (void *arg) {
 
 /*
 *数据发送
-*参数:pData:数据指针，length数据长度
+*参数:pData:数据指针，length数据长度,osWaitForever
 */
-int32_t usbVirtualComSend(const uint8_t *pData,uint32_t length)
+int32_t usbVirtualComSend(const uint8_t *pData,uint32_t length,uint32_t timeout)
 {
 	uint32_t cnt = 0;
 	osStatus_t result;
 	
+	//获取锁,等待时间根据实际项目需求配置
+	result = osMutexAcquire(virtualCom_mutex_id,timeout);
+	if(result != osOK) return result;
 	while(length)
 	{
-		//获取锁,等待时间根据实际项目需求配置
-		result = osMutexAcquire(virtualCom_mutex_id,osWaitForever);
-		if(result == osOK)
-		{
-			//数据发送
-			cnt = USBD_CDC_ACM_WriteData(0,pData,length);
-			length -= cnt;
-		}else{
-			return -1;
-		}
+		//数据发送
+		cnt = USBD_CDC_ACM_WriteData(0,pData,length);
+		length -= cnt;
 	}
 	return 0;
 }
@@ -132,7 +128,11 @@ void virtualCOMMsgHandle(uint32_t len)
 int32_t (*(virtualCOMMsgHandleRegister(int32_t (*fn)(uint8_t *pData,uint32_t length))))(uint8_t *pData,uint32_t length)
 {
 	int32_t (*tmp)(uint8_t *pData,uint32_t length) = virtualComMsgHandler;
-	virtualComMsgHandler = fn;
+	if(fn != NULL){
+		virtualComMsgHandler = fn;
+	}else{
+		virtualComMsgHandler = virtualComMsgLocalHandler;
+	}
 	
 	return tmp;
 }

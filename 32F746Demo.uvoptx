@@ -140,12 +140,12 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name>(105=150,186,829,544,0)</Name>
+          <Name>(105=133,321,812,679,0)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
           <Key>ST-LINKIII-KEIL_SWO</Key>
-          <Name>-U0671FF535651727067084825 -O206 -SF1800 -C0 -A0 -I0 -HNlocalhost -HP7184 -P1 -N00("ARM CoreSight SW-DP (ARM Core") -D00(5BA02477) -L00(0) -TO19 -TC218000000 -TP21 -TDS806C -TDT0 -TDC1F -TIE1 -TIP8 -FO15 -FD20010000 -FC1000 -FN3 -FF0STM32F7x_1024.FLM -FS08000000 -FL0100000 -FP0($$Device:STM32F746NGHx$CMSIS\Flash\STM32F7x_1024.FLM) -FF1STM32F7xTCM_1024.FLM -FS1200000 -FL1100000 -FP1($$Device:STM32F746NGHx$CMSIS\Flash\STM32F7xTCM_1024.FLM) -FF2STM32F7xx_QSPI_Disco.FLM -FS290000000 -FL21000000 -FP2($$Device:STM32F746NGHx$CMSIS\Flash\STM32F7xx_QSPI_Disco.FLM)</Name>
+          <Name>-U0671FF535651727067084825 -O206 -SF1800 -C0 -A0 -I0 -HNlocalhost -HP7184 -P1 -N00("ARM CoreSight SW-DP (ARM Core") -D00(5BA02477) -L00(0) -TO17 -TC200000000 -TP21 -TDS8063 -TDT0 -TDC1F -TIE1 -TIP8 -FO15 -FD20010000 -FC1000 -FN3 -FF0STM32F7x_1024.FLM -FS08000000 -FL0100000 -FP0($$Device:STM32F746NGHx$CMSIS\Flash\STM32F7x_1024.FLM) -FF1STM32F7xTCM_1024.FLM -FS1200000 -FL1100000 -FP1($$Device:STM32F746NGHx$CMSIS\Flash\STM32F7xTCM_1024.FLM) -FF2STM32F7xx_QSPI_Disco.FLM -FS290000000 -FL21000000 -FP2($$Device:STM32F746NGHx$CMSIS\Flash\STM32F7xx_QSPI_Disco.FLM)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -192,7 +192,7 @@
         <Mm>
           <WinNumber>1</WinNumber>
           <SubType>0</SubType>
-          <ItemText>0x200197c0</ItemText>
+          <ItemText>0x20022430</ItemText>
           <AccSizeX>0</AccSizeX>
         </Mm>
       </MemoryWindow1>
@@ -1681,7 +1681,7 @@
 
   <Group>
     <GroupName>::Device</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>1</RteFlg>

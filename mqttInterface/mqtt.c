@@ -42,8 +42,7 @@ unsigned char sendbuf[80], readbuf[80];
 MQTTClient client;
 Network network;
 
-
-uint64_t app_mqtt_stk[8192/8];
+uint64_t app_mqtt_stk[20480/8];
 const osThreadAttr_t app_mqtt_attr = {
 	.stack_size = sizeof(app_mqtt_stk),
 	.stack_mem = &app_mqtt_stk
@@ -64,23 +63,36 @@ __NO_RETURN void app_mqtt (void *arg)
 	osDelay(1000U);
 	MQTTClientInit(&client, &network, 30000, sendbuf, sizeof(sendbuf), readbuf, sizeof(readbuf));
 	
-	#if (MQTT_MBEDTLS != 0)
+mqtt_network_retry:
+	osThreadFlagsWait (0x01, osFlagsWaitAny, osWaitForever);
+#if (MQTT_MBEDTLS != 0)
   if ((rc = NetworkConnectTLS(&network, SERVER_NAME, SERVER_PORT, &tlscert)) != 0)
 #else
   if ((rc = NetworkConnect(&network, SERVER_NAME, SERVER_PORT)) != 0)
 #endif
+	{
     printf("Return code from network connect is %d\n", rc);
+		goto mqtt_network_retry;
+	}
 
+mqttStartTaskRetry:
 #if defined(MQTT_TASK)
   if ((rc = MQTTStartTask(&client)) == 0)
     printf("Return code from start tasks is %d\n", rc);
 #endif
+	{
+		goto mqttStartTaskRetry;
+	}
 
   connectData.MQTTVersion = 3;
   connectData.clientID.cstring = "MDK_sample";
 
+mqttConnectRetry:
   if ((rc = MQTTConnect(&client, &connectData)) != 0)
+	{
     printf("Return code from MQTT connect is %d\n", rc);
+		goto mqttConnectRetry;
+	}
   else
     printf("MQTT Connected\n");
 
@@ -112,8 +124,7 @@ void messageArrived(MessageData* data)
 	cJSON* item =NULL;
 	cJSON* dev =NULL;
 	
-  printf("Message arrived on topic %.*s: %.*s\n", data->topicName->lenstring.len, data->topicName->lenstring.data,
-  data->message->payloadlen, (char *)data->message->payload);
+  printf("Message arrived on topic %.*s: %.*s\n", data->topicName->lenstring.len, data->topicName->lenstring.data,data->message->payloadlen, (char *)data->message->payload);
 	
 	//对消息进行散转处理
 	if(data->message->payloadlen)

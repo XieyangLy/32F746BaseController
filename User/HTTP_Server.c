@@ -67,19 +67,6 @@ uint8_t get_button (void) {
   return ((uint8_t)Buttons_GetState ());
 }
 
-/* IP address change notification */
-void netDHCP_Notify (uint32_t if_num, uint8_t option, const uint8_t *val, uint32_t len) {
-
-  (void)if_num;
-  (void)val;
-  (void)len;
-
-  if (option == NET_DHCP_OPTION_IP_ADDRESS) {
-    /* IP address change, trigger LCD update */
-    osThreadFlagsSet (TID_Display, 0x01);
-  }
-}
-
 /*----------------------------------------------------------------------------
   Thread 'Display': LCD display handler
  *---------------------------------------------------------------------------*/

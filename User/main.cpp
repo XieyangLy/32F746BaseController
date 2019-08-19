@@ -156,7 +156,7 @@ int main(void)
 	
   /* Configure the System clock to have a frequency of 216 MHz */
   SystemClock_Config();
-//  SystemCoreClockUpdate();
+  SystemCoreClockUpdate();
 
 	MX_GPIO_Init();
 	MX_CRC_Init();
@@ -181,6 +181,7 @@ int main(void)
 	init_attr.priority = osPriorityAboveNormal;
 	osThreadNew(init_task, NULL, &init_attr);
 	
+	printf("system Start ... \r\n");
   /* Start thread execution */
   osKernelStart();
 
@@ -194,14 +195,14 @@ int main(void)
   * @brief  System Clock Configuration
   *         The system Clock is configured as follow : 
   *            System Clock source            = PLL (HSE)
-  *            SYSCLK(Hz)                     = 216000000
-  *            HCLK(Hz)                       = 216000000
+  *            SYSCLK(Hz)                     = 200000000
+  *            HCLK(Hz)                       = 200000000
   *            AHB Prescaler                  = 1
   *            APB1 Prescaler                 = 4
   *            APB2 Prescaler                 = 2
   *            HSE Frequency(Hz)              = 25000000
   *            PLL_M                          = 25
-  *            PLL_N                          = 432
+  *            PLL_N                          = 400
   *            PLL_P                          = 2
   *            PLL_Q                          = 9
   *            VDD(V)                         = 3.3
@@ -627,7 +628,7 @@ static void MX_GPIO_Init(void)
 
 
 
-
+osThreadId_t app_mqtt_tid;
 static void init_task(void *arg)
 {
 	//初始化网络
@@ -642,7 +643,7 @@ static void init_task(void *arg)
 	osThreadNew(httpServer_main, NULL, &httpServer_attr);
 	
 	//创建mqtt任务
-	osThreadNew(app_mqtt, NULL, &app_mqtt_attr);
+	app_mqtt_tid = osThreadNew(app_mqtt, NULL, &app_mqtt_attr);
 	
 	//创建	
 	osThreadNew(usbVirtualCOM_main,NULL,&usbVirtualCOM_attr);
@@ -655,6 +656,62 @@ static void init_task(void *arg)
 		osDelay(500);
 	}
 }
+
+/* IP address change notification */
+void netDHCP_Notify (uint32_t if_num, uint8_t option, const uint8_t *val, uint32_t len) {
+
+  (void)if_num;
+  (void)val;
+  (void)len;
+
+  if (option == NET_DHCP_OPTION_IP_ADDRESS) {
+    /* IP address change, trigger LCD update */
+    osThreadFlagsSet (app_mqtt_tid, 0x01);
+  }
+}
+
+/*
+*网络变动提醒
+*/
+void netETH_Notify (uint32_t if_num, netETH_Event event, uint32_t val) {
+  NET_ETH_LINK_INFO *info;
+     
+  switch (event) {
+    case netETH_LinkDown:	//掉线
+      printf ("Link is down\n");
+      break;
+    case netETH_LinkUp:	//上线
+      printf ("Link is up\n");
+      info = (NET_ETH_LINK_INFO *)&val;
+      switch (info->speed) {
+        case 0:
+          printf ("10 MBit\n");
+          break;
+        case 1:
+          printf ("100 MBit\n");
+          break;
+        case 2:
+          printf ("1 GBit\n");
+          break;
+      }
+      switch (info->duplex) {
+        case 0:
+          printf ("Half duplex\n");
+          break;
+        case 1:
+          printf ("Full duplex\n");
+          break;
+      }
+      break;
+    case netETH_Wakeup:	//唤醒
+      printf ("Wakeup frame received\n");
+      break;
+    case netETH_TimerAlarm:	//定时
+      printf ("Timer alarm\n");
+      break;
+  }
+} 
+
 
 
 #ifdef  USE_FULL_ASSERT
