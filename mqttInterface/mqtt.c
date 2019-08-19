@@ -63,8 +63,9 @@ __NO_RETURN void app_mqtt (void *arg)
 	osDelay(1000U);
 	MQTTClientInit(&client, &network, 30000, sendbuf, sizeof(sendbuf), readbuf, sizeof(readbuf));
 	
-mqtt_network_retry:
+	
 	osThreadFlagsWait (0x01, osFlagsWaitAny, osWaitForever);
+mqtt_network_retry:
 #if (MQTT_MBEDTLS != 0)
   if ((rc = NetworkConnectTLS(&network, SERVER_NAME, SERVER_PORT, &tlscert)) != 0)
 #else
@@ -78,9 +79,10 @@ mqtt_network_retry:
 mqttStartTaskRetry:
 #if defined(MQTT_TASK)
   if ((rc = MQTTStartTask(&client)) == 0)
+	{
     printf("Return code from start tasks is %d\n", rc);
 #endif
-	{
+	
 		goto mqttStartTaskRetry;
 	}
 
