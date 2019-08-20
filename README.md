@@ -2,9 +2,9 @@
 
 ## 已开发内容
 
-1、移除webFile中关于LCD的内容
-2、移除HTTP_Server.c/HTTP_Server_CGI.c中LCD相关内容
-3、添加touchGFX{
+1.移除webFile中关于LCD的内容
+2.移除HTTP_Server.c/HTTP_Server_CGI.c中LCD相关内容
+3.添加touchGFX{
 	添加相关文件，确保编译通过	--done
 	添加相关初始化函数			--done
 	添加GRAPHICS_HW_Init();		--done
@@ -16,13 +16,13 @@
 		GRAPHICS_MainTask
 	}
 }
-4、加入USB虚拟串口，可以通过虚拟串口与系统通信
-5、mqtt task中发现bug，会导致系统死机，原因:当网络为联通时，如果调用MQTTConnect连接服务器，会导致HardFault ，通过添加线程时间解决，在连接前死等网络就绪
-6、添加dhcp 回调函数，获取ip地址后向mqtt任务发送线程事件
-7、加入netETH_Notify事件回调，打印上线，掉线等信息，以便后续使用
-8、修改系统时钟注释，原本的218MHz修改为200MHz，以及相关分频器数值
-9、添加debug日志模块
-10、
+4.加入USB虚拟串口，可以通过虚拟串口与系统通信
+5.mqtt task中发现bug，会导致系统死机，原因:当网络为联通时，如果调用MQTTConnect连接服务器，会导致HardFault ，通过添加线程时间解决，在连接前死等网络就绪
+6.添加dhcp 回调函数，获取ip地址后向mqtt任务发送线程事件
+7.加入netETH_Notify事件回调，打印上线，掉线等信息，以便后续使用
+8.修改系统时钟注释，原本的218MHz修改为200MHz，以及相关分频器数值
+9.添加debug日志模块
+10.
 
 
 
