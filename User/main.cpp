@@ -89,7 +89,7 @@ uint32_t HAL_GetTick (void) {
 /* Private variables ---------------------------------------------------------*/
 CRC_HandleTypeDef hcrc;
 QSPI_HandleTypeDef hqspi;
-
+TIM_HandleTypeDef  htim6; 
 
 // Main stack size must be multiple of 8 Bytes
 #define INIT_MAIN_STK_SZ (4096U)
@@ -125,6 +125,7 @@ static void CPU_CACHE_Enable(void);
 static void init_task(void *arg);
 static void MX_CRC_Init(void);
 static void MX_QUADSPI_Init(void);
+void MX_TIM6_init(void);
 /* Private functions ---------------------------------------------------------*/
 
 /**
@@ -161,7 +162,7 @@ int main(void)
 	MX_GPIO_Init();
 	MX_CRC_Init();
 	MX_QUADSPI_Init();
-	
+	MX_TIM6_init();
 	/* Initialise the graphical hardware */
   GRAPHICS_HW_Init();
 
@@ -418,6 +419,61 @@ static void CPU_CACHE_Enable(void)
 }
 
 /**
+  * @brief user system timer base init Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM6_init(void)
+{
+	RCC_ClkInitTypeDef    clkconfig;
+  uint32_t              uwTimclock = 0;
+  uint32_t              uwPrescalerValue = 0;
+  uint32_t              pFLatency;
+  
+  /*Configure the TIM6 IRQ priority */
+  HAL_NVIC_SetPriority(TIM6_DAC_IRQn, TICK_INT_PRIORITY ,0); 
+  
+  /* Enable the TIM6 global Interrupt */
+  HAL_NVIC_EnableIRQ(TIM6_DAC_IRQn); 
+  
+  /* Enable TIM6 clock */
+  __HAL_RCC_TIM6_CLK_ENABLE();
+  
+  /* Get clock configuration */
+  HAL_RCC_GetClockConfig(&clkconfig, &pFLatency);
+  
+  /* Compute TIM6 clock */
+  uwTimclock = 2*HAL_RCC_GetPCLK1Freq();
+   
+  /* Compute the prescaler value to have TIM6 counter clock equal to 1MHz */
+  uwPrescalerValue = (uint32_t) ((uwTimclock / 1000000) - 1);
+  
+  /* Initialize TIM6 */
+  htim6.Instance = TIM6;
+  
+  /* Initialize TIMx peripheral as follow:
+  + Period = [(TIM6CLK/1000) - 1]. to have a (1/1000) s time base.
+  + Prescaler = (uwTimclock/1000000 - 1) to have a 1MHz counter clock.
+  + ClockDivision = 0
+  + Counter direction = Up
+  */
+  htim6.Init.Period = (1000000 / 1000) - 1;
+  htim6.Init.Prescaler = uwPrescalerValue;
+  htim6.Init.ClockDivision = 0;
+  htim6.Init.CounterMode = TIM_COUNTERMODE_UP;
+  if(HAL_TIM_Base_Init(&htim6) == HAL_OK)
+  {
+    /* Start the TIM time Base generation in interrupt mode */
+		HAL_TIM_Base_Start_IT(&htim6);
+    return ;
+  }
+  
+  /* Return function status */
+  return ;
+}
+
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -625,7 +681,28 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 }
 
+/**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM6 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
 
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM6) {
+    //提供时钟信息给系统
+		
+		
+  }
+  /* USER CODE BEGIN Callback 1 */
+
+  /* USER CODE END Callback 1 */
+}
 
 
 osThreadId_t app_mqtt_tid;
