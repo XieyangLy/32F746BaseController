@@ -22,6 +22,8 @@
 #include <gui/scprocess_screen/ScProcessPresenter.hpp>
 #include <gui/switchbutton_screen/SwitchButtonView.hpp>
 #include <gui/switchbutton_screen/SwitchButtonPresenter.hpp>
+#include <gui/filemanager_screen/FileManagerView.hpp>
+#include <gui/filemanager_screen/FileManagerPresenter.hpp>
 
 
 /**
@@ -47,7 +49,8 @@ public:
     typedef meta::TypeList< ScWelcomView,
             meta::TypeList< ScProcessView,
             meta::TypeList< SwitchButtonView,
-            meta::Nil > >
+            meta::TypeList< FileManagerView,
+            meta::Nil > > >
             > GeneratedViewTypes;
 
     /**
@@ -62,7 +65,8 @@ public:
     typedef meta::TypeList< ScWelcomPresenter,
             meta::TypeList< ScProcessPresenter,
             meta::TypeList< SwitchButtonPresenter,
-            meta::Nil > >
+            meta::TypeList< FileManagerPresenter,
+            meta::Nil > > >
             > GeneratedPresenterTypes;
 
     /**

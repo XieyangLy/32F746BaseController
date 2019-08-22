@@ -13,6 +13,8 @@
 #include <gui/scprocess_screen/ScProcessPresenter.hpp>
 #include <gui/switchbutton_screen/SwitchButtonView.hpp>
 #include <gui/switchbutton_screen/SwitchButtonPresenter.hpp>
+#include <gui/filemanager_screen/FileManagerView.hpp>
+#include <gui/filemanager_screen/FileManagerPresenter.hpp>
 
 using namespace touchgfx;
 

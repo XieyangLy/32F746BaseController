@@ -1,2 +1,205 @@
-ERROR: "touchgfx update_project" was called with arguments ["update_project"]
-Usage: "touchgfx update_project --project-file=PROJECT-FILE"
+<File>
+  <FileName>FileManagerPresenter.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/gui/src/filemanager_screen/filemanagerpresenter.cpp</FilePath>
+</File>
+<File>
+  <FileName>FileManagerView.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/gui/src/filemanager_screen/filemanagerview.cpp</FilePath>
+</File>
+<File>
+  <FileName>FrontendApplication.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/gui/src/common/frontendapplication.cpp</FilePath>
+</File>
+<File>
+  <FileName>Model.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/gui/src/model/model.cpp</FilePath>
+</File>
+<File>
+  <FileName>ScProcessPresenter.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/gui/src/scprocess_screen/scprocesspresenter.cpp</FilePath>
+</File>
+<File>
+  <FileName>ScProcessView.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/gui/src/scprocess_screen/scprocessview.cpp</FilePath>
+</File>
+<File>
+  <FileName>ScWelcomPresenter.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/gui/src/scwelcom_screen/scwelcompresenter.cpp</FilePath>
+</File>
+<File>
+  <FileName>ScWelcomView.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/gui/src/scwelcom_screen/scwelcomview.cpp</FilePath>
+</File>
+<File>
+  <FileName>SwitchButtonPresenter.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/gui/src/switchbutton_screen/switchbuttonpresenter.cpp</FilePath>
+</File>
+<File>
+  <FileName>SwitchButtonView.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/gui/src/switchbutton_screen/switchbuttonview.cpp</FilePath>
+</File>
+<File>
+  <FileName>ApplicationFontProvider.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/fonts/src/applicationfontprovider.cpp</FilePath>
+</File>
+<File>
+  <FileName>background.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/images/src/background.cpp</FilePath>
+</File>
+<File>
+  <FileName>BitmapDatabase.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/images/src/bitmapdatabase.cpp</FilePath>
+</File>
+<File>
+  <FileName>blue_buttons_round_edge_small.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/images/src/__designer/blue_buttons_round_edge_small.cpp</FilePath>
+</File>
+<File>
+  <FileName>blue_buttons_round_edge_small_pressed.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/images/src/__designer/blue_buttons_round_edge_small_pressed.cpp</FilePath>
+</File>
+<File>
+  <FileName>blue_check_buttons_check_round_mark_active.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/images/src/__designer/blue_check_buttons_check_round_mark_active.cpp</FilePath>
+</File>
+<File>
+  <FileName>blue_check_buttons_check_round_mark_pressed.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/images/src/__designer/blue_check_buttons_check_round_mark_pressed.cpp</FilePath>
+</File>
+<File>
+  <FileName>blue_progressindicators_bg_medium_circle_indicator_bg_full.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/images/src/__designer/blue_progressindicators_bg_medium_circle_indicator_bg_full.cpp</FilePath>
+</File>
+<File>
+  <FileName>blue_progressindicators_fill_medium_circle_indicator_fill_full.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/images/src/__designer/blue_progressindicators_fill_medium_circle_indicator_fill_full.cpp</FilePath>
+</File>
+<File>
+  <FileName>blue_radio_buttons_radio_round_button_inactive.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/images/src/__designer/blue_radio_buttons_radio_round_button_inactive.cpp</FilePath>
+</File>
+<File>
+  <FileName>blue_radio_buttons_radio_round_button_normal.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/images/src/__designer/blue_radio_buttons_radio_round_button_normal.cpp</FilePath>
+</File>
+<File>
+  <FileName>blue_togglebars_toggle_round_large_button_off.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/images/src/__designer/blue_togglebars_toggle_round_large_button_off.cpp</FilePath>
+</File>
+<File>
+  <FileName>blue_togglebars_toggle_round_large_button_on.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/images/src/__designer/blue_togglebars_toggle_round_large_button_on.cpp</FilePath>
+</File>
+<File>
+  <FileName>FileManagerViewBase.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/gui_generated/src/filemanager_screen/filemanagerviewbase.cpp</FilePath>
+</File>
+<File>
+  <FileName>Font_verdana_10_4bpp.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/fonts/src/font_verdana_10_4bpp.cpp</FilePath>
+</File>
+<File>
+  <FileName>Font_verdana_20_4bpp.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/fonts/src/font_verdana_20_4bpp.cpp</FilePath>
+</File>
+<File>
+  <FileName>Font_verdana_40_4bpp.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/fonts/src/font_verdana_40_4bpp.cpp</FilePath>
+</File>
+<File>
+  <FileName>FontGetters.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/fonts/src/fontgetters.cpp</FilePath>
+</File>
+<File>
+  <FileName>FrontendApplicationBase.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/gui_generated/src/common/frontendapplicationbase.cpp</FilePath>
+</File>
+<File>
+  <FileName>Kerning_verdana_10_4bpp.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/fonts/src/kerning_verdana_10_4bpp.cpp</FilePath>
+</File>
+<File>
+  <FileName>Kerning_verdana_20_4bpp.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/fonts/src/kerning_verdana_20_4bpp.cpp</FilePath>
+</File>
+<File>
+  <FileName>Kerning_verdana_40_4bpp.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/fonts/src/kerning_verdana_40_4bpp.cpp</FilePath>
+</File>
+<File>
+  <FileName>LanguageGb.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/texts/src/languagegb.cpp</FilePath>
+</File>
+<File>
+  <FileName>ScprocessViewBase.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/gui_generated/src/scprocess_screen/scprocessviewbase.cpp</FilePath>
+</File>
+<File>
+  <FileName>ScWelcomViewBase.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/gui_generated/src/scwelcom_screen/scwelcomviewbase.cpp</FilePath>
+</File>
+<File>
+  <FileName>SwitchButtonViewBase.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/gui_generated/src/switchbutton_screen/switchbuttonviewbase.cpp</FilePath>
+</File>
+<File>
+  <FileName>Table_verdana_10_4bpp.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/fonts/src/table_verdana_10_4bpp.cpp</FilePath>
+</File>
+<File>
+  <FileName>Table_verdana_20_4bpp.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/fonts/src/table_verdana_20_4bpp.cpp</FilePath>
+</File>
+<File>
+  <FileName>Table_verdana_40_4bpp.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/fonts/src/table_verdana_40_4bpp.cpp</FilePath>
+</File>
+<File>
+  <FileName>Texts.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/texts/src/texts.cpp</FilePath>
+</File>
+<File>
+  <FileName>TypedTextDatabase.cpp</FileName>
+  <FileType>8</FileType>
+  <FilePath>touchgfx/generated/texts/src/typedtextdatabase.cpp</FilePath>
+</File>
