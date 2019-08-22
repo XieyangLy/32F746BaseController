@@ -9,7 +9,9 @@
 #include <mvp/MVPHeap.hpp>
 #include <touchgfx/transitions/NoTransition.hpp>
 #include <touchgfx/transitions/CoverTransition.hpp>
+
 #include <touchgfx/transitions/SlideTransition.hpp>
+
 
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
@@ -18,6 +20,8 @@
 #include <gui/scwelcom_screen/ScWelcomPresenter.hpp>
 #include <gui/scprocess_screen/ScProcessView.hpp>
 #include <gui/scprocess_screen/ScProcessPresenter.hpp>
+#include <gui/switchbutton_screen/SwitchButtonView.hpp>
+#include <gui/switchbutton_screen/SwitchButtonPresenter.hpp>
 
 
 /**
@@ -42,7 +46,8 @@ public:
      */
     typedef meta::TypeList< ScWelcomView,
             meta::TypeList< ScProcessView,
-            meta::Nil >
+            meta::TypeList< SwitchButtonView,
+            meta::Nil > >
             > GeneratedViewTypes;
 
     /**
@@ -56,7 +61,8 @@ public:
      */
     typedef meta::TypeList< ScWelcomPresenter,
             meta::TypeList< ScProcessPresenter,
-            meta::Nil >
+            meta::TypeList< SwitchButtonPresenter,
+            meta::Nil > >
             > GeneratedPresenterTypes;
 
     /**

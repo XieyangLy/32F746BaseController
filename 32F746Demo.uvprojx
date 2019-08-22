@@ -793,11 +793,51 @@
               <FileType>8</FileType>
               <FilePath>.\TouchGFX\generated\images\src\__designer\blue_progressindicators_fill_medium_circle_indicator_fill_full.cpp</FilePath>
             </File>
+            <File>
+              <FileName>background.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\background.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_togglebars_toggle_round_large_button_off.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_togglebars_toggle_round_large_button_off.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_togglebars_toggle_round_large_button_on.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_togglebars_toggle_round_large_button_on.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_check_buttons_check_round_mark_active.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_check_buttons_check_round_mark_active.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_check_buttons_check_round_mark_pressed.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_check_buttons_check_round_mark_pressed.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_radio_buttons_radio_round_button_inactive.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_radio_buttons_radio_round_button_inactive.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_radio_buttons_radio_round_button_normal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_radio_buttons_radio_round_button_normal.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Application\user\Gui\generated\images\gui</GroupName>
           <Files>
+            <File>
+              <FileName>SwitchButtonViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\gui_generated\src\switchbutton_screen\SwitchButtonViewBase.cpp</FilePath>
+            </File>
             <File>
               <FileName>FrontendApplicationBase.cpp</FileName>
               <FileType>8</FileType>
@@ -886,12 +926,27 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Application\user\Gui\gui\switchLight</GroupName>
+          <Files>
+            <File>
+              <FileName>SwitchButtonPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\switchbutton_screen\SwitchButtonPresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SwitchButtonView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\switchbutton_screen\SwitchButtonView.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Middlewares\TouchGFX</GroupName>
           <Files>
             <File>
               <FileName>touchgfx_core.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>D:\workSpaceEmbedded\STMicroelectronics\32F746DISCOVERY\Applications\32F746BaseController\Middlewares\ST\TouchGFX\touchgfx\lib\core\cortex_m7\Keil\touchgfx_core.lib</FilePath>
+              <FilePath>./Middlewares\ST\TouchGFX\touchgfx\lib\core\cortex_m7\Keil\touchgfx_core.lib</FilePath>
             </File>
             <File>
               <FileName>OSWrappers.cpp</FileName>
@@ -2297,11 +2352,51 @@
               <FileType>8</FileType>
               <FilePath>.\TouchGFX\generated\images\src\__designer\blue_progressindicators_fill_medium_circle_indicator_fill_full.cpp</FilePath>
             </File>
+            <File>
+              <FileName>background.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\background.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_togglebars_toggle_round_large_button_off.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_togglebars_toggle_round_large_button_off.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_togglebars_toggle_round_large_button_on.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_togglebars_toggle_round_large_button_on.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_check_buttons_check_round_mark_active.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_check_buttons_check_round_mark_active.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_check_buttons_check_round_mark_pressed.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_check_buttons_check_round_mark_pressed.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_radio_buttons_radio_round_button_inactive.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_radio_buttons_radio_round_button_inactive.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>blue_radio_buttons_radio_round_button_normal.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\images\src\__designer\blue_radio_buttons_radio_round_button_normal.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Application\user\Gui\generated\images\gui</GroupName>
           <Files>
+            <File>
+              <FileName>SwitchButtonViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\generated\gui_generated\src\switchbutton_screen\SwitchButtonViewBase.cpp</FilePath>
+            </File>
             <File>
               <FileName>FrontendApplicationBase.cpp</FileName>
               <FileType>8</FileType>
@@ -2390,12 +2485,27 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Application\user\Gui\gui\switchLight</GroupName>
+          <Files>
+            <File>
+              <FileName>SwitchButtonPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\switchbutton_screen\SwitchButtonPresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SwitchButtonView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\TouchGFX\gui\src\switchbutton_screen\SwitchButtonView.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Middlewares\TouchGFX</GroupName>
           <Files>
             <File>
               <FileName>touchgfx_core.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>D:\workSpaceEmbedded\STMicroelectronics\32F746DISCOVERY\Applications\32F746BaseController\Middlewares\ST\TouchGFX\touchgfx\lib\core\cortex_m7\Keil\touchgfx_core.lib</FilePath>
+              <FilePath>./Middlewares\ST\TouchGFX\touchgfx\lib\core\cortex_m7\Keil\touchgfx_core.lib</FilePath>
             </File>
             <File>
               <FileName>OSWrappers.cpp</FileName>

@@ -1,0 +1,2 @@
+ERROR: "touchgfx update_project" was called with arguments ["update_project"]
+Usage: "touchgfx update_project --project-file=PROJECT-FILE"

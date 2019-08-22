@@ -11,6 +11,8 @@
 #include <gui/scwelcom_screen/ScWelcomPresenter.hpp>
 #include <gui/scprocess_screen/ScProcessView.hpp>
 #include <gui/scprocess_screen/ScProcessPresenter.hpp>
+#include <gui/switchbutton_screen/SwitchButtonView.hpp>
+#include <gui/switchbutton_screen/SwitchButtonPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -63,5 +65,18 @@ void FrontendApplicationBase::gotoScProcessScreenCoverTransitionEast()
 void FrontendApplicationBase::gotoScProcessScreenCoverTransitionEastImpl()
 {
     makeTransition<ScProcessView, ScProcessPresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// SwitchButton
+
+void FrontendApplicationBase::gotoSwitchButtonScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoSwitchButtonScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoSwitchButtonScreenNoTransitionImpl()
+{
+    makeTransition<SwitchButtonView, SwitchButtonPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 

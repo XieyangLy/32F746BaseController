@@ -7,7 +7,7 @@
 #include <gui/common/FrontendApplication.hpp>
 #include <mvp/View.hpp>
 #include <gui/scwelcom_screen/ScWelcomPresenter.hpp>
-#include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class ScWelcomViewBase : public touchgfx::View<ScWelcomPresenter>
@@ -26,8 +26,10 @@ protected:
     /*
      * Member Declarations
      */
-    touchgfx::Box box1;
-    touchgfx::ButtonWithLabel enterBut;
+    touchgfx::Image image;
+    touchgfx::ButtonWithLabel ProcessBut;
+    touchgfx::ButtonWithLabel lightEnter;
+    touchgfx::ButtonWithLabel buttonWithLabel1;
 
 private:
 

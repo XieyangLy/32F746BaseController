@@ -24,6 +24,10 @@ public:
     // ScProcess
     void gotoScProcessScreenCoverTransitionEast();
 
+
+    // SwitchButton
+    void gotoSwitchButtonScreenNoTransition();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -37,6 +41,10 @@ protected:
 
     // ScProcess
     void gotoScProcessScreenCoverTransitionEastImpl();
+
+
+    // SwitchButton
+    void gotoSwitchButtonScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

@@ -7,7 +7,7 @@
 #include <gui/common/FrontendApplication.hpp>
 #include <mvp/View.hpp>
 #include <gui/scprocess_screen/ScProcessPresenter.hpp>
-#include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/containers/progress_indicators/CircleProgress.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565Bitmap.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
@@ -28,7 +28,7 @@ protected:
     /*
      * Member Declarations
      */
-    touchgfx::Box box1;
+    touchgfx::Image image;
     touchgfx::CircleProgress circleProgress1;
     touchgfx::PainterRGB565Bitmap circleProgress1Painter;
     touchgfx::ButtonWithLabel backBut;
