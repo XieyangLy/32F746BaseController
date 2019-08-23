@@ -1,0 +1,3 @@
+[submodule "SoftComponents"]
+	path = SoftComponents
+	url = ssh://xieyang@xieyanghi.jios.org:6022/xieyang/SoftComponents.git
