@@ -16,7 +16,7 @@
  */
 #define CMSIS_device_header "stm32f7xx.h"
 
-/*  ARM::CMSIS:RTOS2:Keil RTX5:Source:5.5.0 */
+/*  ARM::CMSIS:RTOS2:Keil RTX5:Source:5.5.1 */
 #define RTE_CMSIS_RTOS2                 /* CMSIS-RTOS2 */
         #define RTE_CMSIS_RTOS2_RTX5            /* CMSIS-RTOS2 Keil RTX5 */
         #define RTE_CMSIS_RTOS2_RTX5_SOURCE     /* CMSIS-RTOS2 Keil RTX5 Source */
@@ -60,7 +60,7 @@
 
 /*  Keil::CMSIS Driver:Ethernet MAC:1.6.0 */
 #define RTE_Drivers_ETH_MAC0            /* Driver ETH_MAC0 */
-/*  Keil::CMSIS Driver:Ethernet PHY:LAN8742A:1.2.0 */
+/*  Keil::CMSIS Driver:Ethernet PHY:LAN8742A:1.3.0 */
 #define RTE_Drivers_PHY_LAN8742A        /* Driver PHY LAN8742A */
 /*  Keil::CMSIS Driver:MCI:1.6.0 */
 #define RTE_Drivers_MCI0                /* Driver MCI0 */

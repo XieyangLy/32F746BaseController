@@ -16,8 +16,8 @@
         <TargetCommonOption>
           <Device>STM32F746NGHx</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F7xx_DFP.2.11.0</PackID>
-          <PackURL>http://www.keil.com/pack</PackURL>
+          <PackID>Keil.STM32F7xx_DFP.2.12.0</PackID>
+          <PackURL>https://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20010000,0x40000) IRAM2(0x20000000,0x10000) IROM(0x08000000,0x100000) IROM2(0x00200000,0x100000) CPUTYPE("Cortex-M7") FPU3(SFPU) CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
@@ -1435,8 +1435,8 @@
         <TargetCommonOption>
           <Device>STM32F746NGHx</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F7xx_DFP.2.11.0</PackID>
-          <PackURL>http://www.keil.com/pack</PackURL>
+          <PackID>Keil.STM32F7xx_DFP.2.12.0</PackID>
+          <PackURL>https://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20010000,0x40000) IRAM2(0x20000000,0x10000) IROM(0x08000000,0x100000) IROM2(0x00200000,0x100000) CPUTYPE("Cortex-M7") FPU3(SFPU) CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
@@ -2607,6 +2607,141 @@
   </Targets>
 
   <RTE>
+    <packages>
+      <filter>
+        <targetInfos/>
+      </filter>
+      <package name="AMP" schemaVersion="1.3" supportContact="http://developer.arm.com/support" url="http://www.keil.com/pack" vendor="ARM" version="1.1.0">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package name="CMSIS-Driver" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="ARM" version="2.4.1">
+        <targetInfos>
+          <targetInfo name="webServer" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package license="LICENSE.txt" name="CMSIS-Driver_Validation" schemaVersion="1.4.9" supportContact="http://silver.arm.com/support" url="http://www.keil.com/pack" vendor="ARM" version="1.2.0">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package license="License/license.txt" name="CMSIS-FreeRTOS" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="ARM" version="10.2.0">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package name="CMSIS-RTOS_Validation" schemaVersion="1.3" supportContact="http://silver.arm.com/support" url="http://www.keil.com/pack" vendor="ARM" version="1.1.0">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.6.0">
+        <targetInfos>
+          <targetInfo name="webServer" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="mbedClient" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="1.1.0">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package name="mbedTLS" schemaVersion="1.6" url="http://www.keil.com/pack/" vendor="ARM" version="1.6.0">
+        <targetInfos>
+          <targetInfo name="webServer" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="minar" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="1.0.0">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package license="License\License.txt" name="CMSIS_RTOS_Tutorial" schemaVersion="1.2" supportContact="tmartin@hitex.co.uk" url="http://www.keil.com/pack/" vendor="Hitex" version="1.1.0">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package license="Docs\license.txt" name="LiteOS" schemaVersion="1.4" url="http://obs.cn-north-1.myhwclouds.com/iot-liteos/" vendor="Huawei" version="1.0.0">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package name="ARM_Compiler" schemaVersion="1.4.9" url="http://www.keil.com/pack/" vendor="Keil" version="1.6.1">
+        <targetInfos>
+          <targetInfo name="webServer" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package license="doc\license.txt" name="Jansson" schemaVersion="1.0" url="http://www.keil.com/pack/" vendor="Keil" version="1.0.0">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0">
+        <targetInfos>
+          <targetInfo name="webServer" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0">
+        <targetInfos>
+          <targetInfo name="webServer" versionMatchMode="fixed"/>
+        </targetInfos>
+      </package>
+      <package name="STM32H7xx_DFP" schemaVersion="1.4" url="https://www.keil.com/pack/" vendor="Keil" version="2.3.0">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package license="LICENSE.txt" name="AWS_IoT_Device" schemaVersion="1.6" url="https://github.com/MDK-Packs/Pack/raw/master/AWS_IoT_Device/" vendor="MDK-Packs" version="1.0.1">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package license="LICENSE.txt" name="Azure_IoT" schemaVersion="1.6" url="https://github.com/MDK-Packs/Pack/raw/master/Azure_IoT/" vendor="MDK-Packs" version="1.0.1">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package license="LICENSE.txt" name="IoT_Socket" schemaVersion="1.6" url="https://github.com/MDK-Packs/Pack/raw/master/IoT_Socket/" vendor="MDK-Packs" version="1.1.0">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package license="edl-v10.txt" name="Paho_MQTT" schemaVersion="1.6" url="https://github.com/MDK-Packs/Pack/raw/master/Paho_MQTT/" vendor="MDK-Packs" version="1.0.2">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package license="LICENSE.txt" name="cJSON" schemaVersion="1.4" url="https://github.com/MDK-Packs/Pack/raw/master/cJSON/" vendor="MDK-Packs" version="1.0.0">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package license="SMQ/License.txt" name="SMQ" schemaVersion="1.2" url="https://realtimelogic.com/downloads/arm-mdk-packs/" vendor="RealTimeLogic" version="38.9.8">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package license="SharkSSL/License.txt" name="SharkSSL-Lite" schemaVersion="1.2" url="https://realtimelogic.com/downloads/arm-mdk-packs/" vendor="RealTimeLogic" version="38.9.8">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package name="lwIP" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="lwIP" version="2.0.0">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package license="License.txt" name="rtthread" schemaVersion="1.4" supportContact="http://www.rt-thread.org" url="http://www.rt-thread.org/download/mdk/" vendor="rt-thread" version="3.0.3">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+      <package license="wolfssl\IDE\MDK5-ARM\Docs\wolfSSL-License.txt" name="wolfSSL" schemaVersion="1.4" url="http://www.wolfSSL.com/files/ide" vendor="wolfSSL" version="3.14.0">
+        <targetInfos>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </package>
+    </packages>
     <apis>
       <api Capiversion="1.0.0" Cclass="Board Support" Cgroup="Buttons" exclusive="0">
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
@@ -2673,15 +2808,15 @@
       </api>
     </apis>
     <components>
-      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.2.0" condition="ARMv6_7_8-M Device">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.5.1"/>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.3.0" condition="ARMv6_7_8-M Device">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.6.0"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
         </targetInfos>
       </component>
-      <component Capiversion="2.1.3" Cclass="CMSIS" Cgroup="RTOS2" Csub="Keil RTX5" Cvariant="Source" Cvendor="ARM" Cversion="5.5.0" condition="RTOS2 RTX5">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.5.1"/>
+      <component Capiversion="2.1.3" Cclass="CMSIS" Cgroup="RTOS2" Csub="Keil RTX5" Cvariant="Source" Cvendor="ARM" Cversion="5.5.1" condition="RTOS2 RTX5">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.6.0"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
@@ -2726,82 +2861,132 @@
       <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="CORE" Cvariant="IPv4/IPv6 Debug" Cvendor="Keil" Cversion="7.10.0" condition="CMSIS Core with RTOS and Event Recorder">
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="CORE" Cvariant="IPv4/IPv6 Debug" Cvendor="Keil" Cversion="7.11.0" condition="CMSIS Core with RTOS and Event Recorder">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.9.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Interface" Csub="ETH" Cvendor="Keil" Cversion="7.10.0" condition="Network Driver ETH" maxInstances="1">
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Interface" Csub="ETH" Cvendor="Keil" Cversion="7.11.0" condition="Network Driver ETH" maxInstances="1">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.9.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Service" Csub="DNS Client" Cvendor="Keil" Cversion="7.10.0" condition="Network UDP">
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Service" Csub="DNS Client" Cvendor="Keil" Cversion="7.11.0" condition="Network UDP">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.9.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Service" Csub="Web Server Compact" Cvariant="HTTP" Cvendor="Keil" Cversion="7.10.0" condition="Network Web Server Compact">
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Service" Csub="Web Server Compact" Cvariant="HTTP" Cvendor="Keil" Cversion="7.11.0" condition="Network Web Server Compact">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.9.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Socket" Csub="BSD" Cvendor="Keil" Cversion="7.10.0" condition="Network UDP/TCP">
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Socket" Csub="BSD" Cvendor="Keil" Cversion="7.11.0" condition="Network UDP/TCP">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.9.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Socket" Csub="TCP" Cvendor="Keil" Cversion="7.10.0" condition="Network Interface">
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Socket" Csub="TCP" Cvendor="Keil" Cversion="7.11.0" condition="Network Interface">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.9.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Socket" Csub="UDP" Cvendor="Keil" Cversion="7.10.0" condition="Network Interface">
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Socket" Csub="UDP" Cvendor="Keil" Cversion="7.11.0" condition="Network Interface">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.9.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="CORE" Cvariant="Debug" Cvendor="Keil" Cversion="6.13.0" condition="USB Core and Event Recorder">
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="CORE" Cvariant="Debug" Cvendor="Keil" Cversion="6.13.6" condition="USB Core and Event Recorder">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.9.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="Device" Cvendor="Keil" Cversion="6.13.0" condition="USB Core and Device Driver" maxInstances="4">
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="Device" Cvendor="Keil" Cversion="6.13.6" condition="USB Core, Device Instance and Device Driver" maxInstances="4">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.9.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="Device" Csub="CDC" Cvendor="Keil" Cversion="6.13.6" condition="USB Core, Device Instance and Device Driver" maxInstances="8">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.9.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cbundle="MDK-Pro" Cclass="USB" Cgroup="Device" Csub="CDC" Cvendor="Keil" Cversion="6.13.0" condition="USB Device" maxInstances="8">
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
         </targetInfos>
       </component>
       <component Capiversion="1.0.0" Cbundle="STM32F746G-Discovery" Cclass="Board Support" Cgroup="Buttons" Cvendor="Keil" Cversion="1.1.1" condition="STM32F7 HAL GPIO">
-        <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
         </targetInfos>
       </component>
       <component Capiversion="1.0.0" Cbundle="STM32F746G-Discovery" Cclass="Board Support" Cgroup="LED" Cvendor="Keil" Cversion="1.1.1" condition="STM32F7 HAL GPIO">
-        <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
@@ -2810,12 +2995,17 @@
       <component Capiversion="2.1.0" Cclass="CMSIS Driver" Cgroup="Ethernet MAC" Cvendor="Keil" Cversion="1.6.0" condition="STM32F7 CMSIS_Driver ETH_MAC">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
         </targetInfos>
       </component>
-      <component Capiversion="2.0.0" Cclass="CMSIS Driver" Cgroup="Ethernet PHY" Csub="LAN8742A" Cvendor="Keil" Cversion="1.2.0" condition="CMSIS Core">
-        <package name="CMSIS-Driver" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="ARM" version="2.4.0"/>
+      <component Capiversion="2.1.0" Cclass="CMSIS Driver" Cgroup="Ethernet MAC" Cvendor="Keil" Cversion="1.8.0" condition="STM32F7 CMSIS_Driver ETH_MAC">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+        </targetInfos>
+      </component>
+      <component Capiversion="2.0.0" Cclass="CMSIS Driver" Cgroup="Ethernet PHY" Csub="LAN8742A" Cvendor="Keil" Cversion="1.3.0" condition="CMSIS Core">
+        <package name="CMSIS-Driver" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="ARM" version="2.4.1"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
@@ -2824,148 +3014,253 @@
       <component Capiversion="2.2.0" Cclass="CMSIS Driver" Cgroup="MCI" Cvendor="Keil" Cversion="1.6.0" condition="STM32F7 CMSIS_Driver MCI">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Capiversion="2.2.0" Cclass="CMSIS Driver" Cgroup="MCI" Cvendor="Keil" Cversion="1.7.0" condition="STM32F7 CMSIS_Driver MCI">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Capiversion="2.1.0" Cclass="CMSIS Driver" Cgroup="USB Device" Csub="Full-speed" Cvendor="Keil" Cversion="1.10.0" condition="STM32F7 CMSIS_Driver USB">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Capiversion="2.1.0" Cclass="CMSIS Driver" Cgroup="USB Device" Csub="Full-speed" Cvendor="Keil" Cversion="1.11.0" condition="STM32F7 CMSIS_Driver USB">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Capiversion="2.1.0" Cclass="CMSIS Driver" Cgroup="USB Device" Csub="High-speed" Cvendor="Keil" Cversion="1.13.0" condition="STM32F7 CMSIS_Driver USB">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Capiversion="2.1.0" Cclass="CMSIS Driver" Cgroup="USB Device" Csub="High-speed" Cvendor="Keil" Cversion="1.14.0" condition="STM32F7 CMSIS_Driver USB">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Capiversion="1.0.0" Cclass="Device" Cgroup="STM32Cube Framework" Csub="Classic" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 Framework Classic">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Capiversion="1.0.0" Cclass="Device" Cgroup="STM32Cube Framework" Csub="Classic" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 Framework Classic">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="CRC" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="CRC" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="Common" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL Common">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="Common" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL Common">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="Cortex" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="Cortex" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="DMA" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="DMA" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="DMA2D" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="DMA2D" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="GPIO" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="GPIO" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="I2C" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL DMA">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="I2C" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL DMA">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="LTDC" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7x6_7x7_7x8_7x9_750 HAL">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="LTDC" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7x6_7x7_7x8_7x9_750 HAL">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="PWR" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="PWR" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="QSPI" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL DMA">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="QSPI" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL DMA">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="RCC" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL GPIO">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="RCC" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7x5_7x6_7x7_7x9_750 HAL GPIO">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="SD" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL DMA">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="SD" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL DMA">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="SDRAM" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL DMA">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="SDRAM" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL DMA">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="TIM" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL DMA">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="TIM" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL DMA">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="UART" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL DMA">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="UART" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL DMA">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="USART" Cvendor="Keil" Cversion="1.2.6" condition="STM32F7 HAL DMA">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="USART" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 HAL DMA">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.2.2" condition="STM32F7 CMSIS">
         <package name="STM32F7xx_DFP" schemaVersion="1.3" url="http://www.keil.com/pack" vendor="Keil" version="2.11.0"/>
         <targetInfos>
-          <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.2.4" condition="STM32F7 CMSIS">
+        <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
         </targetInfos>
       </component>
       <component Cclass="Data Exchange" Cgroup="JSON" Csub="cJSON" Cvendor="MDK-Packs" Cversion="1.7.7" condition="ARMCC">
@@ -3000,8 +3295,8 @@
     <files>
       <file attr="config" category="source" name="CMSIS\RTOS2\RTX\Config\RTX_Config.c" version="5.1.0">
         <instance index="0">RTE\CMSIS\RTX_Config.c</instance>
-        <component Capiversion="2.1.3" Cclass="CMSIS" Cgroup="RTOS2" Csub="Keil RTX5" Cvariant="Source" Cvendor="ARM" Cversion="5.5.0" condition="RTOS2 RTX5"/>
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.5.1"/>
+        <component Capiversion="2.1.3" Cclass="CMSIS" Cgroup="RTOS2" Csub="Keil RTX5" Cvariant="Source" Cvendor="ARM" Cversion="5.5.1" condition="RTOS2 RTX5"/>
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.6.0"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
@@ -3009,8 +3304,8 @@
       </file>
       <file attr="config" category="header" name="CMSIS\RTOS2\RTX\Config\RTX_Config.h" version="5.5.0">
         <instance index="0">RTE\CMSIS\RTX_Config.h</instance>
-        <component Capiversion="2.1.3" Cclass="CMSIS" Cgroup="RTOS2" Csub="Keil RTX5" Cvariant="Source" Cvendor="ARM" Cversion="5.5.0" condition="RTOS2 RTX5"/>
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.5.1"/>
+        <component Capiversion="2.1.3" Cclass="CMSIS" Cgroup="RTOS2" Csub="Keil RTX5" Cvariant="Source" Cvendor="ARM" Cversion="5.5.1" condition="RTOS2 RTX5"/>
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.6.0"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
