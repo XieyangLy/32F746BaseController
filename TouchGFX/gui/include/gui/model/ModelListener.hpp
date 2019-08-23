@@ -19,6 +19,11 @@ public:
 
     virtual ~ModelListener() {}
 
+		virtual void notifyCurRadioSwitchChanged(int32_t index) {}
+		virtual void notifytext1StringChanged(std::string str) {}
+		virtual void notifytext2StringChanged(std::string str) {}
+		virtual void notifylightStatusChanged(int32_t index,bool status) {}
+		
     /**
      * Sets the model pointer to point to the Model object. Called automatically
      * when switching screen.

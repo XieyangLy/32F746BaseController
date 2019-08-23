@@ -1,6 +1,8 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
+#include "stdint.h"
+#include <string>
 class ModelListener;
 
 /**
@@ -18,7 +20,15 @@ class ModelListener;
 class Model
 {
 public:
-    Model();
+		Model();
+
+		int getCurRadioSwitchNum() const { return radioSwitch;}
+		std::string getText1String() const {return text1;}
+		std::string getText2String() const {return text2;}
+		bool getlightStatus(int32_t num) const {return lightStatus[num];}
+
+
+
 
     /**
      * Sets the modelListener to point to the currently active presenter. Called automatically
@@ -40,6 +50,16 @@ protected:
      * Pointer to the currently active presenter.
      */
     ModelListener* modelListener;
+
+		/*
+		* switch page
+		*/
+		bool lightStatus[2];
+		std::string text1;
+		std::string text2;
+		uint32_t radioSwitch;
+
+
 };
 
 #endif /* MODEL_HPP */
