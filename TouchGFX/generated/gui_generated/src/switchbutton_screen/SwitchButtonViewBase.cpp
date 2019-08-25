@@ -31,11 +31,17 @@ SwitchButtonViewBase::SwitchButtonViewBase() :
     TextDisPlay_1.setXY(105, 99);
     TextDisPlay_1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     TextDisPlay_1.setLinespacing(0);
+    Unicode::snprintf(TextDisPlay_1Buffer, TEXTDISPLAY_1_SIZE, "%s", TypedText(T_SINGLEUSEID12).getText());
+    TextDisPlay_1.setWildcard(TextDisPlay_1Buffer);
+    TextDisPlay_1.resizeToCurrentText();
     TextDisPlay_1.setTypedText(TypedText(T_SINGLEUSEID5));
 
     TextDisPlay_2.setXY(105, 144);
     TextDisPlay_2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     TextDisPlay_2.setLinespacing(0);
+    Unicode::snprintf(TextDisPlay_2Buffer, TEXTDISPLAY_2_SIZE, "%s", TypedText(T_SINGLEUSEID13).getText());
+    TextDisPlay_2.setWildcard(TextDisPlay_2Buffer);
+    TextDisPlay_2.resizeToCurrentText();
     TextDisPlay_2.setTypedText(TypedText(T_SINGLEUSEID6));
 
     textArea1.setXY(33, 99);

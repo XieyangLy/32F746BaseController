@@ -1,137 +1,18 @@
 Converting images
-Compiling gui/src/switchbutton_screen/SwitchButtonPresenter.cpp
 Compiling gui/src/switchbutton_screen/SwitchButtonView.cpp
-Compiling gui/src/filemanager_screen/FileManagerPresenter.cpp
-Compiling gui/src/filemanager_screen/FileManagerView.cpp
-Compiling gui/src/scprocess_screen/ScProcessView.cpp
-Compiling gui/src/scprocess_screen/ScProcessPresenter.cpp
-Compiling gui/src/scwelcom_screen/ScWelcomView.cpp
-Compiling gui/src/scwelcom_screen/ScWelcomPresenter.cpp
-Compiling gui/src/model/Model.cpp
-Compiling gui/src/common/FrontendApplication.cpp
-In file included from gui/src/model/Model.cpp:1:0:
-gui/include/gui/model/Model.hpp:52:1: error: expected unqualified-id before '}' token
- };
- ^
-gui/include/gui/model/Model.hpp:49:8: error: expected ';' at end of member declaration
-   char *
-        ^
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/model/Model.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/model/Model.o] Error 1
-make[2]: *** Waiting for unfinished jobs....
-In file included from generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:8:0,
-                 from gui/include/gui/common/FrontendApplication.hpp:4,
-                 from generated/gui_generated/include/gui_generated/filemanager_screen/FileManagerViewBase.hpp:7,
-                 from gui/include/gui/filemanager_screen/FileManagerView.hpp:4,
-                 from gui/src/filemanager_screen/FileManagerPresenter.cpp:1:
-gui/include/gui/model/Model.hpp:52:1: error: expected unqualified-id before '}' token
- };
- ^
-gui/include/gui/model/Model.hpp:49:8: error: expected ';' at end of member declaration
-   char *
-        ^
-In file included from generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:8:0,
-                 from gui/include/gui/common/FrontendApplication.hpp:4,
-                 from generated/gui_generated/include/gui_generated/scprocess_screen/ScProcessViewBase.hpp:7,
-                 from gui/include/gui/scprocess_screen/ScProcessView.hpp:4,
-                 from gui/src/scprocess_screen/ScProcessView.cpp:1:
-gui/include/gui/model/Model.hpp:52:1: error: expected unqualified-id before '}' token
- };
- ^
-gui/include/gui/model/Model.hpp:49:8: error: expected ';' at end of member declaration
-   char *
-        ^
-In file included from generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:8:0,
-                 from gui/include/gui/common/FrontendApplication.hpp:4,
-                 from generated/gui_generated/include/gui_generated/scwelcom_screen/ScWelcomViewBase.hpp:7,
-                 from gui/include/gui/scwelcom_screen/ScWelcomView.hpp:4,
-                 from gui/src/scwelcom_screen/ScWelcomView.cpp:1:
-gui/include/gui/model/Model.hpp:52:1: error: expected unqualified-id before '}' token
- };
- ^
-gui/include/gui/model/Model.hpp:49:8: error: expected ';' at end of member declaration
-   char *
-        ^
-In file included from generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:8:0,
-                 from gui/include/gui/common/FrontendApplication.hpp:4,
-                 from generated/gui_generated/include/gui_generated/switchbutton_screen/SwitchButtonViewBase.hpp:7,
-                 from gui/include/gui/switchbutton_screen/SwitchButtonView.hpp:4,
-                 from gui/src/switchbutton_screen/SwitchButtonPresenter.cpp:1:
-gui/include/gui/model/Model.hpp:52:1: error: expected unqualified-id before '}' token
- };
- ^
-gui/include/gui/model/Model.hpp:49:8: error: expected ';' at end of member declaration
-   char *
-        ^
-In file included from generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:8:0,
-                 from gui/include/gui/common/FrontendApplication.hpp:4,
-                 from generated/gui_generated/include/gui_generated/filemanager_screen/FileManagerViewBase.hpp:7,
-                 from gui/include/gui/filemanager_screen/FileManagerView.hpp:4,
-                 from gui/src/filemanager_screen/FileManagerView.cpp:1:
-gui/include/gui/model/Model.hpp:52:1: error: expected unqualified-id before '}' token
- };
- ^
-gui/include/gui/model/Model.hpp:49:8: error: expected ';' at end of member declaration
-   char *
-        ^
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/filemanager_screen/FileManagerPresenter.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/filemanager_screen/FileManagerPresenter.o] Error 1
-In file included from generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:8:0,
-                 from gui/include/gui/common/FrontendApplication.hpp:4,
-                 from generated/gui_generated/include/gui_generated/scprocess_screen/ScProcessViewBase.hpp:7,
-                 from gui/include/gui/scprocess_screen/ScProcessView.hpp:4,
-                 from gui/src/scprocess_screen/ScProcessPresenter.cpp:1:
-gui/include/gui/model/Model.hpp:52:1: error: expected unqualified-id before '}' token
- };
- ^
-gui/include/gui/model/Model.hpp:49:8: error: expected ';' at end of member declaration
-   char *
-        ^
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/scwelcom_screen/ScWelcomView.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/scwelcom_screen/ScWelcomView.o] Error 1
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/scprocess_screen/ScProcessView.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/scprocess_screen/ScProcessView.o] Error 1
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/switchbutton_screen/SwitchButtonPresenter.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/switchbutton_screen/SwitchButtonPresenter.o] Error 1
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/filemanager_screen/FileManagerView.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/filemanager_screen/FileManagerView.o] Error 1
-In file included from generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:8:0,
-                 from gui/include/gui/common/FrontendApplication.hpp:4,
-                 from generated/gui_generated/include/gui_generated/scwelcom_screen/ScWelcomViewBase.hpp:7,
-                 from gui/include/gui/scwelcom_screen/ScWelcomView.hpp:4,
-                 from gui/src/scwelcom_screen/ScWelcomPresenter.cpp:1:
-gui/include/gui/model/Model.hpp:52:1: error: expected unqualified-id before '}' token
- };
- ^
-gui/include/gui/model/Model.hpp:49:8: error: expected ';' at end of member declaration
-   char *
-        ^
-In file included from generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:8:0,
-                 from gui/include/gui/common/FrontendApplication.hpp:4,
-                 from gui/src/common/FrontendApplication.cpp:1:
-gui/include/gui/model/Model.hpp:52:1: error: expected unqualified-id before '}' token
- };
- ^
-gui/include/gui/model/Model.hpp:49:8: error: expected ';' at end of member declaration
-   char *
-        ^
-In file included from generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:8:0,
-                 from gui/include/gui/common/FrontendApplication.hpp:4,
-                 from generated/gui_generated/include/gui_generated/switchbutton_screen/SwitchButtonViewBase.hpp:7,
-                 from gui/include/gui/switchbutton_screen/SwitchButtonView.hpp:4,
-                 from gui/src/switchbutton_screen/SwitchButtonView.cpp:1:
-gui/include/gui/model/Model.hpp:52:1: error: expected unqualified-id before '}' token
- };
- ^
-gui/include/gui/model/Model.hpp:49:8: error: expected ';' at end of member declaration
-   char *
-        ^
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/common/FrontendApplication.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/common/FrontendApplication.o] Error 1
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/scprocess_screen/ScProcessPresenter.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/scprocess_screen/ScProcessPresenter.o] Error 1
-simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/scwelcom_screen/ScWelcomPresenter.o' failed
-make[2]: *** [build/MINGW32_NT-6.2/gui/src/scwelcom_screen/ScWelcomPresenter.o] Error 1
+gui/src/switchbutton_screen/SwitchButtonView.cpp: In member function 'virtual void SwitchButtonView::setupScreen()':
+gui/src/switchbutton_screen/SwitchButtonView.cpp:23:30: error: cast from type 'const char*' to type 'uint8_t* {aka unsigned char*}' casts away qualifiers [-Werror=cast-qual]
+  Unicode::fromUTF8((uint8_t*)"hello world_123",TextDisPlay_1Buffer,30);
+                              ^~~~~~~~~~~~~~~~~
+gui/src/switchbutton_screen/SwitchButtonView.cpp: In member function 'void SwitchButtonView::updatetext1String(std::__cxx11::string)':
+gui/src/switchbutton_screen/SwitchButtonView.cpp:51:40: error: cast from type 'const char*' to type 'uint8_t* {aka unsigned char*}' casts away qualifiers [-Werror=cast-qual]
+  Unicode::fromUTF8((uint8_t*)str.c_str(),TextDisPlay_1Buffer,30);
+                                        ^
+gui/src/switchbutton_screen/SwitchButtonView.cpp: In member function 'void SwitchButtonView::updatetext2String(std::__cxx11::string)':
+gui/src/switchbutton_screen/SwitchButtonView.cpp:65:40: error: cast from type 'const char*' to type 'uint8_t* {aka unsigned char*}' casts away qualifiers [-Werror=cast-qual]
+  Unicode::fromUTF8((uint8_t*)str.c_str(),TextDisPlay_2Buffer,30);
+                                        ^
+cc1plus.exe: all warnings being treated as errors
 simulator/gcc/Makefile:220: recipe for target 'build/MINGW32_NT-6.2/gui/src/switchbutton_screen/SwitchButtonView.o' failed
 make[2]: *** [build/MINGW32_NT-6.2/gui/src/switchbutton_screen/SwitchButtonView.o] Error 1
 simulator/gcc/Makefile:182: recipe for target 'generate_assets' failed

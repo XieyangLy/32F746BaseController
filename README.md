@@ -1,7 +1,29 @@
 # 32F746基础控制器项目
 
-## 已开发内容
+## TODO
+### 系统功能模块
+* 添加文件系统,使用U盘
+* 添加音频
+* 调试组件: 基于segger rtt和event recoder
+* 增加流程控制组件: 命令堆，任务链，
+* 数据结构组件: 复合链表，复合堆
+* 完善系统架构
+* 封装touchGFX基础包
+* 时间基准
 
+touchGFX中的printf()输出失效
+
+
+## changelog
+
+2019-08-25
+1、添加screen切换时的更新机制
+2、解决wildcard字符串重绘为更短字符串部分内容丢失的问题。
+
+
+
+
+old_update
 	1.移除webFile中关于LCD的内容
 	2.移除HTTP_Server.c/HTTP_Server_CGI.c中LCD相关内容
 	3.添加touchGFX{
@@ -27,16 +49,7 @@
 
 
 
-## TODO
-### 系统功能模块
-* 添加文件系统,使用U盘
-* 添加音频
-* 调试组件: 基于segger rtt和event recoder
-* 增加流程控制组件: 命令堆，任务链，
-* 数据结构组件: 复合链表，复合堆
-* 完善系统架构
-* 封装touchGFX基础包
-* 时间基准
+
 
 
 

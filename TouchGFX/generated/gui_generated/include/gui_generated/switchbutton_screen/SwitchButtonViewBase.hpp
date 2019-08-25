@@ -10,6 +10,7 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/RadioButton.hpp>
 #include <touchgfx/widgets/RadioButtonGroup.hpp>
@@ -35,8 +36,8 @@ protected:
     touchgfx::TextArea light_1;
     touchgfx::ToggleButton switch_L2;
     touchgfx::TextArea light_2;
-    touchgfx::TextArea TextDisPlay_1;
-    touchgfx::TextArea TextDisPlay_2;
+    touchgfx::TextAreaWithOneWildcard TextDisPlay_1;
+    touchgfx::TextAreaWithOneWildcard TextDisPlay_2;
     touchgfx::TextArea textArea1;
     touchgfx::TextArea textArea2;
     touchgfx::ButtonWithLabel backBut;
@@ -44,6 +45,14 @@ protected:
     touchgfx::RadioButton radioButton1_1;
     touchgfx::RadioButton radioButton1_1_1;
     touchgfx::RadioButtonGroup<3> radioButtonGroup;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTDISPLAY_1_SIZE = 30;
+    touchgfx::Unicode::UnicodeChar TextDisPlay_1Buffer[TEXTDISPLAY_1_SIZE];
+    static const uint16_t TEXTDISPLAY_2_SIZE = 30;
+    touchgfx::Unicode::UnicodeChar TextDisPlay_2Buffer[TEXTDISPLAY_2_SIZE];
 
 private:
 

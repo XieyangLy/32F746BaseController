@@ -327,8 +327,8 @@
             <uC99>1</uC99>
             <uGnu>0</uGnu>
             <useXO>0</useXO>
-            <v6Lang>1</v6Lang>
-            <v6LangP>1</v6LangP>
+            <v6Lang>3</v6Lang>
+            <v6LangP>3</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
             <v6Lto>0</v6Lto>
@@ -336,7 +336,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>MQTT_MBEDTLS = 0,MQTT_TASK,STM32F746xx,USE_HAL_DRIVER</Define>
+              <Define>MQTT_MBEDTLS = 0,MQTT_TASK,STM32F746xx,USE_HAL_DRIVER,_HARD_DEVICE_</Define>
               <Undefine></Undefine>
               <IncludePath>.\User;.\mqttInterface;.\mqttVirtualDevice;.\TouchGFX\target;.\TouchGFX\generated\fonts\include;.\TouchGFX\generated\gui_generated\include;.\TouchGFX\generated\images\include;.\TouchGFX\generated\texts\include;middlewares/st/touchgfx/touchgfx/framework/include;.\Drivers\BSP\STM32746G-Discovery;.\TouchGFX\gui\include;.\virtualCOM</IncludePath>
             </VariousControls>
@@ -2661,11 +2661,6 @@
           <targetInfo name="webServer"/>
         </targetInfos>
       </package>
-      <package license="Docs\license.txt" name="LiteOS" schemaVersion="1.4" url="http://obs.cn-north-1.myhwclouds.com/iot-liteos/" vendor="Huawei" version="1.0.0">
-        <targetInfos>
-          <targetInfo name="webServer"/>
-        </targetInfos>
-      </package>
       <package name="ARM_Compiler" schemaVersion="1.4.9" url="http://www.keil.com/pack/" vendor="Keil" version="1.6.1">
         <targetInfos>
           <targetInfo name="webServer" versionMatchMode="fixed"/>
@@ -2727,11 +2722,6 @@
         </targetInfos>
       </package>
       <package name="lwIP" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="lwIP" version="2.0.0">
-        <targetInfos>
-          <targetInfo name="webServer"/>
-        </targetInfos>
-      </package>
-      <package license="License.txt" name="rtthread" schemaVersion="1.4" supportContact="http://www.rt-thread.org" url="http://www.rt-thread.org/download/mdk/" vendor="rt-thread" version="3.0.3">
         <targetInfos>
           <targetInfo name="webServer"/>
         </targetInfos>

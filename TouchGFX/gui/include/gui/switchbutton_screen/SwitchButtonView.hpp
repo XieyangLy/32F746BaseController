@@ -11,6 +11,10 @@ public:
     virtual ~SwitchButtonView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+		void updateCurRadioSwitch(int32_t index) ;
+		void updatetext1String(std::string str);
+		void updatetext2String(std::string str);
+		void updatelightStatus(int32_t index,bool status);
 protected:
 };
 

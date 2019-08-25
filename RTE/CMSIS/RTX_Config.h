@@ -330,7 +330,7 @@
 //     <i> Applies to objects with system provided memory for data storage.
 //     <i> Default: 0
 #ifndef OS_MSGQUEUE_DATA_SIZE
-#define OS_MSGQUEUE_DATA_SIZE       0
+#define OS_MSGQUEUE_DATA_SIZE       10240
 #endif
  
 //   </e>
@@ -360,7 +360,7 @@
 //       <o.3>Detailed operation events
 //     </h>
 #ifndef OS_EVR_LEVEL
-#define OS_EVR_LEVEL                0x00U
+#define OS_EVR_LEVEL                0x0FU
 #endif
  
 //     <h>RTOS Event Filter Setup

@@ -51,6 +51,7 @@
 #endif
 #ifdef RTE_CMSIS_RTOS2                  // when RTE component CMSIS RTOS2 is used
 #include "cmsis_os2.h"                  // ::CMSIS:RTOS2
+#include "rtx_os.h"
 #endif
 
 #ifdef RTE_CMSIS_RTOS2_RTX5
@@ -85,7 +86,18 @@ uint32_t HAL_GetTick (void) {
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
+#define TOUCHGFX_GUI_MSGEQUEUE_OBJECTS	16		//number of message queue  Objects
+typedef struct {
+	uint8_t buf[50];
+	uint8_t cmd;
+	uint8_t idx;
+}TouchGFX_OBJ_t;
+
+
 /* Private macro -------------------------------------------------------------*/
+
+
+
 /* Private variables ---------------------------------------------------------*/
 CRC_HandleTypeDef hcrc;
 QSPI_HandleTypeDef hqspi;
@@ -103,6 +115,25 @@ osThreadAttr_t init_attr;
 extern const osThreadAttr_t httpServer_attr;
 extern const osThreadAttr_t app_mqtt_attr;
 extern const osThreadAttr_t usbVirtualCOM_attr;
+osThreadId_t app_mqtt_tid;
+
+osMessageQueueId_t tid_TouchGFX_MsgQueue;
+
+static uint32_t touchGfxMsgObj_Mem[osRtxMessageQueueMemSize(TOUCHGFX_GUI_MSGEQUEUE_OBJECTS, sizeof(TouchGFX_OBJ_t))/4U];
+//static uint32_t touchGfxMsgQueue_MemCb[osRtxMessageQueueCbSize/4U];
+
+osMessageQueueAttr_t touchGfxMsgQueueCb;
+//= {
+//	"touchGfxMsgQueue",
+//	0,
+//	touchGfxMsgQueue_MemCb,
+//	osRtxMessageQueueCbSize,
+//	touchGfxMsgObj_Mem,
+//	TOUCHGFX_GUI_MSGEQUEUE_OBJECTS,
+//};
+
+
+
 
 /* Private function prototypes -----------------------------------------------*/
 extern "C" 
@@ -705,9 +736,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 }
 
 
-osThreadId_t app_mqtt_tid;
 static void init_task(void *arg)
 {
+	touchGfxMsgQueueCb.name = "touchGfxMsgQueue";
+	touchGfxMsgQueueCb.attr_bits = 0;
+	touchGfxMsgQueueCb.cb_mem = NULL;
+	touchGfxMsgQueueCb.cb_size = NULL;
+	touchGfxMsgQueueCb.mq_mem = touchGfxMsgObj_Mem;
+	touchGfxMsgQueueCb.mq_size = TOUCHGFX_GUI_MSGEQUEUE_OBJECTS;
+	
 	//初始化网络
 #ifdef RTE_Compiler_EventRecorder
 	EventRecorderInitialize (EventRecordAll, 1);
@@ -724,6 +761,10 @@ static void init_task(void *arg)
 	
 	//创建	
 	osThreadNew(usbVirtualCOM_main,NULL,&usbVirtualCOM_attr);
+	
+	//创建touchGFX消息队列
+	//tid_TouchGFX_MsgQueue = osMessageQueueNew(TOUCHGFX_GUI_MSGEQUEUE_OBJECTS,sizeof(TouchGFX_OBJ_t),&touchGfxMsgQueueCb);
+	tid_TouchGFX_MsgQueue = osMessageQueueNew(TOUCHGFX_GUI_MSGEQUEUE_OBJECTS,sizeof(TouchGFX_OBJ_t),NULL);
 	
 	
 	GRAPHICS_MainTask();

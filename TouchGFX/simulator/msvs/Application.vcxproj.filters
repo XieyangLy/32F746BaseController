@@ -17,9 +17,6 @@
     <Filter Include="Header Files\gui\model">
       <UniqueIdentifier>{40E11662-6300-4B91-923D-6D597797CF8B}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\template_screen">
-      <UniqueIdentifier>{93B8EAE6-8280-45E8-8F74-E3FD713703AB}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\TouchGFX\common">
       <UniqueIdentifier>{AF2BF67C-89EC-4545-B0D2-5BD6803628D4}</UniqueIdentifier>
     </Filter>
@@ -118,12 +115,6 @@
     <Filter Include="Source Files\gui\model">
       <UniqueIdentifier>{EA416F46-F0AC-40BC-AC87-250F6BC80ACF}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\simulator">
-      <UniqueIdentifier>{C774999B-1C41-42A2-AB0E-3F39375C7CD8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\template_screen">
-      <UniqueIdentifier>{F8841A51-F871-4D58-8547-397229A5DE9D}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\TouchGFX\platform">
       <UniqueIdentifier>{33EDC2DB-AF72-480C-92E5-2A2833BCAB6F}</UniqueIdentifier>
     </Filter>
@@ -141,6 +132,72 @@
     </Filter>
     <Filter Include="Source Files\TouchGFX\platform\hal\simulator\sdl2">
       <UniqueIdentifier>{B48CB42B-0F9E-4815-BFE1-1ACC1150ED8A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated">
+      <UniqueIdentifier>7529A5F0-8B37-42C2-BDA2-A6C2D64566EE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated">
+      <UniqueIdentifier>6CE4434C-B04C-41F9-A6DF-B611EEA0DB12</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated">
+      <UniqueIdentifier>215BD283-02D2-4249-8AEC-6DE8DF9FC398</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated">
+      <UniqueIdentifier>5826F958-DFD9-4738-BA96-E1647CC160D5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\switchbutton_screen">
+      <UniqueIdentifier>E530CF5B-A7E8-4669-9A4C-23147B488BEC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\scwelcom_screen">
+      <UniqueIdentifier>7F22F890-67CC-4FF5-A03E-1D9726DE93F5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\scprocess_screen">
+      <UniqueIdentifier>956FE904-9F8A-416C-8D64-1C5724CFE3B8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\filemanager_screen">
+      <UniqueIdentifier>8129B015-0393-4379-89D0-1C6FC4AE7E57</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\filemanager_screen">
+      <UniqueIdentifier>0D69DA87-A122-47AC-A666-4CD27A9D74C3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\switchbutton_screen">
+      <UniqueIdentifier>B87DF2B7-A904-422D-81C9-C691C5D399C9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\scwelcom_screen">
+      <UniqueIdentifier>645587F7-6C73-4DB8-BC05-8F9DAAAE2B6F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\scprocess_screen">
+      <UniqueIdentifier>2CBB622C-FE3D-4A56-8310-E867D8D366E3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\filemanager_screen">
+      <UniqueIdentifier>F737AB0D-5B97-482C-BBEF-226017596E09</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\common">
+      <UniqueIdentifier>27EA62C3-71B6-44E0-BB89-7E3B17E595A3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\switchbutton_screen">
+      <UniqueIdentifier>97DD5EB7-B4B1-454A-9226-BBED25FBB267</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\scprocess_screen">
+      <UniqueIdentifier>62E1E99F-CF91-48CE-8792-841B5EB4E247</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\scwelcom_screen">
+      <UniqueIdentifier>BBE20F02-678E-43E8-B401-80F984DD1FB6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\scprocess_screen">
+      <UniqueIdentifier>CA4F4006-11AF-45E4-A4E3-6872431B08E7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\filemanager_screen">
+      <UniqueIdentifier>2CCA5C4C-7916-43D3-B69C-4CA374754031</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\scwelcom_screen">
+      <UniqueIdentifier>895481CC-4552-4429-A849-3FE04A121DC6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\common">
+      <UniqueIdentifier>5EC4D017-229B-4B02-8631-55BEB06C7ACF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\switchbutton_screen">
+      <UniqueIdentifier>95AF9CB8-CBD4-4FBD-91EF-BFFFFE3A6061</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -162,14 +219,47 @@
     <ClCompile Include="..\..\gui\src\model\Model.cpp">
       <Filter>Source Files\gui\model</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\template_screen\TemplatePresenter.cpp">
-      <Filter>Source Files\gui\template_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\template_screen\TemplateView.cpp">
-      <Filter>Source Files\gui\template_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\simulator\main.cpp">
       <Filter>Source Files\gui\simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\filemanager_screen\FileManagerPresenter.cpp">
+      <Filter>Source Files\gui\filemanager_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\filemanager_screen\FileManagerView.cpp">
+      <Filter>Source Files\gui\filemanager_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\filemanager_screen\FileManagerViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\filemanager_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp">
+      <Filter>Source Files\generated\gui_generated\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\scprocess_screen\ScProcessPresenter.cpp">
+      <Filter>Source Files\gui\scprocess_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\scprocess_screen\ScProcessView.cpp">
+      <Filter>Source Files\gui\scprocess_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\scprocess_screen\ScprocessViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\scprocess_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\scwelcom_screen\ScWelcomPresenter.cpp">
+      <Filter>Source Files\gui\scwelcom_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\scwelcom_screen\ScWelcomView.cpp">
+      <Filter>Source Files\gui\scwelcom_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\scwelcom_screen\ScWelcomViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\scwelcom_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\switchbutton_screen\SwitchButtonPresenter.cpp">
+      <Filter>Source Files\gui\switchbutton_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\switchbutton_screen\SwitchButtonView.cpp">
+      <Filter>Source Files\gui\switchbutton_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\switchbutton_screen\SwitchButtonViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\switchbutton_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -592,11 +682,50 @@
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp">
       <Filter>Header Files\gui\model</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\template_screen\TemplatePresenter.hpp">
-      <Filter>Header Files\gui\template_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\filemanager_screen\FileManagerPresenter.hpp">
+      <Filter>Header Files\gui\filemanager_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\template_screen\TemplateView.hpp">
-      <Filter>Header Files\gui\template_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\filemanager_screen\FileManagerView.hpp">
+      <Filter>Header Files\gui\filemanager_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\filemanager_screen\FileManagerViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\filemanager_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\scprocess_screen\ScProcessPresenter.hpp">
+      <Filter>Header Files\gui\scprocess_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\scprocess_screen\ScProcessView.hpp">
+      <Filter>Header Files\gui\scprocess_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\scprocess_screen\ScprocessViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\scprocess_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\scwelcom_screen\ScWelcomPresenter.hpp">
+      <Filter>Header Files\gui\scwelcom_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\scwelcom_screen\ScWelcomView.hpp">
+      <Filter>Header Files\gui\scwelcom_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\scwelcom_screen\ScWelcomViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\scwelcom_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\switchbutton_screen\SwitchButtonPresenter.hpp">
+      <Filter>Header Files\gui\switchbutton_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\switchbutton_screen\SwitchButtonView.hpp">
+      <Filter>Header Files\gui\switchbutton_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\switchbutton_screen\SwitchButtonViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\switchbutton_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -24,8 +24,17 @@ extern uint16_t AD_in (uint32_t ch);
 extern uint8_t  get_button (void);
 
 extern bool LEDrun;
-extern char lcd_text[2][20+1];
-extern osThreadId_t TID_Display;
+//extern char lcd_text[2][20+1];
+//extern osThreadId_t TID_Display;
+
+typedef struct {
+	uint8_t buf[50];
+	uint8_t cmd;
+	uint8_t idx;
+}TouchGFX_OBJ_t;
+
+extern osMessageQueueId_t tid_TouchGFX_MsgQueue;
+
 
 // Local variables.
 static uint8_t P2;
@@ -101,6 +110,7 @@ void netCGI_ProcessQuery (const char *qstr) {
 //            - 4 = any XML encoded POST data (single or last stream).
 //            - 5 = the same as 4, but with more XML data to follow.
 void netCGI_ProcessData (uint8_t code, const char *data, uint32_t len) {
+	TouchGFX_OBJ_t msg;
   char var[40],passw[12];
 
   if (code != 0) {
@@ -163,13 +173,24 @@ void netCGI_ProcessData (uint8_t code, const char *data, uint32_t len) {
       }
       else if (strncmp (var, "lcd1=", 5) == 0) {
         // LCD Module line 1 text
-        strcpy (lcd_text[0], var+5);
-        osThreadFlagsSet (TID_Display, 0x01);
+//        strcpy (lcd_text[0], var+5);
+//        osThreadFlagsSet (TID_Display, 0x01);
+				strcpy((char*)msg.buf,var+5);
+				msg.cmd = 2;
+				msg.idx = 1;
+				osMessageQueuePut(tid_TouchGFX_MsgQueue,&msg,0,300);
+				printf("text1 msg put\r\n");
       }
       else if (strncmp (var, "lcd2=", 5) == 0) {
         // LCD Module line 2 text
-        strcpy (lcd_text[1], var+5);
-        osThreadFlagsSet (TID_Display, 0x01);
+//        strcpy (lcd_text[1], var+5);
+//        osThreadFlagsSet (TID_Display, 0x01);
+				
+				strcpy((char*)msg.buf,var+5);
+				msg.cmd = 2;
+				msg.idx = 2;
+				osMessageQueuePut(tid_TouchGFX_MsgQueue,&msg,0,300);
+				printf("text2 msg put\r\n");
       }
     }
   } while (data);
@@ -337,10 +358,10 @@ uint32_t netCGI_Script (const char *env, char *buf, uint32_t buflen, uint32_t *p
       // LCD Module control from 'lcd.cgi'
       switch (env[2]) {
         case '1':
-          len = (uint32_t)sprintf (buf, &env[4], lcd_text[0]);
+          len = (uint32_t)sprintf (buf, &env[4], "text line 1");
           break;
         case '2':
-          len = (uint32_t)sprintf (buf, &env[4], lcd_text[1]);
+          len = (uint32_t)sprintf (buf, &env[4], "text line 2");
           break;
       }
       break;

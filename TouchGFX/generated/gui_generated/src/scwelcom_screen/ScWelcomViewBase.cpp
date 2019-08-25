@@ -19,7 +19,7 @@ ScWelcomViewBase::ScWelcomViewBase() :
     ProcessBut.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     ProcessBut.setAction(buttonCallback);
 
-    lightEnter.setXY(264, 136);
+    lightEnter.setXY(265, 136);
     lightEnter.setBitmaps(Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     lightEnter.setLabelText(TypedText(T_SINGLEUSEID9));
     lightEnter.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));

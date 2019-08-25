@@ -65,7 +65,7 @@
             "TextRotation": "0",
             "Style": "Style4",
             "Name": "lightEnter",
-            "X": 264,
+            "X": 265,
             "Y": 136,
             "Width": 170,
             "Height": 60,
@@ -354,10 +354,15 @@
             "Alpha": 255,
             "AutoSize": true,
             "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId12",
+              "UseBuffer": true,
+              "BufferSize": 30
+            },
             "Name": "TextDisPlay_1",
             "X": 105,
             "Y": 99,
-            "Width": 140,
+            "Width": 127,
             "Height": 25,
             "Type": "TextArea",
             "Visible": true,
@@ -377,10 +382,15 @@
             "Alpha": 255,
             "AutoSize": true,
             "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId13",
+              "UseBuffer": true,
+              "BufferSize": 30
+            },
             "Name": "TextDisPlay_2",
             "X": 105,
             "Y": 144,
-            "Width": 140,
+            "Width": 134,
             "Height": 25,
             "Type": "TextArea",
             "Visible": true,
@@ -403,7 +413,7 @@
             "Name": "textArea1",
             "X": 33,
             "Y": 99,
-            "Width": 61,
+            "Width": 68,
             "Height": 25,
             "Type": "TextArea",
             "Visible": true,
@@ -426,7 +436,7 @@
             "Name": "textArea2",
             "X": 33,
             "Y": 144,
-            "Width": 61,
+            "Width": 68,
             "Height": 25,
             "Type": "TextArea",
             "Visible": true,
@@ -613,6 +623,14 @@
       {
         "TextEntryId": "SingleUseId11",
         "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId12",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId13",
+        "IsResource": false
       }
     ],
     "Name": "MyApplication",
@@ -642,7 +660,7 @@
       "AvailableResolutions": [],
       "PhysicalButtons": [],
       "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j10",
-      "PostGenerateCommand": "touchgfx update_project --project-file=..\\32F746Demo.uvprojx",
+      "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj && touchgfx update_project --project-file=..\\32F746Demo.uvprojx",
       "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j10",
       "RunSimulatorCommand": "build\\bin\\simulator.exe",
       "CompileTargetCommand": "",

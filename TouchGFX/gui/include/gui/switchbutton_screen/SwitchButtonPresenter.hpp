@@ -27,6 +27,12 @@ public:
 
     virtual ~SwitchButtonPresenter() {};
 
+		virtual void notifyCurRadioSwitchChanged(int32_t index);
+		virtual void notifytext1StringChanged(std::string str);
+		virtual void notifytext2StringChanged(std::string str);
+		virtual void notifylightStatusChanged(int32_t index,bool status);	
+			
+			
 private:
     SwitchButtonPresenter();
 
