@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * This file is part of the TouchGFX 4.10.0 distribution.
+  * This file is part of the TouchGFX 4.13.0 distribution.
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -16,13 +16,13 @@
 #ifndef TEXTAREA_HPP
 #define TEXTAREA_HPP
 
-#include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Font.hpp>
 #include <touchgfx/FontManager.hpp>
-#include <touchgfx/widgets/Widget.hpp>
-#include <touchgfx/Unicode.hpp>
-#include <touchgfx/lcd/LCD.hpp>
 #include <touchgfx/TypedText.hpp>
+#include <touchgfx/Unicode.hpp>
+#include <touchgfx/hal/Types.hpp>
+#include <touchgfx/lcd/LCD.hpp>
+#include <touchgfx/widgets/Widget.hpp>
 
 namespace touchgfx
 {
@@ -46,7 +46,6 @@ namespace touchgfx
 class TextArea : public Widget
 {
 public:
-
     /**
      * @fn TextArea::TextArea()
      *
@@ -54,8 +53,10 @@ public:
      *
      *        Create an empty TextArea. Default color is black.
      */
-    TextArea() : Widget(), typedText(TYPED_TEXT_INVALID), color(0), linespace(0), alpha(255), indentation(0), rotation(TEXT_ROTATE_0), wideTextAction(WIDE_TEXT_NONE)
-    { }
+    TextArea()
+        : Widget(), typedText(TYPED_TEXT_INVALID), color(0), linespace(0), alpha(255), indentation(0), rotation(TEXT_ROTATE_0), wideTextAction(WIDE_TEXT_NONE)
+    {
+    }
 
     /**
      * @fn virtual Rect TextArea::getSolidRect() const
@@ -165,7 +166,7 @@ public:
     }
 
     /**
-     * @fn inline void TextArea::setLinespacing(uint16_t space)
+     * @fn inline void TextArea::setLinespacing(int16_t space)
      *
      * @brief Sets the line spacing of the TextArea.
      *
@@ -173,13 +174,13 @@ public:
      *
      * @param space The line spacing of use in the TextArea.
      */
-    inline void setLinespacing(uint16_t space)
+    inline void setLinespacing(int16_t space)
     {
         linespace = space;
     }
 
     /**
-     * @fn inline uint16_t TextArea::getLinespacing() const
+     * @fn inline int16_t TextArea::getLinespacing() const
      *
      * @brief Gets the line spacing of the TextArea.
      *
@@ -187,7 +188,7 @@ public:
      *
      * @return The line spacing.
      */
-    inline uint16_t getLinespacing() const
+    inline int16_t getLinespacing() const
     {
         return linespace;
     }
@@ -299,7 +300,7 @@ public:
     }
 
     /**
-     * @fn void TextArea::setRotation(const TextRotation rotation = TEXT_ROTATE_0)
+     * @fn void TextArea::setRotation(const TextRotation rotation)
      *
      * @brief Sets rotation of the text in the TextArea.
      *
@@ -310,7 +311,7 @@ public:
      *
      * @param rotation The rotation of the text.
      */
-    void setRotation(const TextRotation rotation = TEXT_ROTATE_0)
+    void setRotation(const TextRotation rotation)
     {
         this->rotation = rotation;
     }
@@ -347,12 +348,32 @@ public:
     void resizeToCurrentText();
 
     /**
+     * @fn void TextArea::resizeToCurrentTextWithAlignment();
+     *
+     * @brief Sets the dimensions of the TextArea.
+     *
+     *        Sets the dimensions of the TextArea to match the width and height of the current
+     *        associated text for the current selected language.
+     *
+     *        When setting the width, the position of the TextArea might be changed in order to
+     *        keep the text centered or right aligned.
+     *
+     *        Please note that if the current text rotation is either 90 or 270 degrees, the width
+     *        of the text area will be set to the height of the text and vice versa, as the text is
+     *        rotated.
+     *
+     * @see setRotation
+     * @see resizeHeightToCurrentText
+     */
+    void resizeToCurrentTextWithAlignment();
+
+    /**
      * @fn void TextArea::resizeHeightToCurrentText();
      *
-     * @brief Sets the hight of the TextArea.
+     * @brief Sets the height of the TextArea.
      *
      *        Sets the height of the TextArea to match the height of the current associated
-     *        text for the current selected language. This is espicially useful for texts with
+     *        text for the current selected language. This is especially useful for texts with
      *        WordWrap enabled.
      *
      *        Please note that if the current text rotation is either 90 or 270 degrees, the
@@ -405,30 +426,29 @@ public:
     }
 
     /**
-     * @fn virtual uint16_t TextArea::getType() const
+     * @fn int16_t TextArea::calculateTextHeight(const Unicode::UnicodeChar* format, ...) const;
      *
-     * @brief For GUI testing only.
+     * @brief Gets the total height needed by the text.
      *
-     *        For GUI testing only. Returns type of this drawable.
+     *        Gets the total height needed by the text. Determined by number of lines and
+     *        linespace. The number of wildcards in the text should match the number of values
+     *        for the wildcards.
      *
-     * @return TYPE_TEXTAREA.
+     * @param format The text containing %s wildcards.
+     * @param ...    Variable arguments providing additional information.
+     *
+     * @return the total height needed by the text.
      */
-    virtual uint16_t getType() const
-    {
-        return (uint16_t)TYPE_TEXTAREA;
-    }
+    virtual int16_t calculateTextHeight(const Unicode::UnicodeChar* format, ...) const;
 
 protected:
     TypedText      typedText;      ///< The TypedText to display
     colortype      color;          ///< The color to use.
-    uint16_t       linespace;      ///< The line spacing to use, in pixels, in case the text contains newlines.
+    int16_t        linespace;      ///< The line spacing to use, in pixels, in case the text contains newlines.
     uint8_t        alpha;          ///< The alpha to use.
     uint8_t        indentation;    ///< The indentation of the text inside the text area
     TextRotation   rotation;       ///< The text rotation to use
     WideTextAction wideTextAction; ///< What to do if the text is wider than the text area
-
-private:
-    int16_t getTextHeightInternal(const Unicode::UnicodeChar* format, ...) const;
 };
 } // namespace touchgfx
 

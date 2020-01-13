@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * This file is part of the TouchGFX 4.10.0 distribution.
+  * This file is part of the TouchGFX 4.13.0 distribution.
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -33,7 +33,6 @@ namespace touchgfx
 class ButtonWithLabel : public Button
 {
 public:
-
     /**
      * @fn ButtonWithLabel::ButtonWithLabel();
      *
@@ -154,31 +153,25 @@ public:
      */
     void updateTextPosition()
     {
-        const Font* f = typedText.getFont();
-        const Unicode::UnicodeChar* s = typedText.getText();
-        textHeightIncludingSpacing = f->getMaxTextHeight(s) * f->getNumberOfLines(s) + f->getSpacingAbove(s);
+        if (typedText.hasValidId())
+        {
+            const Font* f = typedText.getFont();
+            const Unicode::UnicodeChar* s = typedText.getText();
+            textHeightIncludingSpacing = f->getMaxTextHeight(s) * f->getNumberOfLines(s) + f->getSpacingAbove(s);
+        }
+        else
+        {
+            textHeightIncludingSpacing = 0;
+        }
     }
 
     virtual Rect getSolidRect() const
     {
         return Button::getSolidRect();
-    };
+    }
 
     virtual void draw(const Rect& area) const;
 
-    /**
-     * @fn virtual uint16_t ButtonWithLabel::getType() const
-     *
-     * @brief For GUI testing only.
-     *
-     *        For GUI testing only. Returns type of this drawable.
-     *
-     * @return TYPE_BUTTONWITHLABEL.
-     */
-    virtual uint16_t getType() const
-    {
-        return (uint16_t)TYPE_BUTTONWITHLABEL;
-    }
 protected:
     TypedText    typedText;                  ///< The TypedText used for the button label.
     colortype    color;                      ///< The color used for the label when not pressed.

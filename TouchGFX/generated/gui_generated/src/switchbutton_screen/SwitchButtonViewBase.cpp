@@ -9,70 +9,71 @@
 SwitchButtonViewBase::SwitchButtonViewBase() :
     buttonCallback(this, &SwitchButtonViewBase::buttonCallbackHandler)
 {
+
     image.setXY(0, 0);
-    image.setBitmap(Bitmap(BITMAP_BACKGROUND_ID));
+    image.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_ID));
 
     switch_L1.setXY(105, 25);
-    switch_L1.setBitmaps(Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_OFF_ID), Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_ON_ID));
+    switch_L1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_ON_ID));
 
     light_1.setXY(33, 32);
     light_1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     light_1.setLinespacing(0);
-    light_1.setTypedText(TypedText(T_SINGLEUSEID3));
+    light_1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID3));
 
     switch_L2.setXY(320, 25);
-    switch_L2.setBitmaps(Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_OFF_ID), Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_ON_ID));
+    switch_L2.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_ON_ID));
 
     light_2.setXY(248, 32);
     light_2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     light_2.setLinespacing(0);
-    light_2.setTypedText(TypedText(T_SINGLEUSEID4));
+    light_2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID4));
 
     TextDisPlay_1.setXY(105, 99);
     TextDisPlay_1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     TextDisPlay_1.setLinespacing(0);
-    Unicode::snprintf(TextDisPlay_1Buffer, TEXTDISPLAY_1_SIZE, "%s", TypedText(T_SINGLEUSEID12).getText());
+    Unicode::snprintf(TextDisPlay_1Buffer, TEXTDISPLAY_1_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID12).getText());
     TextDisPlay_1.setWildcard(TextDisPlay_1Buffer);
     TextDisPlay_1.resizeToCurrentText();
-    TextDisPlay_1.setTypedText(TypedText(T_SINGLEUSEID5));
+    TextDisPlay_1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID5));
 
     TextDisPlay_2.setXY(105, 144);
     TextDisPlay_2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     TextDisPlay_2.setLinespacing(0);
-    Unicode::snprintf(TextDisPlay_2Buffer, TEXTDISPLAY_2_SIZE, "%s", TypedText(T_SINGLEUSEID13).getText());
+    Unicode::snprintf(TextDisPlay_2Buffer, TEXTDISPLAY_2_SIZE, "%s", touchgfx::TypedText(T_SINGLEUSEID13).getText());
     TextDisPlay_2.setWildcard(TextDisPlay_2Buffer);
     TextDisPlay_2.resizeToCurrentText();
-    TextDisPlay_2.setTypedText(TypedText(T_SINGLEUSEID6));
+    TextDisPlay_2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID6));
 
     textArea1.setXY(33, 99);
     textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textArea1.setLinespacing(0);
-    textArea1.setTypedText(TypedText(T_SINGLEUSEID7));
+    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID7));
 
     textArea2.setXY(33, 144);
     textArea2.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
     textArea2.setLinespacing(0);
-    textArea2.setTypedText(TypedText(T_SINGLEUSEID8));
+    textArea2.setTypedText(touchgfx::TypedText(T_SINGLEUSEID8));
 
     backBut.setXY(155, 187);
-    backBut.setBitmaps(Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    backBut.setLabelText(TypedText(T_SINGLEUSEID10));
+    backBut.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    backBut.setLabelText(touchgfx::TypedText(T_SINGLEUSEID10));
     backBut.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     backBut.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     backBut.setAction(buttonCallback);
 
     radioButton1.setXY(362, 89);
-    radioButton1.setBitmaps(Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID), Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_ROUND_MARK_ACTIVE_ID), Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_ROUND_MARK_PRESSED_ID));
+    radioButton1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_ROUND_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_ROUND_MARK_PRESSED_ID));
     radioButton1.setSelected(false);
     radioButton1.setDeselectionEnabled(false);
 
     radioButton1_1.setXY(362, 134);
-    radioButton1_1.setBitmaps(Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID), Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_ROUND_MARK_ACTIVE_ID), Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_ROUND_MARK_PRESSED_ID));
+    radioButton1_1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_ROUND_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_ROUND_MARK_PRESSED_ID));
     radioButton1_1.setSelected(false);
     radioButton1_1.setDeselectionEnabled(false);
 
     radioButton1_1_1.setXY(362, 178);
-    radioButton1_1_1.setBitmaps(Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID), Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_ROUND_MARK_ACTIVE_ID), Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_ROUND_MARK_PRESSED_ID));
+    radioButton1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_ROUND_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_ROUND_MARK_PRESSED_ID));
     radioButton1_1_1.setSelected(false);
     radioButton1_1_1.setDeselectionEnabled(false);
 
@@ -101,15 +102,7 @@ void SwitchButtonViewBase::setupScreen()
 
 void SwitchButtonViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &switch_L1)
-    {
-
-    }
-    else if (&src == &switch_L2)
-    {
-
-    }
-    else if (&src == &backBut)
+    if (&src == &backBut)
     {
         //returnToMain
         //When backBut clicked change screen to ScWelcom

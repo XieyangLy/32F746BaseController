@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * This file is part of the TouchGFX 4.10.0 distribution.
+  * This file is part of the TouchGFX 4.13.0 distribution.
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -49,7 +49,6 @@ namespace touchgfx
 class Drawable
 {
 public:
-
     /**
      * @fn Drawable::Drawable()
      *
@@ -251,7 +250,7 @@ public:
         setXY(x, y);
         setWidth(width);
         setHeight(height);
-    };
+    }
 
     /**
      * @fn int16_t Drawable::getX() const
@@ -567,64 +566,15 @@ public:
     }
 
     /**
-     * @typedef enum DrawableType
+     * @fn void Drawable::drawToDynamicBitmap(BitmapId id)
      *
-     * @brief Enum defining Drawable types.
+     * @brief Render the Drawable object into a dynamic bitmap.
      *
-     *        Enum defining Drawable types. To be used by automated GUI testing to determine
-     *        class type of a Drawable object.
+     *        Render the Drawable object into a dynamic bitmap.
+     *
+     * @param id The target dynamic bitmap to use for rendering.
      */
-    typedef enum
-    {
-        TYPE_DRAWABLE,
-        TYPE_WIDGET,
-        TYPE_ABSTRACTBUTTON,
-        TYPE_ANIMATEDIMAGE,
-        TYPE_BOX,
-        TYPE_BUTTON,
-        TYPE_BUTTONWITHICON,
-        TYPE_BUTTONWITHLABEL,
-        TYPE_IMAGE,
-        TYPE_TILEDIMAGE,
-        TYPE_KEYBOARD,
-        TYPE_SCALABLEIMAGE,
-        TYPE_SNAPSHOTWIDGET,
-        TYPE_TEXTAREA,
-        TYPE_TEXTAREAWITHONEWILDCARD,
-        TYPE_TEXTAREAWITHTWOWILDCARDS,
-        TYPE_TOGGLEBUTTON,
-        TYPE_TOUCHAREA,
-        TYPE_CONTAINER,
-        TYPE_LISTLAYOUT,
-        TYPE_SCROLLABLECONTAINER,
-        TYPE_ZOOMANIMATIONIMAGE,
-        TYPE_RADIOBUTTON,
-        TYPE_TEXTUREMAPPER,
-        TYPE_SLIDER,
-        TYPE_CUSTOMTYPESBEGIN,
-        TYPE_CLICKABLECONTAINER
-    } DrawableType;
-
-    /**
-     * @fn virtual uint16_t Drawable::getType() const
-     *
-     * @brief For GUI testing only.
-     *
-     *        For GUI testing only. Call this virtual function to determine the class type of
-     *        this Drawable object. Can be used in automated GUI testing. Otherwise this
-     *        function is unused.
-     *
-     * @note If creating custom drawables that need to be manipulated by a test framework,
-     *       override this function and return a custom value higher than or equal to
-     *       TYPE_CUSTOMTYPESBEGIN.
-     *
-     * @return An integer describing the class type of this object, corresponding to the
-     *         DrawableType enum for built-in Drawables.
-     */
-    virtual uint16_t getType() const
-    {
-        return (uint16_t)TYPE_DRAWABLE;
-    }
+    void drawToDynamicBitmap(BitmapId id);
 
 protected:
     Rect      rect;                 ///< The coordinates of this drawable, relative to its parent.

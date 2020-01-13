@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * This file is part of the TouchGFX 4.10.0 distribution.
+  * This file is part of the TouchGFX 4.13.0 distribution.
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -17,6 +17,7 @@
 #define TEXTAREAWITHWILDCARD_HPP
 
 #include <touchgfx/TextProvider.hpp>
+#include <touchgfx/hal/HAL.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 
 namespace touchgfx
@@ -43,23 +44,10 @@ public:
      *
      * @note No text can be displayed until a font is set. Default color is black.
      */
-    TextAreaWithWildcardBase() : TextArea() {  }
-
-    /**
-     * @fn int16_t TextAreaWithWildcardBase::calculateTextHeight(const Unicode::UnicodeChar* format, ...) const;
-     *
-     * @brief Gets the total height needed by the text.
-     *
-     *        Gets the total height needed by the text. Determined by number of lines and
-     *        linespace. The number of wildcards in the text should match the number of values
-     *        for the wildcards.
-     *
-     * @param format The text containing %s wildcards.
-     * @param ...    Variable arguments providing additional information.
-     *
-     * @return the total height needed by the text.
-     */
-    int16_t calculateTextHeight(const Unicode::UnicodeChar* format, ...) const;
+    TextAreaWithWildcardBase()
+        : TextArea()
+    {
+    }
 };
 
 /**
@@ -75,7 +63,6 @@ public:
 class TextAreaWithOneWildcard : public TextAreaWithWildcardBase
 {
 public:
-
     /**
      * @fn TextAreaWithOneWildcard::TextAreaWithOneWildcard()
      *
@@ -85,7 +72,8 @@ public:
      *
      * @note No text can be displayed until a font is set. Default color is black.
      */
-    TextAreaWithOneWildcard() : TextAreaWithWildcardBase(), wildcard(0)
+    TextAreaWithOneWildcard()
+        : TextAreaWithWildcardBase(), wildcard(0)
     {
     }
 
@@ -100,7 +88,7 @@ public:
      */
     virtual int16_t getTextHeight()
     {
-        return typedText.hasValidId() ? calculateTextHeight(typedText.getText(), wildcard) : 0;
+        return typedText.hasValidId() ? calculateTextHeight(typedText.getText(), wildcard, 0) : 0;
     }
 
     /**
@@ -113,18 +101,7 @@ public:
      *
      * @param area The invalidated area.
      */
-    virtual void draw(const Rect& area) const
-    {
-        if (typedText.hasValidId())
-        {
-            const Font* fontToDraw = typedText.getFont();
-            if (fontToDraw != 0)
-            {
-                LCD::StringVisuals visuals(fontToDraw, color, alpha, typedText.getAlignment(), linespace, rotation, typedText.getTextDirection(), indentation, wideTextAction);
-                HAL::lcd().drawString(getAbsoluteRect(), area, visuals, typedText.getText(), wildcard);
-            }
-        }
-    }
+    virtual void draw(const Rect& area) const;
 
     /**
      * @fn void TextAreaWithOneWildcard::setWildcard(const Unicode::UnicodeChar* value)
@@ -166,21 +143,7 @@ public:
      */
     virtual uint16_t getTextWidth() const
     {
-        return typedText.hasValidId() ? typedText.getFont()->getStringWidth(typedText.getTextDirection(), typedText.getText(), wildcard) : 0;
-    }
-
-    /**
-     * @fn virtual uint16_t TextAreaWithOneWildcard::getType() const
-     *
-     * @brief For GUI testing only.
-     *
-     *        For GUI testing only. Returns type of this drawable.
-     *
-     * @return TYPE_TEXTAREAWITHONEWILDCARD.
-     */
-    virtual uint16_t getType() const
-    {
-        return (uint16_t)TYPE_TEXTAREAWITHONEWILDCARD;
+        return typedText.hasValidId() ? typedText.getFont()->getStringWidth(typedText.getTextDirection(), typedText.getText(), wildcard, 0) : 0;
     }
 
 protected:
@@ -200,7 +163,6 @@ protected:
 class TextAreaWithTwoWildcards : public TextAreaWithWildcardBase
 {
 public:
-
     /**
      * @fn TextAreaWithTwoWildcards::TextAreaWithTwoWildcards()
      *
@@ -210,7 +172,8 @@ public:
      *
      * @note No text can be displayed until a font is set. Default color is black.
      */
-    TextAreaWithTwoWildcards() : TextAreaWithWildcardBase(), wc1(0), wc2(0)
+    TextAreaWithTwoWildcards()
+        : TextAreaWithWildcardBase(), wc1(0), wc2(0)
     {
     }
 
@@ -238,18 +201,7 @@ public:
      *
      * @param area The invalidated area.
      */
-    virtual void draw(const Rect& area) const
-    {
-        if (typedText.hasValidId())
-        {
-            const Font* fontToDraw = typedText.getFont();
-            if (fontToDraw != 0)
-            {
-                LCD::StringVisuals visuals(fontToDraw, color, alpha, typedText.getAlignment(), linespace, rotation, typedText.getTextDirection(), indentation, wideTextAction);
-                HAL::lcd().drawString(getAbsoluteRect(), area, visuals, typedText.getText(), wc1, wc2);
-            }
-        }
-    }
+    virtual void draw(const Rect& area) const;
 
     /**
      * @fn void TextAreaWithTwoWildcards::setWildcard1(const Unicode::UnicodeChar* value)
@@ -323,19 +275,7 @@ public:
         return typedText.hasValidId() ? typedText.getFont()->getStringWidth(typedText.getTextDirection(), typedText.getText(), wc1, wc2) : 0;
     }
 
-    /**
-     * @fn virtual uint16_t TextAreaWithTwoWildcards::getType() const
-     *
-     * @brief For GUI testing only.
-     *
-     *        For GUI testing only. Returns type of this drawable.
-     *
-     * @return TYPE_TEXTAREAWITHTWOWILDCARDS.
-     */
-    virtual uint16_t getType() const
-    {
-        return (uint16_t)TYPE_TEXTAREAWITHTWOWILDCARDS;
-    }
+
 protected:
     const Unicode::UnicodeChar* wc1; ///< Pointer to the first wildcard string. Must be zero-terminated.
     const Unicode::UnicodeChar* wc2; ///< Pointer to the second wildcard string. Must be zero-terminated.

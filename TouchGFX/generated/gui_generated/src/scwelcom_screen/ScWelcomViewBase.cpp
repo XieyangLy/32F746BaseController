@@ -9,26 +9,27 @@
 ScWelcomViewBase::ScWelcomViewBase() :
     buttonCallback(this, &ScWelcomViewBase::buttonCallbackHandler)
 {
+
     image.setXY(0, 0);
-    image.setBitmap(Bitmap(BITMAP_BACKGROUND_ID));
+    image.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_ID));
 
     ProcessBut.setXY(51, 136);
-    ProcessBut.setBitmaps(Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    ProcessBut.setLabelText(TypedText(T_SINGLEUSEID1));
+    ProcessBut.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    ProcessBut.setLabelText(touchgfx::TypedText(T_SINGLEUSEID1));
     ProcessBut.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     ProcessBut.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     ProcessBut.setAction(buttonCallback);
 
     lightEnter.setXY(265, 136);
-    lightEnter.setBitmaps(Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    lightEnter.setLabelText(TypedText(T_SINGLEUSEID9));
+    lightEnter.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    lightEnter.setLabelText(touchgfx::TypedText(T_SINGLEUSEID9));
     lightEnter.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     lightEnter.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     lightEnter.setAction(buttonCallback);
 
     buttonWithLabel1.setXY(155, 40);
-    buttonWithLabel1.setBitmaps(Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    buttonWithLabel1.setLabelText(TypedText(T_SINGLEUSEID11));
+    buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonWithLabel1.setLabelText(touchgfx::TypedText(T_SINGLEUSEID11));
     buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
 
@@ -58,9 +59,5 @@ void ScWelcomViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //When lightEnter clicked change screen to SwitchButton
         //Go to SwitchButton with no screen transition
         application().gotoSwitchButtonScreenNoTransition();
-    }
-    else if (&src == &buttonWithLabel1)
-    {
-
     }
 }

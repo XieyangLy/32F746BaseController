@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * This file is part of the TouchGFX 4.10.0 distribution.
+  * This file is part of the TouchGFX 4.13.0 distribution.
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -44,7 +44,6 @@ class Screen;
 class Application : public UIEventListener
 {
 public:
-
     /**
      * @fn static Application* Application::getInstance();
      *
@@ -265,25 +264,86 @@ public:
     uint16_t getNumberOfRegisteredTimerWidgets() const;
 
     /**
-     * @fn uint16_t Application::getTimerWidgetCountForDrawable(Drawable* w) const;
+     * @fn uint16_t Application::getTimerWidgetCountForDrawable(const Drawable* w) const;
      *
      * @brief Gets the number of timer events registered to a widget.
      *
      *        Gets the number of timer events registered to a widget, i.e. how many times a
      *        drawable must be unregistered until it no longer receives timer ticks.
      *
-     * @param [in] w The widget to to get count from.
+     * @param w The widget to to get count from.
      *
      * @return 0 if the drawable is not registered as a timer widget, otherwise returns how many
      *         times the drawable is currently registered.
      */
-    uint16_t getTimerWidgetCountForDrawable(Drawable* w) const;
+    uint16_t getTimerWidgetCountForDrawable(const Drawable* w) const;
 
     static const uint8_t MAX_TIMER_WIDGETS = 32; ///< Maximum number of widgets receiving ticks. @remarks Memory impact: x * (sizeof(Drawable*)+1)
     static const uint16_t TICK_INTERVAL_MS = 10; ///< Deprecated, do not use this constant. Tick interval depends on VSYNC of your target platform.
 
-protected:
+    /**
+     * @fn static void Application::setDebugPrinter(DebugPrinter* printer)
+     *
+     * @brief Sets the DebugPrinter object to be used by the application.
+     *
+     *        Sets the DebugPrinter object to be used by the application to print debug
+     *        messages.
+     *
+     * @param [in] printer The debug printer to configure.
+     */
+    static void setDebugPrinter(DebugPrinter* printer)
+    {
+        debugPrinter = printer;
+    }
 
+    /**
+     * @fn static DebugPrinter* Application::getDebugPrinter()
+     *
+     * @brief Returns the DebugPrinter object associated with the application.
+     *
+     *        Returns the DebugPrinter object associated with the application.
+     *
+     * @return DebugPrinter The DebugPrinter object.
+     */
+    static DebugPrinter* getDebugPrinter()
+    {
+        return debugPrinter;
+    }
+
+    /**
+     * @fn static void Application::invalidateDebugRegion()
+     *
+     * @brief Sets the debug string to be displayed onscreen.
+     *
+     *        Sets the debug string to be displayed onscreen on top of the framebuffer.
+     */
+    static void invalidateDebugRegion()
+    {
+        if (debugPrinter)
+        {
+            debugRegionInvalidRect.expandToFit(debugPrinter->getRegion());
+        }
+    }
+
+    /**
+     * @fn static void Application::setDebugString(const char* string)
+     *
+     * @brief Sets the debug string to be displayed onscreen.
+     *
+     *        Sets the debug string to be displayed onscreen on top of the framebuffer.
+     *
+     * @param [in] string The debug string to display onscreen.
+     */
+    static void setDebugString(const char* string)
+    {
+        if (debugPrinter)
+        {
+            debugPrinter->setString(string);
+            invalidateDebugRegion();
+        }
+    }
+
+protected:
     /**
      * @fn void Application::invalidateArea(Rect area);
      *
@@ -298,9 +358,9 @@ protected:
     /**
      * @fn Application::Application();
      *
-     * @brief Procected constructor
+     * @brief Protected constructor
      *
-     *        Procected constructor.
+     *        Protected constructor.
      */
     Application();
 
@@ -312,8 +372,9 @@ protected:
     bool transitionHandled;                            ///< True if the transition is done and Screen::afterTransition has been called.
     static Screen* currentScreen;                      ///< Pointer to currently displayed Screen.
     static Transition* currentTransition;              ///< Pointer to current transition.
-    static Application* instance;                      ///< Pointer to the instance of the Application-derived subclass.
-    ///< @note Must be set by subclass constructor!
+    static Application* instance;                      ///< Pointer to the instance of the Application-derived subclass. @note Must be set by subclass constructor!
+    static DebugPrinter* debugPrinter;                 ///< Pointer to the DebugPrinter instance.
+    static Rect debugRegionInvalidRect;                ///< Invalidated Debug Region
 };
 } // namespace touchgfx
 #endif // APPLICATION_HPP

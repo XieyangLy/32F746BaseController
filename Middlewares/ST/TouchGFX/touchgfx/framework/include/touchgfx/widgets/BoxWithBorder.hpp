@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * This file is part of the TouchGFX 4.10.0 distribution.
+  * This file is part of the TouchGFX 4.13.0 distribution.
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -177,18 +177,6 @@ public:
      * @param area The area.
      */
     virtual void draw(const Rect& area) const;
-
-    /**
-     * @fn virtual uint16_t BoxWithBorder::getType() const
-     *
-     * @brief Gets the type.
-     *
-     * @return The type.
-     */
-    virtual uint16_t getType() const
-    {
-        return (uint16_t)TYPE_BOX;
-    }
 
 protected:
     uint8_t     alpha;         ///< The alpha

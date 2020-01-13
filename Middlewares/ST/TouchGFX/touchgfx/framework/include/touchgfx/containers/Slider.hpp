@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * This file is part of the TouchGFX 4.10.0 distribution.
+  * This file is part of the TouchGFX 4.13.0 distribution.
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -40,7 +40,6 @@ namespace touchgfx
 class Slider : public Container
 {
 public:
-
     /**
      * @fn Slider::Slider();
      *
@@ -353,22 +352,7 @@ public:
         return currentValue;
     }
 
-    /**
-     * @fn virtual uint16_t Slider::getType() const
-     *
-     * @brief For GUI testing only.
-     *
-     *        For GUI testing only. Returns type of this drawable.
-     *
-     * @return TYPE_BUTTON.
-     */
-    virtual uint16_t getType() const
-    {
-        return (uint16_t)TYPE_SLIDER;
-    }
-
 protected:
-
     /**
      * @enum SliderOrientation
      *

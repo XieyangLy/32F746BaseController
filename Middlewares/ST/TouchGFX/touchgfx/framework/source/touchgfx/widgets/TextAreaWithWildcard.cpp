@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * This file is part of the TouchGFX 4.10.0 distribution.
+  * This file is part of the TouchGFX 4.13.0 distribution.
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -17,25 +17,30 @@
 
 namespace touchgfx
 {
-int16_t TextAreaWithWildcardBase::calculateTextHeight(const Unicode::UnicodeChar* format, ...) const
+void TextAreaWithOneWildcard::draw(const Rect& area) const
 {
-    if (!typedText.hasValidId())
+    if (typedText.hasValidId())
     {
-        return 0;
+        const Font* fontToDraw = typedText.getFont();
+        if (fontToDraw != 0)
+        {
+            LCD::StringVisuals visuals(fontToDraw, color, alpha, typedText.getAlignment(), linespace, rotation, typedText.getTextDirection(), indentation, wideTextAction);
+            HAL::lcd().drawString(getAbsoluteRect(), area, visuals, typedText.getText(), wildcard, 0);
+        }
     }
-
-    va_list pArg;
-    va_start(pArg, format);
-
-    TextProvider textProvider;
-    textProvider.initialize(format, pArg);
-
-    int16_t numLines = HAL::lcd().getNumLines(textProvider, wideTextAction, typedText.getTextDirection(), typedText.getFont(), getWidth());
-
-    const Font* fontToDraw = typedText.getFont();
-    int16_t textHeight = fontToDraw->getMinimumTextHeight();
-
-    va_end(pArg);
-    return numLines * textHeight + (numLines - 1) * linespace;
 }
+
+void TextAreaWithTwoWildcards::draw(const Rect& area) const
+{
+    if (typedText.hasValidId())
+    {
+        const Font* fontToDraw = typedText.getFont();
+        if (fontToDraw != 0)
+        {
+            LCD::StringVisuals visuals(fontToDraw, color, alpha, typedText.getAlignment(), linespace, rotation, typedText.getTextDirection(), indentation, wideTextAction);
+            HAL::lcd().drawString(getAbsoluteRect(), area, visuals, typedText.getText(), wc1, wc2);
+        }
+    }
+}
+
 } // namespace touchgfx

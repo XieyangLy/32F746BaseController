@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * This file is part of the TouchGFX 4.10.0 distribution.
+  * This file is part of the TouchGFX 4.13.0 distribution.
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -36,7 +36,6 @@ namespace touchgfx
 class Image : public Widget
 {
 public:
-
     /**
      * @fn Image::Image(const Bitmap& bmp = Bitmap())
      *
@@ -132,19 +131,6 @@ public:
      */
     virtual Rect getSolidRect() const;
 
-    /**
-     * @fn virtual uint16_t Image::getType() const
-     *
-     * @brief For GUI testing only.
-     *
-     *        For GUI testing only. Returns type of this drawable.
-     *
-     * @return TYPE_IMAGE.
-     */
-    virtual uint16_t getType() const
-    {
-        return (uint16_t)TYPE_IMAGE;
-    }
 protected:
     Bitmap  bitmap;               ///< The Bitmap to display.
     uint8_t alpha;                ///< The Alpha for this image.

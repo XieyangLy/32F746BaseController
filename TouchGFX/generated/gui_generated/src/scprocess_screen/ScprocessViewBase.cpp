@@ -9,10 +9,11 @@
 ScProcessViewBase::ScProcessViewBase() :
     buttonCallback(this, &ScProcessViewBase::buttonCallbackHandler)
 {
-    CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
+
+    touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
 
     image.setXY(0, 0);
-    image.setBitmap(Bitmap(BITMAP_BACKGROUND_ID));
+    image.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_ID));
 
     circleProgress1.setXY(188, 21);
     circleProgress1.setProgressIndicatorPosition(0, 0, 104, 104);
@@ -21,14 +22,14 @@ ScProcessViewBase::ScProcessViewBase() :
     circleProgress1.setRadius(50);
     circleProgress1.setLineWidth(0);
     circleProgress1.setStartEndAngle(0, 360);
-    circleProgress1.setBackground(Bitmap(BITMAP_BLUE_PROGRESSINDICATORS_BG_MEDIUM_CIRCLE_INDICATOR_BG_FULL_ID));
-    circleProgress1Painter.setBitmap(Bitmap(BITMAP_BLUE_PROGRESSINDICATORS_FILL_MEDIUM_CIRCLE_INDICATOR_FILL_FULL_ID));
+    circleProgress1.setBackground(touchgfx::Bitmap(BITMAP_BLUE_PROGRESSINDICATORS_BG_MEDIUM_CIRCLE_INDICATOR_BG_FULL_ID));
+    circleProgress1Painter.setBitmap(touchgfx::Bitmap(BITMAP_BLUE_PROGRESSINDICATORS_FILL_MEDIUM_CIRCLE_INDICATOR_FILL_FULL_ID));
     circleProgress1.setPainter(circleProgress1Painter);
     circleProgress1.setValue(60);
 
     backBut.setXY(155, 158);
-    backBut.setBitmaps(Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    backBut.setLabelText(TypedText(T_SINGLEUSEID2));
+    backBut.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    backBut.setLabelText(touchgfx::TypedText(T_SINGLEUSEID2));
     backBut.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     backBut.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     backBut.setAction(buttonCallback);

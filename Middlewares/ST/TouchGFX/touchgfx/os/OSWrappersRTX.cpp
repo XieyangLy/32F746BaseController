@@ -1,8 +1,8 @@
 #include <touchgfx/hal/OSWrappers.hpp>
-#include "cmsis_os2.h"
+#include "cmsis_os2.h"                          // CMSIS RTOS header file
 #include "task.h"
 #include "queue.h"
-#include "semphr.h"
+#include "semphr.h"d
 #include <touchgfx/hal/GPIO.hpp>
 #include <touchgfx/hal/HAL.hpp>
 

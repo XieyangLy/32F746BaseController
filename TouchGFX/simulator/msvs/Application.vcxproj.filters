@@ -240,9 +240,6 @@
     <ClCompile Include="..\..\gui\src\scprocess_screen\ScProcessView.cpp">
       <Filter>Source Files\gui\scprocess_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\scprocess_screen\ScprocessViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\scprocess_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\scwelcom_screen\ScWelcomPresenter.cpp">
       <Filter>Source Files\gui\scwelcom_screen</Filter>
     </ClCompile>
@@ -702,9 +699,6 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\scprocess_screen\ScProcessView.hpp">
       <Filter>Header Files\gui\scprocess_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\scprocess_screen\ScprocessViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\scprocess_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\scwelcom_screen\ScWelcomPresenter.hpp">
       <Filter>Header Files\gui\scwelcom_screen</Filter>

@@ -39,62 +39,62 @@
  * type lists in this class.
  *
  */
-class FrontendHeapBase : public MVPHeap
+class FrontendHeapBase : public touchgfx::MVPHeap
 {
 public:
     /**
      * A list of all view types. Must end with meta::Nil.
      * @note All view types used in the application MUST be added to this list!
      */
-    typedef meta::TypeList< ScWelcomView,
-            meta::TypeList< ScProcessView,
-            meta::TypeList< SwitchButtonView,
-            meta::TypeList< FileManagerView,
-            meta::Nil > > >
+    typedef touchgfx::meta::TypeList< ScWelcomView,
+            touchgfx::meta::TypeList< ScProcessView,
+            touchgfx::meta::TypeList< SwitchButtonView,
+            touchgfx::meta::TypeList< FileManagerView,
+            touchgfx::meta::Nil > > >
             > GeneratedViewTypes;
 
     /**
      * Determine (compile time) the View type of largest size.
      */
-    typedef meta::select_type_maxsize< GeneratedViewTypes >::type MaxGeneratedViewType;
+    typedef touchgfx::meta::select_type_maxsize< GeneratedViewTypes >::type MaxGeneratedViewType;
 
     /**
      * A list of all presenter types. Must end with meta::Nil.
      * @note All presenter types used in the application MUST be added to this list!
      */
-    typedef meta::TypeList< ScWelcomPresenter,
-            meta::TypeList< ScProcessPresenter,
-            meta::TypeList< SwitchButtonPresenter,
-            meta::TypeList< FileManagerPresenter,
-            meta::Nil > > >
+    typedef touchgfx::meta::TypeList< ScWelcomPresenter,
+            touchgfx::meta::TypeList< ScProcessPresenter,
+            touchgfx::meta::TypeList< SwitchButtonPresenter,
+            touchgfx::meta::TypeList< FileManagerPresenter,
+            touchgfx::meta::Nil > > >
             > GeneratedPresenterTypes;
 
     /**
      * Determine (compile time) the Presenter type of largest size.
      */
-    typedef meta::select_type_maxsize< GeneratedPresenterTypes >::type MaxGeneratedPresenterType;
+    typedef touchgfx::meta::select_type_maxsize< GeneratedPresenterTypes >::type MaxGeneratedPresenterType;
 
     /**
      * A list of all transition types. Must end with meta::Nil.
      * @note All transition types used in the application MUST be added to this list!
      */
-    typedef meta::TypeList< NoTransition,
-            meta::TypeList< CoverTransition<EAST>,
-            meta::TypeList< SlideTransition<EAST>,
-            meta::Nil > >
+    typedef touchgfx::meta::TypeList< touchgfx::NoTransition,
+            touchgfx::meta::TypeList< CoverTransition<EAST>,
+            touchgfx::meta::TypeList< SlideTransition<EAST>,
+            touchgfx::meta::Nil > >
             > GeneratedTransitionTypes;
 
     /**
      * Determine (compile time) the Transition type of largest size.
      */
-    typedef meta::select_type_maxsize< GeneratedTransitionTypes >::type MaxGeneratedTransitionType;
+    typedef touchgfx::meta::select_type_maxsize< GeneratedTransitionTypes >::type MaxGeneratedTransitionType;
 
     virtual void gotoStartScreen(FrontendApplication& app)
     {
         app.gotoScWelcomScreenNoTransition();
     }
 protected:
-    FrontendHeapBase(AbstractPartition& presenters, AbstractPartition& views, AbstractPartition& transitions, FrontendApplication& app)
+    FrontendHeapBase(touchgfx::AbstractPartition& presenters, touchgfx::AbstractPartition& views, touchgfx::AbstractPartition& transitions, FrontendApplication& app)
         : MVPHeap(presenters, views, transitions, app)
     {
 

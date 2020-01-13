@@ -482,6 +482,7 @@
             "FileNameSelectedPressed": "__designer\\blue_check_buttons_check_round_mark_pressed.png",
             "FileNameUnselected": "__designer\\blue_radio_buttons_radio_round_button_normal.png",
             "FileNameUnselectedPressed": "__designer\\blue_radio_buttons_radio_round_button_inactive.png",
+            "RadioButtonGroup": "radioButtonGroup",
             "Name": "radioButton1",
             "X": 362,
             "Y": 89,
@@ -502,6 +503,7 @@
             "FileNameSelectedPressed": "__designer\\blue_check_buttons_check_round_mark_pressed.png",
             "FileNameUnselected": "__designer\\blue_radio_buttons_radio_round_button_normal.png",
             "FileNameUnselectedPressed": "__designer\\blue_radio_buttons_radio_round_button_inactive.png",
+            "RadioButtonGroup": "radioButtonGroup",
             "Name": "radioButton1_1",
             "X": 362,
             "Y": 134,
@@ -522,6 +524,7 @@
             "FileNameSelectedPressed": "__designer\\blue_check_buttons_check_round_mark_pressed.png",
             "FileNameUnselected": "__designer\\blue_radio_buttons_radio_round_button_normal.png",
             "FileNameUnselectedPressed": "__designer\\blue_radio_buttons_radio_round_button_inactive.png",
+            "RadioButtonGroup": "radioButtonGroup",
             "Name": "radioButton1_1_1",
             "X": 362,
             "Y": 178,
@@ -644,28 +647,38 @@
     "Skin": "Blue",
     "TouchGfxPath": "../Middlewares/ST/TouchGFX/touchgfx/",
     "UIPath": ".",
-    "ApplicationTemplate": {
-      "Name": "Simulator",
-      "Version": "1.0.0",
-      "Description": "STM32CubeMX Generated Simulator Application Template",
-      "AvailableColorDepths": [
-        16
-      ],
-      "AvailableImageFormats": {
-        "16": {
-          "Opaque": "RGB565",
-          "NonOpaque": "ARGB8888"
-        }
-      },
-      "AvailableResolutions": [],
-      "PhysicalButtons": [],
-      "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j10",
-      "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj && touchgfx update_project --project-file=..\\32F746Demo.uvprojx",
-      "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j10",
-      "RunSimulatorCommand": "build\\bin\\simulator.exe",
-      "CompileTargetCommand": "",
-      "FlashTargetCommand": ""
-    }
+    "ApplicationTemplateName": "Simulator",
+    "ApplicationTemplateVersion": "1.0.0",
+    "ApplicationTemplateDescription": "STM32CubeMX Generated Simulator Application Template",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j10",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj && touchgfx update_project --project-file=..\\32F746Demo.uvprojx",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j10",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "",
+    "FlashTargetCommand": "",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape"
   },
-  "Version": "4.10.0"
+  "Version": "4.13.0"
 }

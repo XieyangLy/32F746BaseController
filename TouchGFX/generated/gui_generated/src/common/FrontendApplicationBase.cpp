@@ -7,6 +7,8 @@
 #include <touchgfx/transitions/NoTransition.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/Texts.hpp>
+#include <touchgfx/hal/HAL.hpp>
+#include <platform/driver/lcd/LCD16bpp.hpp>
 #include <gui/scwelcom_screen/ScWelcomView.hpp>
 #include <gui/scwelcom_screen/ScWelcomPresenter.hpp>
 #include <gui/scprocess_screen/ScProcessView.hpp>
@@ -18,19 +20,21 @@
 
 using namespace touchgfx;
 
-
 FrontendApplicationBase::FrontendApplicationBase(Model& m, FrontendHeap& heap)
     : touchgfx::MVPApplication(),
       transitionCallback(),
       frontendHeap(heap),
       model(m)
 {
-    Texts::setLanguage(GB);
+    touchgfx::HAL::getInstance()->setDisplayOrientation(touchgfx::ORIENTATION_LANDSCAPE);
+    touchgfx::Texts::setLanguage(GB);
+    reinterpret_cast<touchgfx::LCD16bpp&>(touchgfx::HAL::lcd()).enableTextureMapperAll();
 }
 
 /*
  * Screen Transition Declarations
  */
+
 // ScWelcom
 
 void FrontendApplicationBase::gotoScWelcomScreenNoTransition()
@@ -41,9 +45,8 @@ void FrontendApplicationBase::gotoScWelcomScreenNoTransition()
 
 void FrontendApplicationBase::gotoScWelcomScreenNoTransitionImpl()
 {
-    makeTransition<ScWelcomView, ScWelcomPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<ScWelcomView, ScWelcomPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
-
 
 void FrontendApplicationBase::gotoScWelcomScreenSlideTransitionEast()
 {
@@ -53,7 +56,7 @@ void FrontendApplicationBase::gotoScWelcomScreenSlideTransitionEast()
 
 void FrontendApplicationBase::gotoScWelcomScreenSlideTransitionEastImpl()
 {
-    makeTransition<ScWelcomView, ScWelcomPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<ScWelcomView, ScWelcomPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // ScProcess
@@ -66,7 +69,7 @@ void FrontendApplicationBase::gotoScProcessScreenCoverTransitionEast()
 
 void FrontendApplicationBase::gotoScProcessScreenCoverTransitionEastImpl()
 {
-    makeTransition<ScProcessView, ScProcessPresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<ScProcessView, ScProcessPresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // SwitchButton
@@ -79,6 +82,5 @@ void FrontendApplicationBase::gotoSwitchButtonScreenNoTransition()
 
 void FrontendApplicationBase::gotoSwitchButtonScreenNoTransitionImpl()
 {
-    makeTransition<SwitchButtonView, SwitchButtonPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<SwitchButtonView, SwitchButtonPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
-

@@ -20,10 +20,8 @@ public:
 
     void gotoScWelcomScreenSlideTransitionEast();
 
-
     // ScProcess
     void gotoScProcessScreenCoverTransitionEast();
-
 
     // SwitchButton
     void gotoSwitchButtonScreenNoTransition();
@@ -38,10 +36,8 @@ protected:
 
     void gotoScWelcomScreenSlideTransitionEastImpl();
 
-
     // ScProcess
     void gotoScProcessScreenCoverTransitionEastImpl();
-
 
     // SwitchButton
     void gotoSwitchButtonScreenNoTransitionImpl();

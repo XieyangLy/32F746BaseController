@@ -735,7 +735,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE END Callback 1 */
 }
 
-
 static void init_task(void *arg)
 {
 	touchGfxMsgQueueCb.name = "touchGfxMsgQueue";
@@ -765,8 +764,7 @@ static void init_task(void *arg)
 	//创建touchGFX消息队列
 	//tid_TouchGFX_MsgQueue = osMessageQueueNew(TOUCHGFX_GUI_MSGEQUEUE_OBJECTS,sizeof(TouchGFX_OBJ_t),&touchGfxMsgQueueCb);
 	tid_TouchGFX_MsgQueue = osMessageQueueNew(TOUCHGFX_GUI_MSGEQUEUE_OBJECTS,sizeof(TouchGFX_OBJ_t),NULL);
-	
-	
+		
 	GRAPHICS_MainTask();
 	//创建touchGFX任务
 	while(1)

@@ -200,7 +200,7 @@
             <NoZi2>0</NoZi2>
             <NoZi3>0</NoZi3>
             <NoZi4>0</NoZi4>
-            <NoZi5>0</NoZi5>
+            <NoZi5>1</NoZi5>
             <Ro1Chk>0</Ro1Chk>
             <Ro2Chk>0</Ro2Chk>
             <Ro3Chk>0</Ro3Chk>
@@ -305,7 +305,7 @@
               <OCR_RVCT10>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x10000</Size>
+                <Size>0x800</Size>
               </OCR_RVCT10>
             </OnChipMemories>
             <RvctStartVector></RvctStartVector>
@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>MQTT_MBEDTLS = 0,MQTT_TASK,STM32F746xx,USE_HAL_DRIVER,_HARD_DEVICE_</Define>
               <Undefine></Undefine>
-              <IncludePath>.\User;.\mqttInterface;.\mqttVirtualDevice;.\TouchGFX\target;.\TouchGFX\generated\fonts\include;.\TouchGFX\generated\gui_generated\include;.\TouchGFX\generated\images\include;.\TouchGFX\generated\texts\include;middlewares/st/touchgfx/touchgfx/framework/include;.\Drivers\BSP\STM32746G-Discovery;.\TouchGFX\gui\include;.\virtualCOM</IncludePath>
+              <IncludePath>./User;./mqttInterface;./mqttVirtualDevice;./TouchGFX/target;./Drivers/BSP/STM32746G-Discovery;./virtualCOM./User;middlewares/st/touchgfx/touchgfx/framework/include;touchgfx/generated/fonts/include;touchgfx/generated/gui_generated/include;touchgfx/generated/images/include;touchgfx/generated/texts/include;touchgfx/gui/include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -369,7 +369,7 @@
             <TextAddressRange>0x08000000</TextAddressRange>
             <DataAddressRange>0x20010000</DataAddressRange>
             <pXoBase></pXoBase>
-            <ScatterFile></ScatterFile>
+            <ScatterFile>.\Objects\32F746Demo.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
@@ -734,34 +734,44 @@
               <FilePath>touchgfx/generated/images/src/__designer/blue_togglebars_toggle_round_large_button_on.cpp</FilePath>
             </File>
             <File>
+              <FileName>CachedFont.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>touchgfx/generated/fonts/src/cachedfont.cpp</FilePath>
+            </File>
+            <File>
               <FileName>FileManagerViewBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>touchgfx/generated/gui_generated/src/filemanager_screen/filemanagerviewbase.cpp</FilePath>
             </File>
             <File>
-              <FileName>Font_verdana_10_4bpp.cpp</FileName>
+              <FileName>Font_verdana_10_4bpp_0.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>touchgfx/generated/fonts/src/font_verdana_10_4bpp.cpp</FilePath>
+              <FilePath>touchgfx/generated/fonts/src/font_verdana_10_4bpp_0.cpp</FilePath>
             </File>
             <File>
-              <FileName>Font_verdana_20_4bpp.cpp</FileName>
+              <FileName>Font_verdana_20_4bpp_0.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>touchgfx/generated/fonts/src/font_verdana_20_4bpp.cpp</FilePath>
+              <FilePath>touchgfx/generated/fonts/src/font_verdana_20_4bpp_0.cpp</FilePath>
             </File>
             <File>
-              <FileName>Font_verdana_40_4bpp.cpp</FileName>
+              <FileName>Font_verdana_40_4bpp_0.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>touchgfx/generated/fonts/src/font_verdana_40_4bpp.cpp</FilePath>
+              <FilePath>touchgfx/generated/fonts/src/font_verdana_40_4bpp_0.cpp</FilePath>
             </File>
             <File>
-              <FileName>FontGetters.cpp</FileName>
+              <FileName>FontCache.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>touchgfx/generated/fonts/src/fontgetters.cpp</FilePath>
+              <FilePath>touchgfx/generated/fonts/src/fontcache.cpp</FilePath>
             </File>
             <File>
               <FileName>FrontendApplicationBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>touchgfx/generated/gui_generated/src/common/frontendapplicationbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>GeneratedFont.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>touchgfx/generated/fonts/src/generatedfont.cpp</FilePath>
             </File>
             <File>
               <FileName>Kerning_verdana_10_4bpp.cpp</FileName>
@@ -784,7 +794,7 @@
               <FilePath>touchgfx/generated/texts/src/languagegb.cpp</FilePath>
             </File>
             <File>
-              <FileName>ScprocessViewBase.cpp</FileName>
+              <FileName>ScProcessViewBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>touchgfx/generated/gui_generated/src/scprocess_screen/scprocessviewbase.cpp</FilePath>
             </File>
@@ -1121,6 +1131,11 @@
             <File>
               <FileName>touchgfx_core.lib</FileName>
               <FileType>4</FileType>
+              <FilePath>middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
+            </File>
+            <File>
+              <FileName>touchgfx_core.lib</FileName>
+              <FileType>4</FileType>
               <FilePath>middlewares/st/touchgfx/touchgfx/lib\core\cortex_m7\Keil\touchgfx_core.lib</FilePath>
             </File>
             <File>
@@ -1180,11 +1195,6 @@
               </FileOption>
             </File>
             <File>
-              <FileName>OSWrappers_cmsis.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappers_cmsis.cpp</FilePath>
-            </File>
-            <File>
               <FileName>OSWrappersRTX.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappersRTX.cpp</FilePath>
@@ -1239,6 +1249,11 @@
                   </Cads>
                 </FileArmAds>
               </FileOption>
+            </File>
+            <File>
+              <FileName>OSWrappers_cmsis.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappers_cmsis.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -2273,34 +2288,44 @@
               <FilePath>touchgfx/generated/images/src/__designer/blue_togglebars_toggle_round_large_button_on.cpp</FilePath>
             </File>
             <File>
+              <FileName>CachedFont.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>touchgfx/generated/fonts/src/cachedfont.cpp</FilePath>
+            </File>
+            <File>
               <FileName>FileManagerViewBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>touchgfx/generated/gui_generated/src/filemanager_screen/filemanagerviewbase.cpp</FilePath>
             </File>
             <File>
-              <FileName>Font_verdana_10_4bpp.cpp</FileName>
+              <FileName>Font_verdana_10_4bpp_0.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>touchgfx/generated/fonts/src/font_verdana_10_4bpp.cpp</FilePath>
+              <FilePath>touchgfx/generated/fonts/src/font_verdana_10_4bpp_0.cpp</FilePath>
             </File>
             <File>
-              <FileName>Font_verdana_20_4bpp.cpp</FileName>
+              <FileName>Font_verdana_20_4bpp_0.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>touchgfx/generated/fonts/src/font_verdana_20_4bpp.cpp</FilePath>
+              <FilePath>touchgfx/generated/fonts/src/font_verdana_20_4bpp_0.cpp</FilePath>
             </File>
             <File>
-              <FileName>Font_verdana_40_4bpp.cpp</FileName>
+              <FileName>Font_verdana_40_4bpp_0.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>touchgfx/generated/fonts/src/font_verdana_40_4bpp.cpp</FilePath>
+              <FilePath>touchgfx/generated/fonts/src/font_verdana_40_4bpp_0.cpp</FilePath>
             </File>
             <File>
-              <FileName>FontGetters.cpp</FileName>
+              <FileName>FontCache.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>touchgfx/generated/fonts/src/fontgetters.cpp</FilePath>
+              <FilePath>touchgfx/generated/fonts/src/fontcache.cpp</FilePath>
             </File>
             <File>
               <FileName>FrontendApplicationBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>touchgfx/generated/gui_generated/src/common/frontendapplicationbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>GeneratedFont.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>touchgfx/generated/fonts/src/generatedfont.cpp</FilePath>
             </File>
             <File>
               <FileName>Kerning_verdana_10_4bpp.cpp</FileName>
@@ -2323,7 +2348,7 @@
               <FilePath>touchgfx/generated/texts/src/languagegb.cpp</FilePath>
             </File>
             <File>
-              <FileName>ScprocessViewBase.cpp</FileName>
+              <FileName>ScProcessViewBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>touchgfx/generated/gui_generated/src/scprocess_screen/scprocessviewbase.cpp</FilePath>
             </File>
@@ -2540,6 +2565,11 @@
             <File>
               <FileName>touchgfx_core.lib</FileName>
               <FileType>4</FileType>
+              <FilePath>middlewares/st/touchgfx/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
+            </File>
+            <File>
+              <FileName>touchgfx_core.lib</FileName>
+              <FileType>4</FileType>
               <FilePath>middlewares/st/touchgfx/touchgfx/lib\core\cortex_m7\Keil\touchgfx_core.lib</FilePath>
             </File>
             <File>
@@ -2548,14 +2578,14 @@
               <FilePath>.\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappers.cpp</FilePath>
             </File>
             <File>
-              <FileName>OSWrappers_cmsis.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappers_cmsis.cpp</FilePath>
-            </File>
-            <File>
               <FileName>OSWrappersRTX.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappersRTX.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>OSWrappers_cmsis.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\Middlewares\ST\TouchGFX\touchgfx\os\OSWrappers_cmsis.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -2824,25 +2854,25 @@
         <targetInfos>
           <targetInfo name="Mqtt">
             <mem>
-              <RVCTZI>1</RVCTZI>
+              <RVCTZI>5</RVCTZI>
             </mem>
           </targetInfo>
           <targetInfo name="webServer">
             <mem>
-              <RVCTZI>1</RVCTZI>
+              <RVCTZI>5</RVCTZI>
             </mem>
           </targetInfo>
         </targetInfos>
       </component>
       <component Cbundle="ARM Compiler" Cclass="Compiler" Cgroup="I/O" Csub="STDERR" Cvariant="ITM" Cvendor="Keil" Cversion="1.2.0" condition="ARMCC Cortex-M with ITM">
-        <package name="ARM_Compiler" schemaVersion="1.4.9" url="http://www.keil.com/pack/" vendor="Keil" version="1.6.1"/>
+        <package name="ARM_Compiler" schemaVersion="1.4.9" url="http://www.keil.com/pack/" vendor="Keil" version="1.6.2"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
         </targetInfos>
       </component>
       <component Cbundle="ARM Compiler" Cclass="Compiler" Cgroup="I/O" Csub="STDOUT" Cvariant="ITM" Cvendor="Keil" Cversion="1.2.0" condition="ARMCC Cortex-M with ITM">
-        <package name="ARM_Compiler" schemaVersion="1.4.9" url="http://www.keil.com/pack/" vendor="Keil" version="1.6.1"/>
+        <package name="ARM_Compiler" schemaVersion="1.4.9" url="http://www.keil.com/pack/" vendor="Keil" version="1.6.2"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
@@ -2995,7 +3025,7 @@
         </targetInfos>
       </component>
       <component Capiversion="2.0.0" Cclass="CMSIS Driver" Cgroup="Ethernet PHY" Csub="LAN8742A" Cvendor="Keil" Cversion="1.3.0" condition="CMSIS Core">
-        <package name="CMSIS-Driver" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="ARM" version="2.4.1"/>
+        <package license="LICENSE.txt" name="CMSIS-Driver" schemaVersion="1.4.9" url="http://www.keil.com/pack/" vendor="ARM" version="2.5.0"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>

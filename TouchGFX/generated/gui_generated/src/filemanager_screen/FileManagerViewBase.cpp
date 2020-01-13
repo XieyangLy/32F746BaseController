@@ -6,8 +6,9 @@
 
 FileManagerViewBase::FileManagerViewBase()
 {
+
     image.setXY(0, 0);
-    image.setBitmap(Bitmap(BITMAP_BACKGROUND_ID));
+    image.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_ID));
 
     add(image);
 }

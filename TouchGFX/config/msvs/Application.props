@@ -4,7 +4,7 @@
   <PropertyGroup Label="UserMacros">
     <UseBPP>16</UseBPP>
     <RotateImage90>false</RotateImage90>
-    <TouchGFXReleasePath>..\..\..\Middlewares\ST\TouchGFX\touchgfx\\</TouchGFXReleasePath>
+    <TouchGFXReleasePath>..\..\..\Middlewares\ST\TouchGFX\touchgfx</TouchGFXReleasePath>
     <AlphaDitherImage>yes</AlphaDitherImage>
     <DitherAlgorithm>2</DitherAlgorithm>
     <OpaqueImageOutputFormat>RGB565</OpaqueImageOutputFormat>
@@ -12,7 +12,7 @@
     <TextDataFormat>A4</TextDataFormat>
     <RemapIdenticalTexts>yes</RemapIdenticalTexts>
     <ApplicationRoot>..\..</ApplicationRoot>
-    <TouchGFXEnvPath>D:\STM32Cube\TouchGFX\4.10.0\env</TouchGFXEnvPath>
+    <TouchGFXEnvPath>C:\TouchGFX\4.13.0\env</TouchGFXEnvPath>
   </PropertyGroup>
   <PropertyGroup/>
   <ItemDefinitionGroup/>

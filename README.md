@@ -19,7 +19,7 @@ touchGFX中的printf()输出失效
 2019-08-25
 1、添加screen切换时的更新机制
 2、解决wildcard字符串重绘为更短字符串部分内容丢失的问题。
-
+3、添加定时器，测试printf输出 --可以检测到多次输出
 
 
 
@@ -38,13 +38,13 @@ old_update
 			GRAPHICS_MainTask
 		}
 	}
-	4.加入USB虚拟串口，可以通过虚拟串口与系统通信
-	5.mqtt task中发现bug，会导致系统死机，原因:当网络为联通时，如果调用MQTTConnect连接服务器，会导致HardFault ，通过添加线程时间解决，在连接前死等网络就绪
-	6.添加dhcp 回调函数，获取ip地址后向mqtt任务发送线程事件
-	7.加入netETH_Notify事件回调，打印上线，掉线等信息，以便后续使用
-	8.修改系统时钟注释，原本的218MHz修改为200MHz，以及相关分频器数值
-	9.添加debug日志模块
-	10.添加touchGFX项目生成MDK工程
+	4.加入USB虚拟串口，可以通过虚拟串口与系统通信		--done
+	5.mqtt task中发现bug，会导致系统死机，原因:当网络为联通时，如果调用MQTTConnect连接服务器，会导致HardFault ，通过添加线程时间解决，在连接前死等网络就绪 	--done
+	6.添加dhcp 回调函数，获取ip地址后向mqtt任务发送线程事件						--done
+	7.加入netETH_Notify事件回调，打印上线，掉线等信息，以便后续使用					--done
+	8.修改系统时钟注释，原本的218MHz修改为200MHz，以及相关分频器数值				--done
+	9.添加debug日志模块								--done
+	10.添加touchGFX项目生成MDK工程						--done
 
 
 

@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * This file is part of the TouchGFX 4.10.0 distribution.
+  * This file is part of the TouchGFX 4.13.0 distribution.
   *
-  * <h2><center>&copy; Copyright (c) 2018 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under Ultimate Liberty license
@@ -16,14 +16,14 @@
 #ifndef TOUCHGFXINIT_HPP
 #define TOUCHGFXINIT_HPP
 
-#include <touchgfx/hal/HAL.hpp>
-#include <touchgfx/hal/DMA.hpp>
 #include <platform/driver/touch/TouchController.hpp>
+#include <touchgfx/hal/DMA.hpp>
+#include <touchgfx/hal/HAL.hpp>
 
-#include <texts/TypedTextDatabase.hpp>
-#include <fonts/ApplicationFontProvider.hpp>
-#include <gui/common/FrontendHeap.hpp>
 #include <BitmapDatabase.hpp>
+#include <fonts/ApplicationFontProvider.hpp>
+#include <texts/TypedTextDatabase.hpp>
+#include <gui/common/FrontendHeap.hpp>
 
 static ApplicationFontProvider fontProvider;
 
