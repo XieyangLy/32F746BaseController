@@ -45,7 +45,7 @@
 #include "stm32f7xx_hal_crc.h"
 #include "stm32f7xx_hal_qspi.h"
 #include "stm32746g_discovery_qspi.h"
-
+#include "stdio.h"
 #ifdef _RTE_
 #include "RTE_Components.h"             // Component selection
 #endif
