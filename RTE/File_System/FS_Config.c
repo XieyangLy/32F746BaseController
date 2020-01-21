@@ -1,10 +1,10 @@
 /*------------------------------------------------------------------------------
  * MDK Middleware - Component ::File System
- * Copyright (c) 2004-2016 ARM Germany GmbH. All rights reserved.
+ * Copyright (c) 2004-2019 Arm Limited (or its affiliates). All rights reserved.
  *------------------------------------------------------------------------------
  * Name:    FS_Config.c
  * Purpose: File System Configuration
- * Rev.:    V6.2.0
+ * Rev.:    V6.3.0
  *----------------------------------------------------------------------------*/
 
 //-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
@@ -32,7 +32,7 @@
 // <o>Initial Current Drive <0=>F0: <1=>F1:
 //                          <2=>M0: <3=>M1:
 //                          <4=>N0: <5=>N1:
-//                          <6=>R0:
+//                          <6=>R0: <9=>R1:
 //                          <7=>U0: <8=>U1:
 // <i>Set initial setting for current drive. Current drive is used for File System functions
 // <i>that are invoked with the "" string and can be altered anytime during run-time.
@@ -40,8 +40,11 @@
 
 #include "RTE_Components.h"
 
-#ifdef  RTE_FileSystem_Drive_RAM
-#include "FS_Config_RAM.h"
+#ifdef  RTE_FileSystem_Drive_RAM_0
+#include "FS_Config_RAM_0.h"
+#endif
+#ifdef  RTE_FileSystem_Drive_RAM_1
+#include "FS_Config_RAM_1.h"
 #endif
 
 #ifdef  RTE_FileSystem_Drive_NOR_0

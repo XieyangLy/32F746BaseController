@@ -25,12 +25,22 @@
 /*  Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.4.0 */
 #define RTE_Compiler_EventRecorder
           #define RTE_Compiler_EventRecorder_DAP
+/*  Keil.ARM Compiler::Compiler:I/O:File:File System:1.2.0 */
+#define RTE_Compiler_IO_File            /* Compiler I/O: File */
+          #define RTE_Compiler_IO_File_FS         /* Compiler I/O: File (File System) */
 /*  Keil.ARM Compiler::Compiler:I/O:STDERR:ITM:1.2.0 */
 #define RTE_Compiler_IO_STDERR          /* Compiler I/O: STDERR */
           #define RTE_Compiler_IO_STDERR_ITM      /* Compiler I/O: STDERR ITM */
 /*  Keil.ARM Compiler::Compiler:I/O:STDOUT:ITM:1.2.0 */
 #define RTE_Compiler_IO_STDOUT          /* Compiler I/O: STDOUT */
           #define RTE_Compiler_IO_STDOUT_ITM      /* Compiler I/O: STDOUT ITM */
+/*  Keil.MDK-Pro::File System:CORE:LFN:6.13.0 */
+#define RTE_FileSystem_Core             /* File System Core */
+          #define RTE_FileSystem_LFN              /* File System with Long Filename support */
+          #define RTE_FileSystem_Release          /* File System Release Version */
+/*  Keil.MDK-Pro::File System:Drive:Memory Card:6.13.0 */
+#define RTE_FileSystem_Drive_MC_0       /* File System Memory Card Drive 0 */
+
 /*  Keil.MDK-Pro::Network:CORE:IPv4/IPv6 Debug:7.12.0 */
 #define RTE_Network_Core                /* Network Core */
           #define RTE_Network_IPv4                /* Network IPv4 Stack */

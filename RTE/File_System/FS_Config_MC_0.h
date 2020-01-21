@@ -39,7 +39,7 @@
 
 //     <o>Base address <0x0000-0xFFFFFE00:0x200>
 //     <i>Set buffer base address to RAM areas that support DMA with the drive.
-#define MC0_CACHE_ADDR          0x20000000
+#define MC0_CACHE_ADDR          0x20001000
 
 //   </e>
 //   <o>Filename Cache Size <0-1000000>

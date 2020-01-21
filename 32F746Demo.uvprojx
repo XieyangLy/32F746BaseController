@@ -1286,6 +1286,9 @@
           <GroupName>::Device</GroupName>
         </Group>
         <Group>
+          <GroupName>::File System</GroupName>
+        </Group>
+        <Group>
           <GroupName>::IoT Client</GroupName>
           <GroupOption>
             <CommonProperty>
@@ -2618,6 +2621,9 @@
           <GroupName>::Device</GroupName>
         </Group>
         <Group>
+          <GroupName>::File System</GroupName>
+        </Group>
+        <Group>
           <GroupName>::IoT Client</GroupName>
         </Group>
         <Group>
@@ -2646,9 +2652,9 @@
           <targetInfo name="webServer"/>
         </targetInfos>
       </package>
-      <package name="CMSIS-Driver" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="ARM" version="2.4.1">
+      <package license="LICENSE.txt" name="CMSIS-Driver" schemaVersion="1.4.9" url="http://www.keil.com/pack/" vendor="ARM" version="2.5.0">
         <targetInfos>
-          <targetInfo name="webServer" versionMatchMode="fixed"/>
+          <targetInfo name="webServer"/>
         </targetInfos>
       </package>
       <package license="LICENSE.txt" name="CMSIS-Driver_Validation" schemaVersion="1.4.9" supportContact="http://silver.arm.com/support" url="http://www.keil.com/pack/" vendor="ARM" version="1.4.0">
@@ -2668,7 +2674,7 @@
       </package>
       <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.6.0">
         <targetInfos>
-          <targetInfo name="webServer" versionMatchMode="fixed"/>
+          <targetInfo name="webServer"/>
         </targetInfos>
       </package>
       <package name="mbedClient" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="1.1.0">
@@ -2864,6 +2870,13 @@
           </targetInfo>
         </targetInfos>
       </component>
+      <component Cbundle="ARM Compiler" Cclass="Compiler" Cgroup="I/O" Csub="File" Cvariant="File System" Cvendor="Keil" Cversion="1.2.0" condition="ARMCC Cortex-M with File System">
+        <package name="ARM_Compiler" schemaVersion="1.4.9" url="http://www.keil.com/pack/" vendor="Keil" version="1.6.2"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
       <component Cbundle="ARM Compiler" Cclass="Compiler" Cgroup="I/O" Csub="STDERR" Cvariant="ITM" Cvendor="Keil" Cversion="1.2.0" condition="ARMCC Cortex-M with ITM">
         <package name="ARM_Compiler" schemaVersion="1.4.9" url="http://www.keil.com/pack/" vendor="Keil" version="1.6.2"/>
         <targetInfos>
@@ -2873,6 +2886,20 @@
       </component>
       <component Cbundle="ARM Compiler" Cclass="Compiler" Cgroup="I/O" Csub="STDOUT" Cvariant="ITM" Cvendor="Keil" Cversion="1.2.0" condition="ARMCC Cortex-M with ITM">
         <package name="ARM_Compiler" schemaVersion="1.4.9" url="http://www.keil.com/pack/" vendor="Keil" version="1.6.2"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="MDK-Pro" Cclass="File System" Cgroup="CORE" Cvariant="LFN" Cvendor="Keil" Cversion="6.13.0" condition="CMSIS Core with RTOS and File System I/O" isDefaultVariant="1">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.10.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="MDK-Pro" Cclass="File System" Cgroup="Drive" Csub="Memory Card" Cvendor="Keil" Cversion="6.13.0" condition="File System and SD/MMC Driver" maxInstances="2">
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.10.0"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
           <targetInfo name="webServer"/>
@@ -2899,7 +2926,7 @@
           <targetInfo name="webServer"/>
         </targetInfos>
       </component>
-      <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Service" Csub="Web Server Compact" Cvariant="HTTP" Cvendor="Keil" Cversion="7.12.0" condition="Network Web Server Compact" isDefaultVariant="1">
+      <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Service" Csub="Web Server Compact" Cvariant="HTTP" Cvendor="Keil" Cversion="7.12.0" condition="Network Web Server Compact">
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.10.0"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
@@ -3216,17 +3243,23 @@
           <targetInfo name="webServer"/>
         </targetInfos>
       </file>
-      <file attr="config" category="source" name="FileSystem\Config\FS_Config.c" version="6.2.0">
-        <instance index="0" removed="1">RTE\File_System\FS_Config.c</instance>
-        <component Cbundle="MDK-Pro" Cclass="File System" Cgroup="CORE" Cvariant="LFN Debug" Cvendor="Keil" Cversion="6.11.0" condition="CMSIS Core with RTOS and File System I/O and Event Recorder"/>
-        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
-        <targetInfos/>
+      <file attr="config" category="source" name="FileSystem\Config\FS_Config.c" version="6.3.0">
+        <instance index="0">RTE\File_System\FS_Config.c</instance>
+        <component Cbundle="MDK-Pro" Cclass="File System" Cgroup="CORE" Cvariant="LFN" Cvendor="Keil" Cversion="6.13.0" condition="CMSIS Core with RTOS and File System I/O" isDefaultVariant="1"/>
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.10.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
       </file>
-      <file attr="config" category="source" name="FileSystem\Config\FS_Config_MC.h" version="6.2.0">
-        <instance index="0" removed="1">RTE\File_System\FS_Config_MC_0.h</instance>
-        <component Cbundle="MDK-Pro" Cclass="File System" Cgroup="Drive" Csub="Memory Card" Cvendor="Keil" Cversion="6.11.0" condition="File System and SD/MMC Driver" maxInstances="2"/>
-        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
-        <targetInfos/>
+      <file attr="config" category="header" name="FileSystem\Config\FS_Config_MC.h" version="6.2.0">
+        <instance index="0">RTE\File_System\FS_Config_MC_0.h</instance>
+        <component Cbundle="MDK-Pro" Cclass="File System" Cgroup="Drive" Csub="Memory Card" Cvendor="Keil" Cversion="6.13.0" condition="File System and SD/MMC Driver" maxInstances="2"/>
+        <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.10.0"/>
+        <targetInfos>
+          <targetInfo name="Mqtt"/>
+          <targetInfo name="webServer"/>
+        </targetInfos>
       </file>
       <file attr="config" category="source" name="FileSystem\Config\FS_Config_RAM.h" version="6.2.0">
         <instance index="0" removed="1">RTE\File_System\FS_Config_RAM.h</instance>

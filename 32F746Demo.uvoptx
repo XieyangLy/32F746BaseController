@@ -206,6 +206,11 @@
         <Type>Keil.MDK-Middleware.7.10.0</Type>
         <SubType>1</SubType>
       </ScvdPack>
+      <ScvdPack>
+        <Filename>C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.10.0\FileSystem\FileSystem.scvd</Filename>
+        <Type>Keil.MDK-Middleware.7.10.0</Type>
+        <SubType>1</SubType>
+      </ScvdPack>
       <Tracepoint>
         <THDelay>0</THDelay>
       </Tracepoint>
@@ -1946,6 +1951,14 @@
   </Group>
 
   <Group>
+    <GroupName>::File System</GroupName>
+    <tvExp>0</tvExp>
+    <tvExpOptDlg>0</tvExpOptDlg>
+    <cbSel>0</cbSel>
+    <RteFlg>1</RteFlg>
+  </Group>
+
+  <Group>
     <GroupName>::IoT Client</GroupName>
     <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
@@ -1979,7 +1992,7 @@
 
   <Group>
     <GroupName>::USB</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>1</RteFlg>
