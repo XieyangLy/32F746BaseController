@@ -90,7 +90,7 @@
             <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>0</SelectedForBatchBuild>
-          <SVCSIdString></SVCSIdString>
+          <SVCSIdString>ly1126225520@gmail.com</SVCSIdString>
         </TargetCommonOption>
         <CommonProperty>
           <UseCPPCompiler>0</UseCPPCompiler>
@@ -2899,7 +2899,7 @@
           <targetInfo name="webServer"/>
         </targetInfos>
       </component>
-      <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Service" Csub="Web Server Compact" Cvariant="HTTP" Cvendor="Keil" Cversion="7.12.0" condition="Network Web Server Compact">
+      <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Service" Csub="Web Server Compact" Cvariant="HTTP" Cvendor="Keil" Cversion="7.12.0" condition="Network Web Server Compact" isDefaultVariant="1">
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.10.0"/>
         <targetInfos>
           <targetInfo name="Mqtt"/>
@@ -3180,7 +3180,7 @@
           <targetInfo name="webServer"/>
         </targetInfos>
       </file>
-      <file attr="config" category="header" name="CMSIS\Driver\Config\RTE_Device.h" version="1.5.0">
+      <file attr="config" category="header" name="CMSIS\Driver\Config\RTE_Device.h" version="1.5.1">
         <instance index="0">RTE\Device\STM32F746NGHx\RTE_Device.h</instance>
         <component Capiversion="1.0.0" Cclass="Device" Cgroup="STM32Cube Framework" Csub="Classic" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 Framework Classic"/>
         <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
@@ -3198,7 +3198,7 @@
           <targetInfo name="webServer"/>
         </targetInfos>
       </file>
-      <file attr="config" category="header" name="MDK\Templates\Inc\stm32f7xx_hal_conf.h" version="1.2.6">
+      <file attr="config" category="header" name="MDK\Templates\Inc\stm32f7xx_hal_conf.h" version="1.2.7">
         <instance index="0">RTE\Device\STM32F746NGHx\stm32f7xx_hal_conf.h</instance>
         <component Capiversion="1.0.0" Cclass="Device" Cgroup="STM32Cube Framework" Csub="Classic" Cvendor="Keil" Cversion="1.2.7" condition="STM32F7 Framework Classic"/>
         <package name="STM32F7xx_DFP" schemaVersion="1.6.0" url="https://www.keil.com/pack/" vendor="Keil" version="2.12.0"/>
@@ -3246,7 +3246,7 @@
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
         <targetInfos/>
       </file>
-      <file attr="config" category="source" name="Network\Config\Net_Config.c" version="7.0.0">
+      <file attr="config" category="source" name="Network\Config\Net_Config.c" version="7.1.0">
         <instance index="0">RTE\Network\Net_Config.c</instance>
         <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="CORE" Cvariant="IPv4/IPv6 Debug" Cvendor="Keil" Cversion="7.12.0" condition="CMSIS Core with RTOS and Event Recorder"/>
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.10.0"/>
@@ -3282,7 +3282,7 @@
           <targetInfo name="webServer"/>
         </targetInfos>
       </file>
-      <file attr="config" category="header" name="Network\Config\Net_Config_HTTP_Server.h" version="7.0.0">
+      <file attr="config" category="header" name="Network\Config\Net_Config_HTTP_Server.h" version="7.1.0">
         <instance index="0">RTE\Network\Net_Config_HTTP_Server.h</instance>
         <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Service" Csub="Web Server Compact" Cvariant="HTTP" Cvendor="Keil" Cversion="7.12.0" condition="Network Web Server Compact" isDefaultVariant="1"/>
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.10.0"/>
@@ -3297,7 +3297,7 @@
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.8.0"/>
         <targetInfos/>
       </file>
-      <file attr="config" category="header" name="Network\Config\Net_Config_TCP.h" version="7.1.0">
+      <file attr="config" category="header" name="Network\Config\Net_Config_TCP.h" version="7.1.1">
         <instance index="0">RTE\Network\Net_Config_TCP.h</instance>
         <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="Socket" Csub="TCP" Cvendor="Keil" Cversion="7.12.0" condition="Network Interface"/>
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.10.0"/>
@@ -3315,7 +3315,7 @@
           <targetInfo name="webServer"/>
         </targetInfos>
       </file>
-      <file attr="config" category="source" name="Network\Config\Net_Debug.c" version="7.0.0">
+      <file attr="config" category="source" name="Network\Config\Net_Debug.c" version="7.1.0">
         <instance index="0">RTE\Network\Net_Debug.c</instance>
         <component Cbundle="MDK-Pro" Cclass="Network" Cgroup="CORE" Cvariant="IPv4/IPv6 Debug" Cvendor="Keil" Cversion="7.12.0" condition="CMSIS Core with RTOS and Event Recorder"/>
         <package name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.10.0"/>

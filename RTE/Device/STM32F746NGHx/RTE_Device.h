@@ -1,24 +1,23 @@
 /* -----------------------------------------------------------------------------
- * Copyright (c) 2013-2017 ARM Ltd.
+ * Copyright (c) 2013-2019 Arm Limited (or its affiliates). All 
+ * rights reserved.
  *
- * This software is provided 'as-is', without any express or implied warranty.
- * In no event will the authors be held liable for any damages arising from
- * the use of this software. Permission is granted to anyone to use this
- * software for any purpose, including commercial applications, and to alter
- * it and redistribute it freely, subject to the following restrictions:
+ * SPDX-License-Identifier: Apache-2.0
  *
- * 1. The origin of this software must not be misrepresented; you must not
- *    claim that you wrote the original software. If you use this software in
- *    a product, an acknowledgment in the product documentation would be
- *    appreciated but is not required.
+ * Licensed under the Apache License, Version 2.0 (the License); you may
+ * not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * 2. Altered source versions must be plainly marked as such, and must not be
- *    misrepresented as being the original software.
+ * www.apache.org/licenses/LICENSE-2.0
  *
- * 3. This notice may not be removed or altered from any source distribution.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
- * $Date:        6. September 2017
- * $Revision:    V1.5.0
+ * $Date:        17. June 2019
+ * $Revision:    V1.5.1
  *
  * Project:      RTE Device Configuration for ST STM32F7xx
  * -------------------------------------------------------------------------- */
@@ -46,10 +45,10 @@
 
 // <e> USART1 (Universal synchronous asynchronous receiver transmitter) [Driver_USART1]
 // <i> Configuration settings for Driver_USART1 in component ::CMSIS Driver:USART
-#define RTE_USART1                      1
+#define RTE_USART1                      0
 
 //   <o> USART1_TX Pin <0=>Not Used <1=>PA9 <2=>PB6 <3=>PB14
-#define RTE_USART1_TX_ID                1
+#define RTE_USART1_TX_ID                0
 #if    (RTE_USART1_TX_ID == 0)
 #define RTE_USART1_TX                   0
 #elif  (RTE_USART1_TX_ID == 1)
@@ -69,7 +68,7 @@
 #endif
 
 //   <o> USART1_RX Pin <0=>Not Used <1=>PA10 <2=>PB7 <3=>PB15
-#define RTE_USART1_RX_ID                2
+#define RTE_USART1_RX_ID                0
 #if    (RTE_USART1_RX_ID == 0)
 #define RTE_USART1_RX                   0
 #elif  (RTE_USART1_RX_ID == 1)
@@ -1056,7 +1055,7 @@
 #error "Invalid I2C2_SCL Pin Configuration!"
 #endif
 
-//   <o> I2C2_SDA Pin <0=>PF0 <1=>PH5 <2=>PB11 <3=>PB3 <4=>PB9
+//   <o> I2C2_SDA Pin <0=>PF0 <1=>PH5 <2=>PB11
 #define RTE_I2C2_SDA_PORT_ID            0
 #if    (RTE_I2C2_SDA_PORT_ID == 0)
 #define RTE_I2C2_SDA_PORT               GPIOF
@@ -1067,12 +1066,6 @@
 #elif  (RTE_I2C2_SDA_PORT_ID == 2)
 #define RTE_I2C2_SDA_PORT               GPIOB
 #define RTE_I2C2_SDA_BIT                11
-#elif  (RTE_I2C2_SDA_PORT_ID == 3)
-#define RTE_I2C2_SDA_PORT               GPIOB
-#define RTE_I2C2_SDA_BIT                3
-#elif  (RTE_I2C2_SDA_PORT_ID == 4)
-#define RTE_I2C2_SDA_PORT               GPIOB
-#define RTE_I2C2_SDA_BIT                9
 #else
 #error "Invalid I2C2_SDA Pin Configuration!"
 #endif
@@ -1128,7 +1121,7 @@
 #error "Invalid I2C3_SCL Pin Configuration!"
 #endif
 
-//   <o> I2C3_SDA Pin <0=>PH8 <1=>PC9 <2=>PB4 <3=>PB8
+//   <o> I2C3_SDA Pin <0=>PH8 <1=>PC9
 #define RTE_I2C3_SDA_PORT_ID            0
 #if    (RTE_I2C3_SDA_PORT_ID == 0)
 #define RTE_I2C3_SDA_PORT               GPIOH
@@ -1136,12 +1129,6 @@
 #elif  (RTE_I2C3_SDA_PORT_ID == 1)
 #define RTE_I2C3_SDA_PORT               GPIOC
 #define RTE_I2C3_SDA_BIT                9
-#elif  (RTE_I2C3_SDA_PORT_ID == 2)
-#define RTE_I2C3_SDA_PORT               GPIOB
-#define RTE_I2C3_SDA_BIT                4
-#elif  (RTE_I2C3_SDA_PORT_ID == 3)
-#define RTE_I2C3_SDA_PORT               GPIOB
-#define RTE_I2C3_SDA_BIT                8
 #else
 #error "Invalid I2C3_SDA Pin Configuration!"
 #endif
@@ -1400,7 +1387,7 @@
 #error "Invalid SPI2_MISO Pin Configuration!"
 #endif
 
-//   <o> SPI2_MOSI Pin <0=>Not Used <1=>PB15 <2=>PC1 <3=>PC3 <4=>PI3 <5=>PB15
+//   <o> SPI2_MOSI Pin <0=>Not Used <1=>PB15 <2=>PC1 <3=>PC3 <4=>PI3
 #define RTE_SPI2_MOSI_PORT_ID           0
 #if    (RTE_SPI2_MOSI_PORT_ID == 0)
 #define RTE_SPI2_MOSI                   0
@@ -1420,10 +1407,6 @@
 #define RTE_SPI2_MOSI                   1
 #define RTE_SPI2_MOSI_PORT              GPIOI
 #define RTE_SPI2_MOSI_BIT               3
-#elif  (RTE_SPI2_MOSI_PORT_ID == 5)
-#define RTE_SPI2_MOSI                   1
-#define RTE_SPI2_MOSI_PORT              GPIOB
-#define RTE_SPI2_MOSI_BIT               15
 #else
 #error "Invalid SPI2_MOSI Pin Configuration!"
 #endif
@@ -2389,10 +2372,10 @@
 //     <o4> Pull Resistor <0=>Inactive <1=>Pull-up <2=>Pull-down
 //     <i>  Select Pin Pull Resistor function
 //   </e>
-#define RTE_SDMMC1_CD_PIN_EN            1
+#define RTE_SDMMC1_CD_PIN_EN            0
 #define RTE_SDMMC1_CD_ACTIVE            0
-#define RTE_SDMMC1_CD_PORT              GPIO_PORT(2)
-#define RTE_SDMMC1_CD_PIN               13
+#define RTE_SDMMC1_CD_PORT              GPIO_PORT(0)
+#define RTE_SDMMC1_CD_PIN               0
 #define RTE_SDMMC1_CD_PULL              1
 
 //   <e> Write Protect Pin
@@ -2755,7 +2738,7 @@
 #define RTE_ETH                         1
 
 //   <e> MII (Media Independent Interface)
-#define RTE_ETH_MII                     0
+#define RTE_ETH_MII                     1
 
 //     <o> ETH_MII_TX_CLK Pin <0=>PC3
 #define RTE_ETH_MII_TX_CLK_PORT_ID      0
@@ -2914,10 +2897,10 @@
 //   </e>
 
 //   <e> RMII (Reduced Media Independent Interface)
-#define RTE_ETH_RMII                    1
+#define RTE_ETH_RMII                    0
 
 //     <o> ETH_RMII_TXD0 Pin <0=>PB12 <1=>PG13
-#define RTE_ETH_RMII_TXD0_PORT_ID       1
+#define RTE_ETH_RMII_TXD0_PORT_ID       0
 #if    (RTE_ETH_RMII_TXD0_PORT_ID == 0)
 #define RTE_ETH_RMII_TXD0_PORT          GPIOB
 #define RTE_ETH_RMII_TXD0_PIN           12
@@ -2928,7 +2911,7 @@
 #error "Invalid ETH_RMII_TXD0 Pin Configuration!"
 #endif
 //     <o> ETH_RMII_TXD1 Pin <0=>PB13 <1=>PG14
-#define RTE_ETH_RMII_TXD1_PORT_ID       1
+#define RTE_ETH_RMII_TXD1_PORT_ID       0
 #if    (RTE_ETH_RMII_TXD1_PORT_ID == 0)
 #define RTE_ETH_RMII_TXD1_PORT          GPIOB
 #define RTE_ETH_RMII_TXD1_PIN           13
@@ -2939,7 +2922,7 @@
 #error "Invalid ETH_RMII_TXD1 Pin Configuration!"
 #endif
 //     <o> ETH_RMII_TX_EN Pin <0=>PB11 <1=>PG11
-#define RTE_ETH_RMII_TX_EN_PORT_ID      1
+#define RTE_ETH_RMII_TX_EN_PORT_ID      0
 #if    (RTE_ETH_RMII_TX_EN_PORT_ID == 0)
 #define RTE_ETH_RMII_TX_EN_PORT         GPIOB
 #define RTE_ETH_RMII_TX_EN_PIN          11
@@ -3042,12 +3025,12 @@
 
 
 // <e> USB OTG Full-speed
-#define RTE_USB_OTG_FS                  1
+#define RTE_USB_OTG_FS                  0
 
 //   <e> Device [Driver_USBD0]
 //   <i> Configuration settings for Driver_USBD0 in component ::CMSIS Driver:USB Device
 
-#define RTE_USB_OTG_FS_DEVICE           0
+#define RTE_USB_OTG_FS_DEVICE           1
 
 //     <o0.0> VBUS Sensing Pin
 //     <i> Enable or disable VBUS sensing
@@ -3057,7 +3040,7 @@
 //   <e> Host [Driver_USBH0]
 //   <i> Configuration settings for Driver_USBH0 in component ::CMSIS Driver:USB Host
 
-#define RTE_USB_OTG_FS_HOST             1
+#define RTE_USB_OTG_FS_HOST             0
 
 //     <e> VBUS Power On/Off Pin
 //     <i> Configure Pin for driving VBUS
@@ -3071,10 +3054,10 @@
 //       <o3> Bit <0-15>
 //       <i>  Selects Port Bit
 //     </e>
-#define RTE_OTG_FS_VBUS_PIN             1
-#define RTE_OTG_FS_VBUS_ACTIVE          1
-#define RTE_OTG_FS_VBUS_PORT            GPIO_PORT(3)
-#define RTE_OTG_FS_VBUS_BIT             5
+#define RTE_OTG_FS_VBUS_PIN             0
+#define RTE_OTG_FS_VBUS_ACTIVE          0
+#define RTE_OTG_FS_VBUS_PORT            GPIO_PORT(0)
+#define RTE_OTG_FS_VBUS_BIT             0
 
 //     <e> Overcurrent Detection Pin
 //     <i> Configure Pin for overcurrent detection
@@ -3230,7 +3213,7 @@
 
 //   <e> Host [Driver_USBH1]
 //   <i> Configuration settings for Driver_USBH1 in component ::CMSIS Driver:USB Host
-#define RTE_USB_OTG_HS_HOST             1
+#define RTE_USB_OTG_HS_HOST             0
 
 //     <e> VBUS Power On/Off Pin
 //     <i> Configure Pin for driving VBUS

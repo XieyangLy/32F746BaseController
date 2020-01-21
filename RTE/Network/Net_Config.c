@@ -1,10 +1,10 @@
 /*------------------------------------------------------------------------------
  * MDK Middleware - Component ::Network
- * Copyright (c) 2004-2015 ARM Germany GmbH. All rights reserved.
+ * Copyright (c) 2004-2019 Arm Limited (or its affiliates). All rights reserved.
  *------------------------------------------------------------------------------
  * Name:    Net_Config.c
  * Purpose: Network Configuration
- * Rev.:    V7.0.0
+ * Rev.:    V7.1.0
  *----------------------------------------------------------------------------*/
 
 //-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
@@ -15,7 +15,7 @@
 //   <i>This is the name under which embedded host can be
 //   <i>accessed on a local area network.
 //   <i>Default: "my_host"
-#define NET_HOST_NAME           "stm32f7-disco"
+#define NET_HOST_NAME           "my_host"
 
 //   <o>Memory Pool Size <1536-262144:4>
 //   <i>This is the size of a memory pool in bytes. Buffers for
@@ -50,6 +50,14 @@
 #endif
 #ifdef  RTE_Network_Interface_ETH_1
 #include "Net_Config_ETH_1.h"
+#endif
+
+#ifdef  RTE_Network_Interface_WiFi_0
+#include "Net_Config_WiFi_0.h"
+#endif
+
+#ifdef  RTE_Network_Interface_WiFi_1
+#include "Net_Config_WiFi_1.h"
 #endif
 
 #ifdef  RTE_Network_Interface_PPP

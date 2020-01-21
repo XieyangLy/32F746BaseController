@@ -1,10 +1,10 @@
 /*------------------------------------------------------------------------------
  * MDK Middleware - Component ::Network
- * Copyright (c) 2004-2015 ARM Germany GmbH. All rights reserved.
+ * Copyright (c) 2004-2019 Arm Limited (or its affiliates). All rights reserved.
  *------------------------------------------------------------------------------
  * Name:    Net_Debug.c
  * Purpose: Network Debug Configuration
- * Rev.:    V7.0.0
+ * Rev.:    V7.1.0
  *----------------------------------------------------------------------------*/
 
 //-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
@@ -19,11 +19,15 @@
 
 //   <o>Memory Management  <0=>Off <1=>Errors only <2=>Full debug
 //   <i>Configure Dynamic Memory Management debugging
-#define DBG_MEM                 0
+#define DBG_MEM                 1
 
 //   <o>ETH Interface  <0=>Off <1=>Errors only <2=>Full debug
 //   <i>Configure Ethernet Interface debugging
-#define DBG_ETH                 2
+#define DBG_ETH                 1
+
+//   <o>WiFi Interface  <0=>Off <1=>Errors only <2=>Full debug
+//   <i>Configure WiFi Interface debugging
+#define DBG_WIFI                1
 
 //   <o>PPP Interface  <0=>Off <1=>Errors only <2=>Full debug
 //   <i>Configure Serial PPP Interface debugging
@@ -35,7 +39,7 @@
 
 //   <o>Loopback Interface  <0=>Off <1=>Errors only <2=>Full debug
 //   <i>Configure Local Loopback Interface debugging
-#define DBG_LOOP                0
+#define DBG_LOOP                1
 // </e>
 
 // <e>IPv4 Core Debug

@@ -1,10 +1,10 @@
 /*------------------------------------------------------------------------------
  * MDK Middleware - Component ::Network:Service
- * Copyright (c) 2004-2015 ARM Germany GmbH. All rights reserved.
+ * Copyright (c) 2004-2019 Arm Limited (or its affiliates). All rights reserved.
  *------------------------------------------------------------------------------
  * Name:    Net_Config_HTTP_Server.h
  * Purpose: Network Configuration for HTTP Server
- * Rev.:    V7.0.0
+ * Rev.:    V7.1.0
  *----------------------------------------------------------------------------*/
 
 //-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
@@ -20,17 +20,22 @@
 //   <o>Port Number <1-65535>
 //   <i>Listening port number
 //   <i>Default: 0 (autoselects: 80/HTTP, 443/HTTPS) 
-#define HTTP_SERVER_PORT_NUM        80
+#define HTTP_SERVER_PORT_NUM        0
 
 //   <s.50>Server-Id header
 //   <i>Optional header, which overrides the default server-id header.
 //   <i>Default: ""
-#define HTTP_SERVER_ID              "Xieyang"
+#define HTTP_SERVER_ID              ""
 
 //   <e>Enable User Authentication
 //   <i>When enabled, requires authentication of the user through
 //   <i>the credentials to access any web page on the server.
 #define HTTP_SERVER_AUTH_ENABLE     1
+
+//     <o>Authentication Scheme <0=>Basic <1=>Digest
+//     <i>Defines Access Authentication type
+//     <i>Default: Basic
+#define HTTP_SERVER_AUTH_TYPE       0
 
 //     <s.20>Authentication Realm
 //     <i>Defines the protection space on server
@@ -46,7 +51,9 @@
 //       <i>Default: "admin"
 #define HTTP_SERVER_AUTH_USER       "admin"
 
-//       <s.15>Administrator Password
+//       <s.32>Administrator Secret
+//       <i>Plain text password or Digested value HA1
+//       <i>HA1 = MD5(username:realm:password)
 //       <i>Default: ""
 #define HTTP_SERVER_AUTH_PASS       ""
 //     </e>
