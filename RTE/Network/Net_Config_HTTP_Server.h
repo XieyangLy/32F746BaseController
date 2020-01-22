@@ -20,12 +20,12 @@
 //   <o>Port Number <1-65535>
 //   <i>Listening port number
 //   <i>Default: 0 (autoselects: 80/HTTP, 443/HTTPS) 
-#define HTTP_SERVER_PORT_NUM        0
+#define HTTP_SERVER_PORT_NUM        80
 
 //   <s.50>Server-Id header
 //   <i>Optional header, which overrides the default server-id header.
 //   <i>Default: ""
-#define HTTP_SERVER_ID              ""
+#define HTTP_SERVER_ID              "Xieyang"
 
 //   <e>Enable User Authentication
 //   <i>When enabled, requires authentication of the user through

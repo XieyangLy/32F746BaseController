@@ -19,15 +19,15 @@
 
 //   <o>Memory Management  <0=>Off <1=>Errors only <2=>Full debug
 //   <i>Configure Dynamic Memory Management debugging
-#define DBG_MEM                 1
+#define DBG_MEM                 2
 
 //   <o>ETH Interface  <0=>Off <1=>Errors only <2=>Full debug
 //   <i>Configure Ethernet Interface debugging
-#define DBG_ETH                 1
+#define DBG_ETH                 2
 
 //   <o>WiFi Interface  <0=>Off <1=>Errors only <2=>Full debug
 //   <i>Configure WiFi Interface debugging
-#define DBG_WIFI                1
+#define DBG_WIFI                0
 
 //   <o>PPP Interface  <0=>Off <1=>Errors only <2=>Full debug
 //   <i>Configure Serial PPP Interface debugging
@@ -39,7 +39,7 @@
 
 //   <o>Loopback Interface  <0=>Off <1=>Errors only <2=>Full debug
 //   <i>Configure Local Loopback Interface debugging
-#define DBG_LOOP                1
+#define DBG_LOOP                0
 // </e>
 
 // <e>IPv4 Core Debug

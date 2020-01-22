@@ -45,10 +45,10 @@
 
 // <e> USART1 (Universal synchronous asynchronous receiver transmitter) [Driver_USART1]
 // <i> Configuration settings for Driver_USART1 in component ::CMSIS Driver:USART
-#define RTE_USART1                      0
+#define RTE_USART1                      1
 
 //   <o> USART1_TX Pin <0=>Not Used <1=>PA9 <2=>PB6 <3=>PB14
-#define RTE_USART1_TX_ID                0
+#define RTE_USART1_TX_ID                1
 #if    (RTE_USART1_TX_ID == 0)
 #define RTE_USART1_TX                   0
 #elif  (RTE_USART1_TX_ID == 1)
@@ -68,7 +68,7 @@
 #endif
 
 //   <o> USART1_RX Pin <0=>Not Used <1=>PA10 <2=>PB7 <3=>PB15
-#define RTE_USART1_RX_ID                0
+#define RTE_USART1_RX_ID                2
 #if    (RTE_USART1_RX_ID == 0)
 #define RTE_USART1_RX                   0
 #elif  (RTE_USART1_RX_ID == 1)
@@ -2738,7 +2738,7 @@
 #define RTE_ETH                         1
 
 //   <e> MII (Media Independent Interface)
-#define RTE_ETH_MII                     1
+#define RTE_ETH_MII                     0
 
 //     <o> ETH_MII_TX_CLK Pin <0=>PC3
 #define RTE_ETH_MII_TX_CLK_PORT_ID      0
@@ -2897,10 +2897,10 @@
 //   </e>
 
 //   <e> RMII (Reduced Media Independent Interface)
-#define RTE_ETH_RMII                    0
+#define RTE_ETH_RMII                    1
 
 //     <o> ETH_RMII_TXD0 Pin <0=>PB12 <1=>PG13
-#define RTE_ETH_RMII_TXD0_PORT_ID       0
+#define RTE_ETH_RMII_TXD0_PORT_ID       1
 #if    (RTE_ETH_RMII_TXD0_PORT_ID == 0)
 #define RTE_ETH_RMII_TXD0_PORT          GPIOB
 #define RTE_ETH_RMII_TXD0_PIN           12
@@ -2911,7 +2911,7 @@
 #error "Invalid ETH_RMII_TXD0 Pin Configuration!"
 #endif
 //     <o> ETH_RMII_TXD1 Pin <0=>PB13 <1=>PG14
-#define RTE_ETH_RMII_TXD1_PORT_ID       0
+#define RTE_ETH_RMII_TXD1_PORT_ID       1
 #if    (RTE_ETH_RMII_TXD1_PORT_ID == 0)
 #define RTE_ETH_RMII_TXD1_PORT          GPIOB
 #define RTE_ETH_RMII_TXD1_PIN           13
@@ -2922,7 +2922,7 @@
 #error "Invalid ETH_RMII_TXD1 Pin Configuration!"
 #endif
 //     <o> ETH_RMII_TX_EN Pin <0=>PB11 <1=>PG11
-#define RTE_ETH_RMII_TX_EN_PORT_ID      0
+#define RTE_ETH_RMII_TX_EN_PORT_ID      1
 #if    (RTE_ETH_RMII_TX_EN_PORT_ID == 0)
 #define RTE_ETH_RMII_TX_EN_PORT         GPIOB
 #define RTE_ETH_RMII_TX_EN_PIN          11
@@ -3025,7 +3025,7 @@
 
 
 // <e> USB OTG Full-speed
-#define RTE_USB_OTG_FS                  0
+#define RTE_USB_OTG_FS                  1
 
 //   <e> Device [Driver_USBD0]
 //   <i> Configuration settings for Driver_USBD0 in component ::CMSIS Driver:USB Device
@@ -3040,7 +3040,7 @@
 //   <e> Host [Driver_USBH0]
 //   <i> Configuration settings for Driver_USBH0 in component ::CMSIS Driver:USB Host
 
-#define RTE_USB_OTG_FS_HOST             0
+#define RTE_USB_OTG_FS_HOST             1
 
 //     <e> VBUS Power On/Off Pin
 //     <i> Configure Pin for driving VBUS
@@ -3054,10 +3054,10 @@
 //       <o3> Bit <0-15>
 //       <i>  Selects Port Bit
 //     </e>
-#define RTE_OTG_FS_VBUS_PIN             0
-#define RTE_OTG_FS_VBUS_ACTIVE          0
-#define RTE_OTG_FS_VBUS_PORT            GPIO_PORT(0)
-#define RTE_OTG_FS_VBUS_BIT             0
+#define RTE_OTG_FS_VBUS_PIN             1
+#define RTE_OTG_FS_VBUS_ACTIVE          1
+#define RTE_OTG_FS_VBUS_PORT            GPIO_PORT(3)
+#define RTE_OTG_FS_VBUS_BIT             5
 
 //     <e> Overcurrent Detection Pin
 //     <i> Configure Pin for overcurrent detection
