@@ -11,7 +11,19 @@
 * 封装touchGFX基础包
 * 时间基准
 
-touchGFX中的printf()输出失效
+*touchGFX中的printf()输出失效
+
+*修改任务优先级
+/******************
+实际测试发现这几个任务要全部设置到同一个优先级，之前是仅应用任务没有设置到一个优先级。
+今天测试发现还是不够稳，全部弄到一个优先级稳了。。。
+AppTaskMsgPro任务   : osPriorityNormal3
+AppTaskEthCheck  : osPriorityNormal3。
+netCore_Thread任务  : osPriorityNormal3。
+netEth0_Thread任务  : osPriorityNormal3。
+*************************/
+
+
 
 
 ## changelog
@@ -33,7 +45,7 @@ old_update
 		添加GRAPHICS_Init();		--done
 		添加默认任务(用于启动系统);	--done
 		{
-			httpServer_main
+			httpServer_main	
 			app_mqtt
 			GRAPHICS_MainTask
 		}

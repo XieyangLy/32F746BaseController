@@ -764,7 +764,9 @@ static void init_task(void *arg)
 	//创建touchGFX消息队列
 	//tid_TouchGFX_MsgQueue = osMessageQueueNew(TOUCHGFX_GUI_MSGEQUEUE_OBJECTS,sizeof(TouchGFX_OBJ_t),&touchGfxMsgQueueCb);
 	tid_TouchGFX_MsgQueue = osMessageQueueNew(TOUCHGFX_GUI_MSGEQUEUE_OBJECTS,sizeof(TouchGFX_OBJ_t),NULL);
-		
+	
+	sd_rlfs_demo_task_create();
+	
 	GRAPHICS_MainTask();
 	//创建touchGFX任务
 	while(1)

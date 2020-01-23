@@ -19,7 +19,7 @@
 
 //   <o>Memory Management  <0=>Off <1=>Errors only <2=>Full debug
 //   <i>Configure Dynamic Memory Management debugging
-#define DBG_MEM                 2
+#define DBG_MEM                 0
 
 //   <o>ETH Interface  <0=>Off <1=>Errors only <2=>Full debug
 //   <i>Configure Ethernet Interface debugging

@@ -17,7 +17,7 @@
 //     <65536=>65536
 //   <i>Configures size of Event Record Buffer (each record is 16 bytes)
 //   <i>Must be 2^n (min=8, max=65536)
-#define EVENT_RECORD_COUNT      64U
+#define EVENT_RECORD_COUNT      512U
 
 //   <o>Time Stamp Source
 //      <0=> DWT Cycle Counter  <1=> SysTick  <2=> CMSIS-RTOS2 System Timer
@@ -27,7 +27,7 @@
 
 //   <o>Time Stamp Clock Frequency [Hz] <0-1000000000>
 //   <i>Defines default time stamp clock frequency (0 when not used)
-#define EVENT_TIMESTAMP_FREQ    0U
+#define EVENT_TIMESTAMP_FREQ    100000000U
 
 // </h>
 
